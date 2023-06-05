@@ -32,6 +32,8 @@ import {
 } from './lib/words'
 
 import { MAX_CHALLENGES } from './constants/settings';
+import { inject } from '@vercel/analytics';
+inject();
 
 function App() {
   const isLatestGame = getIsLatestGame()
