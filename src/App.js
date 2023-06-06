@@ -15,6 +15,7 @@ import FailModal from './components/Modals/FailModal';
 import SuccessModal from './components/Modals/SuccessModal';
 import StatsModal from './components/Modals/StatsModal';
 import InfoModal from './components/Modals/InfoModal';
+import Coffee from './images/hl6-j4Ko.png'
 
 import {
   loadGameStateFromLocalStorage,
@@ -275,6 +276,7 @@ function App() {
           {showHowtoPlayModal && (
           <InfoModal closeModal={closeHowToPlayModal}/>
           )}
+          <a href='https://www.buymeacoffee.com/caluhm' target='_blank' rel='noreferrer' className='absolute top-0 right-0 mt-2 mr-2'><img src={Coffee} alt='Buy me a coffee' width={135}></img></a>
           <div className='flex flex-col justify-between max-w-[37.5rem] p-3'>
             <HeroSection />
             <div className='flex justify-center items-center w-full relative'>
