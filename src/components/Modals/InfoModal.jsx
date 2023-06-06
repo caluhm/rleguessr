@@ -1,5 +1,7 @@
 import React, {useEffect, useRef} from 'react'
 import Icon from '../../images/CloseIcon.png';
+import Cursor from '../../images/icons8-hand-cursor.svg';
+import { Tooltip } from 'react-tooltip'
 
 const InfoModal = ({ closeModal}) => {
     const ref = useRef()
@@ -36,6 +38,7 @@ const InfoModal = ({ closeModal}) => {
   return (
     <div className='fixed w-[100vw] h-full min-h-[100vh] top-0 left-0 z-[500] bg-white/10 backdrop-blur-sm flex flex-col justify-start items-center p-4'>
         <div className='relative m-auto overflow-hidden p-10 bg-[#0c101f] w-full max-w-[31.25rem] max-h-[calc(100vh-2.5rem)] outline-none flex flex-col rounded-md drop-shadow-lg' ref={ref}>
+            <Tooltip id="my-tooltip" style={{backgroundColor: "#6366F1", opacity: 1}}/>
             <button className='flex items-center justify-center cursor-pointer absolute top-4 right-4 hover:opacity-70 transition-opacity' onClick={closeModal}><img src={Icon} height={24} width={24} alt='Exit Modal' className='invert'/></button>
             <div className='z-1 mt-6'>
                 <div className='relative flex flex-col items-center text-center h-fit italic'>
@@ -54,10 +57,16 @@ const InfoModal = ({ closeModal}) => {
                         <div className='bg-[#151c36] my-[0.125rem] mr-[0.125rem] ml-0 inline-block p-[0.5rem] rounded'>Blank boxes</div>
                         <span> are incorrect answers.</span>
                     </div>
-                    <div className='w-fit mx-0'>
+                    <div className='w-fit mb-3 mx-0'>
                         <div className='bg-[#151c36] my-[0.125rem] mr-[0.125rem] ml-0 inline-block p-[0.5rem] rounded'>↑</div>
                         <div className='bg-[#151c36] my-[0.125rem] mr-[0.125rem] ml-0 inline-block p-[0.5rem] rounded'>↓</div>
                         <span> arrows point to the correct answer.</span>
+                    </div>
+                    <div className='flex flex-row w-fit mx-0'>
+                      <div className='bg-[#151c36] my-[0.125rem] mr-[0.35rem] ml-0 inline-block p-[0.5rem] rounded' data-tooltip-id="my-tooltip" data-tooltip-content="It looks like this!" data-tooltip-place="top">
+                        <img src={Cursor} height={22} width={22} alt='Hover Cursor'/>
+                      </div>
+                      <span className='flex justify-center items-center'> hover over boxes for extra detail.</span>
                     </div>
                 </div>
                 <div className='flex justify-center items-center mt-6'>
