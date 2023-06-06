@@ -26,7 +26,7 @@ export const shareStatus = (
         guesses,
         getEmojiTiles()
       )
-  
+      + '\n\n' + 'https://rleguessr.app/'
     const shareData = { text: textToShare }
   
     let shareSuccess = false
