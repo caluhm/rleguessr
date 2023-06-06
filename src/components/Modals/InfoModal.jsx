@@ -63,10 +63,10 @@ const InfoModal = ({ closeModal}) => {
                         <span> arrows point to the correct answer.</span>
                     </div>
                     <div className='flex flex-row w-fit mx-0'>
-                      <div className='bg-[#151c36] my-[0.125rem] mr-[0.35rem] ml-0 inline-block p-[0.5rem] rounded' data-tooltip-id="my-tooltip" data-tooltip-content="It looks like this!" data-tooltip-place="top">
+                      <div className='bg-[#151c36] my-[0.125rem] mr-[0.35rem] ml-0 p-[0.5rem] rounded flex items-center justify-center' data-tooltip-id="my-tooltip" data-tooltip-content="It looks like this!" data-tooltip-place="top">
                         <img src={Cursor} height={22} width={22} alt='Hover Cursor'/>
                       </div>
-                      <span className='flex justify-center items-center'> hover over boxes for extra detail.</span>
+                      <span className='flex justify-center items-center'> hover over boxes for extra details.</span>
                     </div>
                 </div>
                 <div className='flex justify-center items-center mt-6'>
