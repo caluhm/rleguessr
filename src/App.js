@@ -231,15 +231,15 @@ function App() {
 
   var inputBorderColour = gameFinished ? 'border-gray-500' : 'border-indigo-500';
   var isGrey = gameFinished ? 'text-gray-500' : 'text-indigo-500';
-  var topAmount = 'top-[596px]';
+  var topAmount = 'sm:top-[597px] top-[556px]';
 
   if (gameActive) {
-    guesses.length === 1 ? topAmount = 'top-[524px]'
-    : guesses.length === 2 ? topAmount = 'top-[505px]'
-    : guesses.length === 3 ? topAmount = 'top-[486px]'
-    : guesses.length === 4 ? topAmount = 'top-[467px]'
-    : guesses.length === 5 ? topAmount = 'top-[448px]'
-    : topAmount = 'top-[596px]';
+    guesses.length === 1 ? topAmount = 'sm:top-[525px] top-[484px]'
+    : guesses.length === 2 ? topAmount = 'sm:top-[506px] top-[465px]'
+    : guesses.length === 3 ? topAmount = 'sm:top-[487px] top-[446px]'
+    : guesses.length === 4 ? topAmount = 'sm:top-[468px] top-[427px]'
+    : guesses.length === 5 ? topAmount = 'sm:top-[449px] top-[408px]'
+    : topAmount = 'sm:top-[597px] top-[556px]';
   }
 
   return (
@@ -260,7 +260,7 @@ function App() {
           )}
           <div className='flex flex-col justify-between max-w-[37.5rem] p-3'>
             <HeroSection />
-            <div className='flex justify-center items-center'>
+            <div className='flex justify-center items-center w-full'>
               <div className={`relative w-full h-[50px] border-2 ${inputBorderColour} rounded-md flex items-center justify-center`}>
                 <div className='pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3'>
                   <MagnifyingGlassIcon className={`h-[26px] w-[26px] ${isGrey}`} aria-hidden='true'/>
@@ -269,7 +269,7 @@ function App() {
               </div>
             
             {!isInputEmpty && (
-              <div className={`flex-1 w-[36rem] p-2 max-h-[250px] text-white text-md text-center bg-[#28335a] rounded-md overflow-y-scroll absolute z-10 ${topAmount} drop-shadow-lg`} id='scroll-list'>
+              <div className={`flex-1 sm:w-[36rem] w-[calc(100vw-1.5rem)] p-2 max-h-[250px] text-white text-md text-center bg-[#28335a] rounded-md overflow-y-scroll absolute z-10 ${topAmount} drop-shadow-lg`} id='scroll-list'>
                 <List input={inputText} handleClick={handleClick} guess0={guess0} guess1={guess1} guess2={guess2} guess3={guess3} guess4={guess4} guess5={guess5}/>
               </div>
             )}

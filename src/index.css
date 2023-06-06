@@ -16,3 +16,12 @@ code {
   font-family: 'Open Sans', sans-serif;
   font-family: 'Poppins', sans-serif;
 }
+
+@layer base {
+  .font-outline-2 {
+    -webkit-text-stroke: 0px white;
+  }
+  .font-outline-2 {
+    -webkit-text-stroke: 1px white;
+  }
+}
