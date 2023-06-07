@@ -52,11 +52,8 @@ const List = ({input, handleClick, guess0, guess1, guess2, guess3, guess4, guess
                             }
                         }}
                     >
-                        {item.name} 
-                        <span 
-                        className='font-light text-gray-250 tracking-normal'>
-                            - {item.fullName}
-                        </span>
+                        {item.name}  
+                        <span className='font-light text-gray-250 tracking-normal'> - {item.fullName}</span>
                     </li>
                 ))}
             </ul>
