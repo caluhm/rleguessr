@@ -7,7 +7,7 @@ const List = ({input, handleClick, guess0, guess1, guess2, guess3, guess4, guess
             return null;
         }
         else {
-            var filtered = el.name.toLowerCase().includes(input);
+            var filtered = el.name.toLowerCase().replace(/0/g, 'o').includes(input.replace(/0/g, 'o'));
             if (guess0.length !== 0) {
                 filtered = filtered && el.id !== guess0.id;
             }
