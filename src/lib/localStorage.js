@@ -22,7 +22,7 @@ export const loadStatsFromLocalStorage = () => {
   return stats ? (JSON.parse(stats)) : null
 }
 
-const infoModalKey = 'infoModalShown'
+const infoModalKey = 'newInfoModalShown'
 
 export const saveInfoModalStatusToLocalStorage = () => {
     localStorage.setItem(infoModalKey, true)
