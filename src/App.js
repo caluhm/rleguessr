@@ -276,7 +276,7 @@ function App() {
           {showHowtoPlayModal && (
           <InfoModal closeModal={closeHowToPlayModal}/>
           )}
-          <a href='https://www.buymeacoffee.com/caluhm' target='_blank' rel='noreferrer' className='absolute top-0 right-0 mt-2 mr-2'><img src={Coffee} alt='Buy me a coffee' width={135}></img></a>
+          <a href='https://www.buymeacoffee.com/caluhm' target='_blank' rel='noreferrer' className='absolute top-0 right-0 sm:mt-2 sm:mr-2 mt-1 mr-1'><img src={Coffee} alt='Buy me a coffee' width={135}></img></a>
           <div className='flex flex-col justify-between max-w-[37.5rem] p-3'>
             <HeroSection />
             <div className='flex justify-center items-center w-full relative'>

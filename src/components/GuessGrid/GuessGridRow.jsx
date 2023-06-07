@@ -107,7 +107,7 @@ const GuessRow = ({guess, answer}) => {
   
   return (
     <>
-        <Tooltip id="my-tooltip" style={{backgroundColor: "#6366F1", opacity: 1}}/>
+        <Tooltip id="my-tooltip" style={{backgroundColor: "#6366F1", opacity: 1, maxWidth: "13rem", textAlign: "center"}}/>
         <div className={`flex col-span-1 row-span-1 ${nameColour} rounded text-white font-md sm:text-sm text-xs text-center items-center justify-center h-[36px]`}>{guess.name}</div>
         <div className={`flex col-span-1 row-span-1 ${nationalityColour} rounded text-white font-md sm:text-sm text-xs text-center items-center justify-center h-[36px] overflow-hidden`} data-tooltip-id="my-tooltip" data-tooltip-content={tooltipNationalityMessage} data-tooltip-place="top">
           <Flag code={guessRegObj.code} width={36} className='border border-white' title={'Flag of ' + guess.nationality}/>

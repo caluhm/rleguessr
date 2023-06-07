@@ -13,7 +13,7 @@ const GuessGrid = ({
     answer,
 }) => {
   return (
-    <div className='grid gap-[2px] grid-cols-[2fr_1fr_2.5fr_1fr_1.5fr] w-full my-8'>
+    <div className='grid gap-[2px] grid-cols-[2fr_1fr_2.5fr_1fr_1.5fr] w-full sm:my-8 my-5'>
         <GuessGridHeader />
         {guess0?.length !== 0 && (
             <GuessGridRow guess={guess0} answer={answer}/>

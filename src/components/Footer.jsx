@@ -12,7 +12,7 @@ const Footer = ({
     setIsStatsModalOpen,
 }) => {
   return (
-    <div className='flex w-full flex-row items-center justify-center gap-8 pt-3 text-white'>
+    <div className='flex w-full flex-row items-center justify-center gap-8 sm:pt-3 pt-0 text-white'>
         <button 
             className='uppercase bg-transparent font-semibold text-xs border-none cursor-pointer py-4 px-4 tracking-[0.1375em] hover:text-gray-400 transition-colors' 
             onClick={() => setIsInfoModalOpen(true)}
