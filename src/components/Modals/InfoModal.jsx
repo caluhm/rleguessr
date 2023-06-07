@@ -1,7 +1,7 @@
 import React, {useEffect, useRef} from 'react'
 import Icon from '../../images/CloseIcon.png';
 import Cursor from '../../images/icons8-hand-cursor.svg';
-import Video from '../../images/93be8917b3b30485f653082415d79ff1.mp4';
+import Video from '../../images/93be8917b3b30485f653082415d79ff1.gif';
 
 const InfoModal = ({closeModal}) => {
     const ref = useRef()
@@ -69,7 +69,8 @@ const InfoModal = ({closeModal}) => {
                       <span className='flex justify-center items-center'> hover over boxes for extra details.</span>
 
                     </div>
-                    <video className='rounded-md border-2 border-white drop-shadow-md' src={Video} width={275} autoPlay loop muted/>
+                    
+                    <img src={Video} alt="" height={200} width={275}  className='rounded-md border-2 border-white drop-shadow-md'/>
                   </div>
                 </div>
                 <div className='flex justify-center items-center sm:mt-6 mt-0'>
