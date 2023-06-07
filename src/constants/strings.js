@@ -5,6 +5,7 @@ export const HERO_SECTION_IMAGE_ALT_TEXT = 'RLEsports Guessr'
 
 export const GUESS_GRID_HEADER_NAME_TEXT = 'Name'
 export const GUESS_GRID_HEADER_NATIONALITY_TEXT = 'Nat'
+export const GUESS_GRID_HEADER_REGION_TEXT = 'Reg'
 export const GUESS_GRID_HEADER_TEAM_TEXT = 'Team'
 export const GUESS_GRID_HEADER_AGE_TEXT = 'Age'
 export const GUESS_GRID_HEADER_LANS_TEXT = 'RLCS Lans'

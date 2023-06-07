@@ -20,6 +20,7 @@ export const getStatus = (
   const charObj = {
     name: '',
     nationality: '',
+    region: '',
     team: '',
     age: '',
     lans: '',
@@ -32,6 +33,12 @@ export const getStatus = (
         charObj.name = 'correct'
       } else if(guess.name !== solution.name) {
         charObj.name = 'incorrect'
+      }
+
+      if (guess.region === solution.region) {
+        charObj.region = 'correct'
+      } else if (guess.region !== solution.region) {
+        charObj.region = 'incorrect'
       }
       
       if(guess.team === solution.team) { 

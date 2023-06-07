@@ -18,12 +18,14 @@ function diff(num1, num2) {
 
 const GuessRow = ({guess, answer}) => {
   var tooltipNationalityMessage = "Nationality is incorrect.";
+  var tooltipRegionMessage = "RLCS Region is incorrect.";
   var tooltipTeamMessage = "";
   var tooltipAgeMessage = "Age is incorrect.";
   var tooltipRLCSMessage = "Amount of RLCS LAN's attended is incorrect.";
 
   let isNameCorrect = false;
   let isNationalityCorrect = false;
+  let isRegionCorrect = false;
   let isTeamCorrect = false;
   let isAgeCorrect = false;
   let isRLCSCorrect = false;
@@ -33,6 +35,10 @@ const GuessRow = ({guess, answer}) => {
   } if (guess.nationality === answer.nationality) {
     isNationalityCorrect = true;
     tooltipNationalityMessage = "Nationality is correct.";
+
+  } if (guess.region === answer.region) {
+    isRegionCorrect = true;
+    tooltipRegionMessage = "RLCS Region is correct.";
   } if (guess.team === answer.team) {
     isTeamCorrect = true;
     tooltipTeamMessage = "Team is correct.";
@@ -49,6 +55,7 @@ const GuessRow = ({guess, answer}) => {
 
   const nameColour = isNameCorrect ? 'bg-[#147549]' : 'bg-[#151c36]';
   let nationalityColour = isNationalityCorrect ? 'bg-[#147549]' : 'bg-[#151c36]';
+  let regionColour = isRegionCorrect ? 'bg-[#147549]' : 'bg-[#151c36]';
   const teamColour = isTeamCorrect ? 'bg-[#147549]' : 'bg-[#151c36]';
   let ageColour = isAgeCorrect ? 'bg-[#147549]' : 'bg-[#151c36]';
   let rlcsColour = isRLCSCorrect ? 'bg-[#147549]' : 'bg-[#151c36]';
@@ -112,6 +119,7 @@ const GuessRow = ({guess, answer}) => {
         <div className={`flex col-span-1 row-span-1 ${nationalityColour} rounded text-white font-md sm:text-sm text-xs text-center items-center justify-center h-[36px] overflow-hidden`} data-tooltip-id="my-tooltip" data-tooltip-content={tooltipNationalityMessage} data-tooltip-place="top">
           <Flag code={guessRegObj.code} width={36} className='border border-white' title={'Flag of ' + guess.nationality}/>
         </div>
+        <div className={`flex col-span-1 row-span-1 ${regionColour} rounded text-white font-md sm:text-sm text-xs text-center items-center justify-center h-[36px]`} data-tooltip-id="my-tooltip" data-tooltip-content={tooltipRegionMessage} data-tooltip-place="top">{guess.region}</div>
         <div className={`flex col-span-1 row-span-1 ${teamColour} rounded text-white font-md sm:text-sm text-xs text-center items-center justify-center h-[36px]`} data-tooltip-id="my-tooltip" data-tooltip-content={tooltipTeamMessage} data-tooltip-place="top">{guess.team}</div>
         <div className={`flex col-span-1 row-span-1 ${ageColour} rounded text-white font-md sm:text-sm text-xs text-center items-center justify-center h-[36px]`} data-tooltip-id="my-tooltip" data-tooltip-content={tooltipAgeMessage} data-tooltip-place="top">
           <div className='flex items-center justify-center'>
