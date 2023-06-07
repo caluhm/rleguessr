@@ -41,7 +41,23 @@ const List = ({input, handleClick, guess0, guess1, guess2, guess3, guess4, guess
         return (
             <ul>
                 {filteredData.map((item) => (
-                    <li className='py-1 cursor-pointer hover:bg-[#151c36] transition-all rounded-sm font-medium tracking-wide' key={item.id} onClick={() => handleClick(item.id)}>{item.name} <span className='font-light text-gray-250 tracking-normal'>- {item.fullName}</span></li>
+                    <li 
+                        tabindex="0" 
+                        className='py-1 cursor-pointer hover:bg-[#151c36] transition-all rounded-sm font-medium tracking-wide' 
+                        key={item.id} 
+                        onClick={() => handleClick(item.id)}
+                        onKeyDown={(e) => {
+                            if (e.key === 'Enter') {
+                              handleClick(item.id);
+                            }
+                        }}
+                    >
+                        {item.name} 
+                        <span 
+                        className='font-light text-gray-250 tracking-normal'>
+                            - {item.fullName}
+                        </span>
+                    </li>
                 ))}
             </ul>
         );
