@@ -64,27 +64,27 @@ const SuccessModal = ({answer, guesses, isGameLost, closeModal, stats}) => {
         theme="colored"
         closeButton={false}
       />
-        <div className='relative m-auto overflow-hidden p-10 bg-[#0c101f] w-full max-w-[31.25rem] max-h-[calc(100vh-2.5rem)] outline-none flex flex-col rounded-md drop-shadow-lg' ref={ref}>
+        <div className='relative m-auto overflow-hidden sm:p-10 p-5 bg-[#0c101f] w-full max-w-[31.25rem] max-h-[calc(100vh-2.5rem)] outline-none flex flex-col rounded-md drop-shadow-lg' ref={ref}>
             <button className='flex items-center justify-center cursor-pointer absolute top-4 right-4 hover:opacity-70 transition-opacity' onClick={closeModal}><img src={Icon} height={24} width={24} alt='Exit Modal' className='invert'/></button>
             <div className='z-1 mt-6'>
                 <div className='relative flex flex-col items-center h-fit'>
-                    <h1 className='text-3xl font-bold bg-clip-text text-white'>{SUCCESS_MODAL_TITLE_TEXT}</h1>
+                    <h1 className='sm:text-3xl text-2xl font-bold bg-clip-text text-white'>{SUCCESS_MODAL_TITLE_TEXT}</h1>
                 </div>
-                <div className='h-[0.0625rem] w-full bg-white/20 my-8 mx-auto'></div>
-                <div className='text-center text-white uppercase font-bold mt-8 tracking-[0.04em] text-sm'>YOU GOT TODAY'S RLE GUESSR WITH <span className='text-indigo-500'>{numOfGuesses}</span> TRIES! YOU ARE ON A <span className='text-indigo-500'>{stats.currentStreak}</span> DAY STREAK!</div>
+                <div className='h-[0.0625rem] w-full bg-white/20 sm:my-8 my-4 mx-auto'></div>
+                <div className='text-center text-white uppercase font-bold sm:mt-8 mt-4 tracking-[0.04em] text-sm'>YOU GOT TODAY'S RLE GUESSR WITH <span className='text-indigo-500'>{numOfGuesses}</span> TRIES! YOU ARE ON A <span className='text-indigo-500'>{stats.currentStreak}</span> DAY STREAK!</div>
                 <div className='flex w-full h-[6.25rem] max-w-[37.5rem] overflow-hidden bg-[#28335a] my-[1.5rem] mx-auto text-white rounded-md'>
                     <div className='flex flex-col justify-center items-center w-full border-2 border-green-500 gap-1'>
-                        <p className='uppercase font-black tracking-normal text-3xl p-0 m-0'>{answer.name}</p>
+                        <p className='uppercase font-black tracking-normal sm:text-3xl text-2xl p-0 m-0'>{answer.name}</p>
                         <div className='flex flex-row items-center'>
                         <Flag code={answerRegObj.code} width={30} className='border border-white mr-2.5' title={'Flag of ' + answer.nationality}/>
                             <p className='tracking-normal text-sm font-medium text-white p-0 m-0'>{answer.fullName}</p>
                         </div>
                     </div>
                 </div>
-                <p className='text-center text-white uppercase font-bold my-8 tracking-[0.04em] text-sm'>{SUCCESS_MODAL_BODY_TEXT}</p>
+                <p className='text-center text-white uppercase font-bold sm:my-8 my-4 tracking-[0.04em] text-sm'>{SUCCESS_MODAL_BODY_TEXT}</p>
                 <div className='flex justify-center items-center'>
                     <button 
-                      className='uppercase font-black m-0 text-xl tracking-wide min-h-[48px] py-3 px-8 text-black bg-indigo-500 hover:bg-indigo-300 outline-none border-none rounded cursor-pointer flex items-center justify-center transition-all'
+                      className='uppercase font-black m-0 sm:text-xl text-lg tracking-wide min-h-[48px] py-3 px-8 text-black bg-indigo-500 hover:bg-indigo-300 outline-none border-none rounded cursor-pointer flex items-center justify-center transition-all'
                       onClick={() => {
                         shareStatus(
                           answer,
@@ -97,11 +97,11 @@ const SuccessModal = ({answer, guesses, isGameLost, closeModal, stats}) => {
                         {SUCCESS_MODAL_BUTTON_TEXT}
                     </button>
                 </div>
-                <div className='h-[0.0625rem] w-full bg-white/20 my-8 mx-auto'></div>
+                <div className='h-[0.0625rem] w-full bg-white/20 sm:my-8 my-4 mx-auto'></div>
                 <div className='text-center text-white'>
-                    <div className='text-base font-bold tracking-wide -mb-[8px]'>{SUCCESS_MODAL_FOOTER_TEXT}</div>
+                    <div className='sm:text-base text-sm font-bold tracking-wide -mb-[8px]'>{SUCCESS_MODAL_FOOTER_TEXT}</div>
                     <Countdown
-                      className="text-[3rem] font-black"
+                      className="sm:text-[3rem] text-[2.5rem] font-black"
                       date={tomorrow}
                       daysInHours={true}
                     />

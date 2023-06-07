@@ -108,19 +108,19 @@ const GuessRow = ({guess, answer}) => {
   return (
     <>
         <Tooltip id="my-tooltip" style={{backgroundColor: "#6366F1", opacity: 1}}/>
-        <div className={`flex col-span-1 row-span-1 ${nameColour} rounded text-white font-md text-sm items-center justify-center h-[36px]`}>{guess.name}</div>
-        <div className={`flex col-span-1 row-span-1 ${nationalityColour} rounded text-white font-md text-sm items-center justify-center h-[36px] overflow-hidden`} data-tooltip-id="my-tooltip" data-tooltip-content={tooltipNationalityMessage} data-tooltip-place="top">
+        <div className={`flex col-span-1 row-span-1 ${nameColour} rounded text-white font-md sm:text-sm text-xs text-center items-center justify-center h-[36px]`}>{guess.name}</div>
+        <div className={`flex col-span-1 row-span-1 ${nationalityColour} rounded text-white font-md sm:text-sm text-xs text-center items-center justify-center h-[36px] overflow-hidden`} data-tooltip-id="my-tooltip" data-tooltip-content={tooltipNationalityMessage} data-tooltip-place="top">
           <Flag code={guessRegObj.code} width={36} className='border border-white' title={'Flag of ' + guess.nationality}/>
         </div>
-        <div className={`flex col-span-1 row-span-1 ${teamColour} rounded text-white font-md text-sm items-center justify-center h-[36px]`} data-tooltip-id="my-tooltip" data-tooltip-content={tooltipTeamMessage} data-tooltip-place="top">{guess.team}</div>
-        <div className={`flex col-span-1 row-span-1 ${ageColour} rounded text-white font-md text-sm items-center justify-center h-[36px]`} data-tooltip-id="my-tooltip" data-tooltip-content={tooltipAgeMessage} data-tooltip-place="top">
+        <div className={`flex col-span-1 row-span-1 ${teamColour} rounded text-white font-md sm:text-sm text-xs text-center items-center justify-center h-[36px]`} data-tooltip-id="my-tooltip" data-tooltip-content={tooltipTeamMessage} data-tooltip-place="top">{guess.team}</div>
+        <div className={`flex col-span-1 row-span-1 ${ageColour} rounded text-white font-md sm:text-sm text-xs text-center items-center justify-center h-[36px]`} data-tooltip-id="my-tooltip" data-tooltip-content={tooltipAgeMessage} data-tooltip-place="top">
           <div className='flex items-center justify-center'>
             <div>{calculateAge(guess.DOB)}</div>
             {isAgeCorrect ? (null) : (
             <div className='mt-[-3px] ml-1'>{returnArrowAge()}</div>)}
           </div>
         </div>
-        <div className={`flex col-span-1 row-span-1 ${rlcsColour} rounded text-white font-md text-sm items-center justify-center h-[36px]`} data-tooltip-id="my-tooltip" data-tooltip-content={tooltipRLCSMessage} data-tooltip-place="top">
+        <div className={`flex col-span-1 row-span-1 ${rlcsColour} rounded text-white font-md sm:text-sm text-xs text-center items-center justify-center h-[36px]`} data-tooltip-id="my-tooltip" data-tooltip-content={tooltipRLCSMessage} data-tooltip-place="top">
           <div className='flex items-center justify-center'>
             <div>{guess.rlcsLanAppearances}</div>
             {isRLCSCorrect ? (null) : (
