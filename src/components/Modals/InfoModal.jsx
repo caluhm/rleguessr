@@ -73,7 +73,7 @@ const InfoModal = ({closeModal}) => {
                     <img src={Video} alt="" height={200} width={275}  className='rounded-md border-2 border-white drop-shadow-md'/>
                   </div>
                 </div>
-                <div className='flex justify-center items-center sm:mt-6 mt-0'>
+                <div className='flex justify-center items-center sm:mt-6 mt-4'>
                     <button className='uppercase font-black m-0 sm:text-xl text-lg tracking-wide min-h-[48px] py-3 px-8 text-black bg-indigo-500 hover:bg-indigo-300 outline-none border-none rounded cursor-pointer flex items-center justify-center transition-all' onClick={closeModal}>close</button>
                 </div>
             </div>
