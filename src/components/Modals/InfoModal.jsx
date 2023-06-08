@@ -3,7 +3,7 @@ import Icon from '../../images/CloseIcon.png';
 import Cursor from '../../images/icons8-hand-cursor.svg';
 import Video from '../../images/93be8917b3b30485f653082415d79ff1.gif';
 
-const InfoModal = ({closeModal}) => {
+const InfoModal = ({closeModal, isHighContrastMode}) => {
     const ref = useRef()
 
     function useOnClickOutside(ref, handler) {
@@ -35,6 +35,11 @@ const InfoModal = ({closeModal}) => {
 
     useOnClickOutside(ref, () => closeModal());
 
+    var correctText = isHighContrastMode ? 'Orange boxes' : 'Green boxes';
+    var closeText = isHighContrastMode ? 'Blue boxes' : 'Orange boxes';
+    var correctColour = isHighContrastMode ? 'bg-[#F97316]' : 'bg-[#147549]';
+    var closeColour = isHighContrastMode ? 'bg-[#06B6D4]' : 'bg-[#9d5c3b]';
+
   return (
     <div className='fixed w-[100vw] h-full min-h-[100vh] top-0 left-0 z-[500] bg-white/10 backdrop-blur-sm flex flex-col justify-start items-center p-4'>
         <div className='relative m-auto overflow-hidden sm:p-10 p-5 bg-[#0c101f] w-full max-w-[31.25rem] max-h-[calc(100vh-2.5rem)] outline-none flex flex-col rounded-md drop-shadow-lg' ref={ref}>
@@ -46,11 +51,11 @@ const InfoModal = ({closeModal}) => {
                 <div className='flex flex-col justify-center items-center w-fit py-8 px-0 my-0 mx-auto text-white text-center sm:text-base text-sm max-h-[20rem] overflow-y-scroll'>
                     <div className='flex flex-col justify-center items-center px-4 mt-[9.5rem]'>
                     <div className='w-fit mb-3 mx-0'>
-                        <div className='bg-[#147549] my-[0.125rem] mr-[0.125rem] ml-0 inline-block p-[0.5rem] rounded'>Green boxes</div>
+                        <div className={`${correctColour} my-[0.125rem] mr-[0.125rem] ml-0 inline-block p-[0.5rem] rounded`}>{correctText}</div>
                         <span> are correct answers.</span>
                     </div>
                     <div className='w-fit mb-3 mx-0'>
-                        <div className='bg-[#9d5c3b] my-[0.125rem] mr-[0.125rem] ml-0 inline-block p-[0.5rem] rounded'>Orange boxes</div>
+                        <div className={`${closeColour} my-[0.125rem] mr-[0.125rem] ml-0 inline-block p-[0.5rem] rounded`}>{closeText}</div>
                         <span> are close answers.</span>
                     </div>
                     <div className='w-fit mb-3 mx-0'>

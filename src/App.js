@@ -21,7 +21,9 @@ import {
   loadGameStateFromLocalStorage,
   saveGameStateToLocalStorage,
   saveInfoModalStatusToLocalStorage,
-  loadInfoModalStatusFromLocalStorage
+  loadInfoModalStatusFromLocalStorage,
+  getStoredIsHighContrastMode, 
+  setStoredIsHighContrastMode
 } from './lib/localStorage'
 
 import { addStatsForCompletedGame, loadStats } from './lib/stats'
@@ -34,6 +36,8 @@ import {
 
 import { MAX_CHALLENGES } from './constants/settings';
 import { inject } from '@vercel/analytics';
+import SettingsModal from './components/Modals/SettingsModal';
+
 inject();
 
 function App() {
@@ -57,7 +61,11 @@ function App() {
   const [showFailModal, setShowFailModal] = useState(false);
   const [showHowtoPlayModal, setShowHowtoPlayModal] = useState(false);
   const [showStatsModal, setShowStatsModal] = useState(false);
+  const [showSettingsModal, setShowSettingsModal] = useState(false);
   const [stats, setStats] = useState(() => loadStats())
+  const [isHighContrastMode, setIsHighContrastMode] = useState(
+    getStoredIsHighContrastMode()
+  )
 
   const firstDivRef = useRef();
   const secondDivRef = useRef();
@@ -233,12 +241,21 @@ function App() {
     setCurrentGuess(currentGuess + 1);
   }
 
+  const handleHighContrastMode = (isHighContrast) => {
+    setIsHighContrastMode(isHighContrast)
+    setStoredIsHighContrastMode(isHighContrast)
+  }
+
   const handleHowtoPlayModal = () => {
     setShowHowtoPlayModal(true);
   }
 
   const handleStatsModal = () => {
     setShowStatsModal(true);
+  }
+
+  const handleSettingsModal = () => {
+    setShowSettingsModal(true);
   }
 
   const closeHowToPlayModal = () => {
@@ -257,6 +274,10 @@ function App() {
     setShowFailModal(false);
   }
 
+  const closeSettingsModal = () => {
+    setShowSettingsModal(false);
+  }
+
   var inputBorderColour = gameFinished ? 'border-gray-500' : 'border-indigo-500';
   var isGrey = gameFinished ? 'text-gray-500' : 'text-indigo-500';
  
@@ -264,17 +285,20 @@ function App() {
     <>
       <Div100vh>
         <div className="flex h-full flex-col items-center justify-center bg-[#0c101f]">
+          {showSettingsModal && (
+          <SettingsModal isHighContrastMode={isHighContrastMode} handleHighContrastMode={handleHighContrastMode} closeModal={closeSettingsModal}/>
+          )}
           {showFailModal && (
-          <FailModal closeModal={closeFailModal} answer={solution} guesses={guesses} isGameLost={!isGameWon}/>
+          <FailModal closeModal={closeFailModal} answer={solution} guesses={guesses} isGameLost={!isGameWon} isHighContrastMode={isHighContrastMode}/>
           )}
           {showSuccessModal && (
-          <SuccessModal  closeModal={closeSuccessModal} answer={solution} guesses={guesses} isGameLost={!isGameWon} stats={stats}/>
+          <SuccessModal  closeModal={closeSuccessModal} answer={solution} guesses={guesses} isGameLost={!isGameWon} stats={stats} isHighContrastMode={isHighContrastMode}/>
           )}
           {showStatsModal && (
           <StatsModal  closeModal={closeStatsModal} stats={stats}/>
           )}
           {showHowtoPlayModal && (
-          <InfoModal closeModal={closeHowToPlayModal}/>
+          <InfoModal closeModal={closeHowToPlayModal} isHighContrastMode={isHighContrastMode}/>
           )}
           <a href='https://www.buymeacoffee.com/caluhm' target='_blank' rel='noreferrer' className='absolute top-0 right-0 sm:mt-2 sm:mr-2 mt-1 mr-1'><img src={Coffee} alt='Buy me a coffee' width={135}></img></a>
           <div className='flex flex-col justify-between max-w-[37.5rem] p-3'>
@@ -294,7 +318,7 @@ function App() {
             )}
             </div>
             {gameActive && (
-            <GuessGrid guess0={guess0} guess1={guess1} guess2={guess2} guess3={guess3} guess4={guess4} guess5={guess5} answer={solution}/>
+            <GuessGrid guess0={guess0} guess1={guess1} guess2={guess2} guess3={guess3} guess4={guess4} guess5={guess5} answer={solution} isHighContrastMode={isHighContrastMode}/>
             )}
             {gameFinished && (
               <AnswerSection answer={solution} isGameWon={isGameWon} reOpenGameEndModal={reopenModal}/>
@@ -302,7 +326,7 @@ function App() {
             {gameActive && !gameFinished &&(
               <GuessCounter guess0={guess0} guess1={guess1} guess2={guess2} guess3={guess3} guess4={guess4} guess5={guess5}/>
             )}
-            <Footer setIsInfoModalOpen={handleHowtoPlayModal} setIsStatsModalOpen={handleStatsModal}/>
+            <Footer setIsInfoModalOpen={handleHowtoPlayModal} setIsStatsModalOpen={handleStatsModal} setIsSettingsModalOpen={handleSettingsModal}/>
           </div>
         </div>
       </Div100vh>

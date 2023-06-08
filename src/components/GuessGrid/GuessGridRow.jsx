@@ -16,7 +16,7 @@ function diff(num1, num2) {
   }
 }
 
-const GuessRow = ({guess, answer}) => {
+const GuessRow = ({guess, answer, isHighContrastMode}) => {
   var tooltipNationalityMessage = "Nationality is incorrect.";
   var tooltipRegionMessage = "RLCS Region is incorrect.";
   var tooltipTeamMessage = "";
@@ -53,12 +53,12 @@ const GuessRow = ({guess, answer}) => {
     tooltipRLCSMessage = "Amount of RLCS LAN's attended is correct.";
   }
 
-  const nameColour = isNameCorrect ? 'bg-[#147549]' : 'bg-[#151c36]';
-  let nationalityColour = isNationalityCorrect ? 'bg-[#147549]' : 'bg-[#151c36]';
-  let regionColour = isRegionCorrect ? 'bg-[#147549]' : 'bg-[#151c36]';
-  const teamColour = isTeamCorrect ? 'bg-[#147549]' : 'bg-[#151c36]';
-  let ageColour = isAgeCorrect ? 'bg-[#147549]' : 'bg-[#151c36]';
-  let rlcsColour = isRLCSCorrect ? 'bg-[#147549]' : 'bg-[#151c36]';
+  const nameColour = isNameCorrect ? (isHighContrastMode ? 'bg-[#F97316]' : 'bg-[#147549]' ) : 'bg-[#151c36]';
+  let nationalityColour = isNationalityCorrect ? (isHighContrastMode ? 'bg-[#F97316]' : 'bg-[#147549]' ) : 'bg-[#151c36]';
+  let regionColour = isRegionCorrect ? (isHighContrastMode ? 'bg-[#F97316]' : 'bg-[#147549]' ) : 'bg-[#151c36]';
+  const teamColour = isTeamCorrect ? (isHighContrastMode ? 'bg-[#F97316]' : 'bg-[#147549]' ) : 'bg-[#151c36]';
+  let ageColour = isAgeCorrect ? (isHighContrastMode ? 'bg-[#F97316]' : 'bg-[#147549]' ) : 'bg-[#151c36]';
+  let rlcsColour = isRLCSCorrect ? (isHighContrastMode ? 'bg-[#F97316]' : 'bg-[#147549]' ) : 'bg-[#151c36]';
 
   const guessRegObj = Data.find((el) => el.name === guess.nationality)
   const answerRegObj = Data.find((el) => el.name === answer.nationality)
@@ -68,7 +68,7 @@ const GuessRow = ({guess, answer}) => {
   const guessAge = calculateAge(guess.DOB);
   
   if (diff(calculateAge(guess.DOB), calculateAge(answer.DOB)) <= 2 && !isAgeCorrect) {
-      ageColour = 'bg-[#9d5c3b]';
+      ageColour = isHighContrastMode ? 'bg-[#06B6D4]' : 'bg-[#9d5c3b]';
       tooltipAgeMessage = "Close, but the player is"
       if (correctAge > guessAge) {
         tooltipAgeMessage += " older."
@@ -76,7 +76,7 @@ const GuessRow = ({guess, answer}) => {
         tooltipAgeMessage += " younger."
       } 
   } if (diff((guess.rlcsLanAppearances), (answer.rlcsLanAppearances)) <= 2 && !isRLCSCorrect) {
-      rlcsColour = 'bg-[#9d5c3b]';
+      rlcsColour = isHighContrastMode ? 'bg-[#06B6D4]' : 'bg-[#9d5c3b]';
       tooltipRLCSMessage = "Close, the amount of RLCS LAN's attended is"
       if (correctRLCS > guessRLCS) {
         tooltipRLCSMessage += " more.";
@@ -86,7 +86,7 @@ const GuessRow = ({guess, answer}) => {
   }
 
   if (guessRegObj?.continent === answerRegObj?.continent && !isNationalityCorrect) {
-    nationalityColour = 'bg-[#9d5c3b]';
+    nationalityColour = isHighContrastMode ? 'bg-[#06B6D4]' : 'bg-[#9d5c3b]';
     tooltipNationalityMessage = "Close, the player is from the same continent."
   }
 

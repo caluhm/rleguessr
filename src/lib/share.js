@@ -14,6 +14,7 @@ export const shareStatus = (
     solution,
     guesses,
     lost,
+    isHighContrastMode,
     handleShareToClipboard,
     handleShareFailure
   ) => {
@@ -24,7 +25,7 @@ export const shareStatus = (
       generateEmojiGrid(
         solution,
         guesses,
-        getEmojiTiles()
+        getEmojiTiles(isHighContrastMode)
       )
       + '\n\n' + 'https://rleguessr.app/'
     const shareData = { text: textToShare }
@@ -92,10 +93,10 @@ export const shareStatus = (
     )
   }
 
-const getEmojiTiles = () => {
+const getEmojiTiles = (isHighContrastMode) => {
     let tiles = []
-    tiles.push('🟩')
-    tiles.push('🟧')
+    tiles.push(isHighContrastMode ? '🟧' : '🟩')
+    tiles.push(isHighContrastMode ? '🟦' : '🟧')
     tiles.push('⬛')
     return tiles
   }

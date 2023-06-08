@@ -16,7 +16,7 @@ import {
 import { shareStatus } from '../../lib/share';
 import { tomorrow } from '../../lib/words'
 
-const FailModal = ({answer, guesses, isGameLost, closeModal}) => {
+const FailModal = ({answer, guesses, isGameLost, closeModal, isHighContrastMode}) => {
     const ref = useRef()
     const answerRegObj = Data.find((el) => el.name === answer.nationality)
 
@@ -92,6 +92,7 @@ const FailModal = ({answer, guesses, isGameLost, closeModal}) => {
                           answer,
                           guesses,
                           isGameLost,
+                          isHighContrastMode,
                           handleShareToClipboard
                         )
                       }}

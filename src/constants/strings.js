@@ -24,5 +24,10 @@ export const SUCCESS_MODAL_BODY_TEXT = 'Come back tomorrow to play again!'
 export const SUCCESS_MODAL_BUTTON_TEXT = 'SHARE YOUR SCORE'
 export const SUCCESS_MODAL_FOOTER_TEXT = 'NEXT RLE GUESSR:'
 
-export const FOOTER_HELP_TEXT = 'How to play'
+export const SETTINGS_MODAL_HEADER_TEXT = 'Settings ⚙️'
+export const SETTINGS_MODAL_CONTRAST_SETTING_NAME_TEXT = 'High Contrast Mode'
+export const SETTINGS_MODAL_CONTRAST_SETTING_DESCRIPTION_TEXT = 'Improves colour vision accessibility'
+
+export const FOOTER_HELP_TEXT = 'Info'
 export const FOOTER_STATS_TEXT = 'Stats'
+export const FOOTER_SETTINGS_TEXT = 'Settings'
