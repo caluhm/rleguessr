@@ -99,11 +99,9 @@ const SuccessModal = ({answer, guesses, isGameLost, closeModal, stats, isHighCon
                         {SUCCESS_MODAL_BUTTON_TEXT}
                     </button>
                 </div>
-                <div className='w-fit flex justify-center items-center text-center text-white uppercase font-bold sm:my-8 my-4 sm:py-3 sm:px-6 py-2 px-4 mx-auto tracking-[0.04em] sm:text-sm text-xs bg-[#1DA1F2] hover:bg-[#1782c5] rounded cursor-pointer transition-colors'>
-                  <a href='https://twitter.com/RL_Cal' target='_blank' rel="noreferrer" className='flex flex-row justify-center items-center gap-2'>
+                  <a href='https://twitter.com/RL_Cal' target='_blank' rel="noreferrer" className='w-fit flex flex-row justify-center items-center gap-2 text-center text-white uppercase font-bold sm:my-8 my-4 sm:py-3 sm:px-6 py-2 px-4 mx-auto tracking-[0.04em] sm:text-sm text-xs bg-[#1DA1F2] hover:bg-[#1782c5] rounded cursor-pointer transition-colors'>
                     <img src={Twitter} height={22} width={22} alt='Twitter Logo'/> <span className='text-black'>@RL_Cal</span>
                   </a>
-                </div>
                 <div className='h-[0.0625rem] w-full bg-white/20 sm:my-8 my-4 mx-auto'></div>
                 <div className='text-center text-white'>
                     <div className='sm:text-base text-sm font-bold tracking-wide -mb-[8px]'>{SUCCESS_MODAL_FOOTER_TEXT}</div>
