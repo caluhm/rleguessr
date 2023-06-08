@@ -13,6 +13,7 @@ import {
 } from "../../constants/strings";
 import { shareStatus } from '../../lib/share';
 import { tomorrow } from '../../lib/words'
+import Twitter from '../../images/iconmonstr-twitter-1-240.png'
 
 const SuccessModal = ({answer, guesses, isGameLost, closeModal, stats, isHighContrastMode}) => {
     const ref = useRef()
@@ -84,7 +85,7 @@ const SuccessModal = ({answer, guesses, isGameLost, closeModal, stats, isHighCon
                 <p className='text-center text-white uppercase font-bold sm:my-8 my-4 tracking-[0.04em] text-sm'>{SUCCESS_MODAL_BODY_TEXT}</p>
                 <div className='flex justify-center items-center'>
                     <button 
-                      className='uppercase font-black m-0 sm:text-xl text-lg tracking-wide min-h-[48px] py-3 px-8 text-black bg-indigo-500 hover:bg-indigo-300 outline-none border-none rounded cursor-pointer flex items-center justify-center transition-all'
+                      className='uppercase font-black m-0 sm:text-xl text-lg tracking-wide min-h-[48px] py-3 px-8 text-black bg-indigo-500 hover:bg-indigo-300 outline-none border-none rounded cursor-pointer flex items-center justify-center transition-colors'
                       onClick={() => {
                         shareStatus(
                           answer,
@@ -97,6 +98,11 @@ const SuccessModal = ({answer, guesses, isGameLost, closeModal, stats, isHighCon
                     >
                         {SUCCESS_MODAL_BUTTON_TEXT}
                     </button>
+                </div>
+                <div className='w-fit flex justify-center items-center text-center text-white uppercase font-bold sm:my-8 my-4 sm:py-3 sm:px-6 py-2 px-4 mx-auto tracking-[0.04em] sm:text-sm text-xs bg-[#1DA1F2] hover:bg-[#1782c5] rounded cursor-pointer transition-colors'>
+                  <a href='https://twitter.com/RL_Cal' target='_blank' rel="noreferrer" className='flex flex-row justify-center items-center gap-2'>
+                    <img src={Twitter} height={22} width={22} alt='Twitter Logo'/> <span className='text-black'>@RL_Cal</span>
+                  </a>
                 </div>
                 <div className='h-[0.0625rem] w-full bg-white/20 sm:my-8 my-4 mx-auto'></div>
                 <div className='text-center text-white'>

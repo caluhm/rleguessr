@@ -86,7 +86,7 @@ const FailModal = ({answer, guesses, isGameLost, closeModal, isHighContrastMode}
                 <p className='text-center text-white uppercase font-bold sm:my-8 my-4 tracking-[0.04em] text-sm'>{FAIL_MODAL_BODY_TEXT_3}</p>
                 <div className='flex justify-center items-center'>
                     <button 
-                      className='uppercase font-black m-0 sm:text-xl text-lg tracking-wide min-h-[48px] py-3 px-8 text-black bg-indigo-500 hover:bg-indigo-300 outline-none border-none rounded cursor-pointer flex items-center justify-center transition-all'
+                      className='uppercase font-black m-0 sm:text-xl text-lg tracking-wide min-h-[48px] py-3 px-8 text-black bg-indigo-500 hover:bg-indigo-300 outline-none border-none rounded cursor-pointer flex items-center justify-center transition-colors'
                       onClick={() => {
                         shareStatus(
                           answer,
