@@ -120,7 +120,7 @@ function App() {
     setShowSuccessModal(true);
     setGameFinished(true);
     setGameWon(true);
-    setStats(addStatsForCompletedGame(stats, guesses.length));
+    setStats(addStatsForCompletedGame(stats, guesses.length, true));
   }
 
   const gameLost = () => {
@@ -129,7 +129,7 @@ function App() {
     setShowFailModal(true);
     setGameFinished(true);
     setGameWon(false);
-    setStats(addStatsForCompletedGame(stats, guesses.length + 1));
+    setStats(addStatsForCompletedGame(stats, guesses.length + 1, false));
   }
 
   // eslint-disable-next-line no-unused-vars
