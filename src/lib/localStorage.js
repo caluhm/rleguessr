@@ -1,8 +1,9 @@
 const gameStateKey = 'gameState'
 
-export const saveGameStateToLocalStorage = (gameState) => {
-  const key = gameStateKey
-  localStorage.setItem(key, JSON.stringify(gameState))
+export const saveGameStateToLocalStorage = (guesses, solutionId) => {
+  const key = gameStateKey;
+  const gameState = { guesses, solution: { id: solutionId } };
+  localStorage.setItem(key, JSON.stringify(gameState));
 }
 
 export const loadGameStateFromLocalStorage = () => {

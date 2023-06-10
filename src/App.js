@@ -174,8 +174,8 @@ function App() {
   }); // [guess0, guess1, guess2, guess3, guess4, guess5]
 
   useEffect(() => {
-    saveGameStateToLocalStorage({ guesses, solution })
-  }, [guesses])
+    saveGameStateToLocalStorage(guesses, solution.id);
+  }, [guesses]);
 
   useEffect(() => {
     const status = loadInfoModalStatusFromLocalStorage()
@@ -211,7 +211,7 @@ function App() {
 
     guesses.push(player);
     
-    saveGameStateToLocalStorage({ guesses, solution })
+    saveGameStateToLocalStorage(guesses, solution.id);
     
     if (currentGuess === 0) {
       setGameActive(true);

@@ -120,7 +120,7 @@ const GuessRow = ({guess, answer, isHighContrastMode}) => {
           <Flag code={guessRegObj.code} width={36} className='border border-white' title={'Flag of ' + guess.nationality}/>
         </div>
         <div className={`flex col-span-1 row-span-1 ${regionColour} rounded text-white font-md sm:text-sm text-xs text-center items-center justify-center h-[36px]`} data-tooltip-id="my-tooltip" data-tooltip-content={tooltipRegionMessage} data-tooltip-place="top">{guess.region}</div>
-        <div className={`flex col-span-1 row-span-1 ${teamColour} rounded text-white font-md sm:text-sm text-xs text-center items-center justify-center h-[36px]`} data-tooltip-id="my-tooltip" data-tooltip-content={tooltipTeamMessage} data-tooltip-place="top">{guess.team}</div>
+        <div className={`flex col-span-1 row-span-1 ${teamColour} rounded text-white font-md sm:text-sm text-xs sm:leading-4 text-center items-center justify-center h-[36px]`} data-tooltip-id="my-tooltip" data-tooltip-content={tooltipTeamMessage} data-tooltip-place="top">{guess.team}</div>
         <div className={`flex col-span-1 row-span-1 ${ageColour} rounded text-white font-md sm:text-sm text-xs text-center items-center justify-center h-[36px]`} data-tooltip-id="my-tooltip" data-tooltip-content={tooltipAgeMessage} data-tooltip-place="top">
           <div className='flex items-center justify-center'>
             <div>{calculateAge(guess.DOB)}</div>
