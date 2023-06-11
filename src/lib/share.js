@@ -27,6 +27,7 @@ export const shareStatus = (
         guesses,
         getEmojiTiles(isHighContrastMode)
       )
+      // eslint-disable-next-line no-useless-concat
       + '\n\n' + 'https://rleguessr.app/'
     const shareData = { text: textToShare }
   

@@ -1,4 +1,3 @@
-import { MAX_CHALLENGES } from '../constants/settings'
 import {
   loadStatsFromLocalStorage,
   saveStatsToLocalStorage,

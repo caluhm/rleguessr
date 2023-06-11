@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef} from 'react'
-import ReactGA from 'react-ga4'
 import './App.css';
+
 import Div100vh from 'react-div-100vh'
 import { MagnifyingGlassIcon } from '@heroicons/react/24/outline'
 
@@ -15,7 +15,6 @@ import FailModal from './components/Modals/FailModal';
 import SuccessModal from './components/Modals/SuccessModal';
 import StatsModal from './components/Modals/StatsModal';
 import InfoModal from './components/Modals/InfoModal';
-import SettingsModal from './components/Modals/SettingsModal';
 import Coffee from './images/hl6-j4Ko.png'
 
 import {
@@ -33,15 +32,12 @@ import {
   getIsLatestGame,
   isWinningPlayer,
   solution,
-  solutionIndex
 } from './lib/words'
 
 import { MAX_CHALLENGES } from './constants/settings';
-
-ReactGA.initialize(process.env.REACT_APP_GA_KEY)
+import SettingsModal from './components/Modals/SettingsModal';
 
 function App() {
-  ReactGA.send({ hitType: 'pageview', page: '/', title: 'Home'});
   const isLatestGame = getIsLatestGame()
 
   // eslint-disable-next-line 
@@ -122,12 +118,6 @@ function App() {
     setGameFinished(true);
     setGameWon(true);
     setStats(addStatsForCompletedGame(stats, guesses.length, true));
-    ReactGA.event("GameWon",{
-      category: 'GameWonEvent',
-      action: 'Game Won',
-      label: solutionIndex,
-      value: guesses.length
-    });
   }
 
   const gameLost = () => {
@@ -241,11 +231,9 @@ function App() {
     }
     if (isWinningPlayer(player)) {
       gameWon();
-      return;
     }
     if (currentGuess === 5 && !isWinningPlayer(player)) {
       gameLost();
-      return;
     }
     setCurrentGuess(currentGuess + 1);
   }
