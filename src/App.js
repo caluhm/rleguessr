@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef} from 'react'
+import ReactGA from 'react-ga4'
 import './App.css';
-import ReactGA from 'react-ga';
 import Div100vh from 'react-div-100vh'
 import { MagnifyingGlassIcon } from '@heroicons/react/24/outline'
 
@@ -15,6 +15,7 @@ import FailModal from './components/Modals/FailModal';
 import SuccessModal from './components/Modals/SuccessModal';
 import StatsModal from './components/Modals/StatsModal';
 import InfoModal from './components/Modals/InfoModal';
+import SettingsModal from './components/Modals/SettingsModal';
 import Coffee from './images/hl6-j4Ko.png'
 
 import {
@@ -36,15 +37,11 @@ import {
 } from './lib/words'
 
 import { MAX_CHALLENGES } from './constants/settings';
-import { inject } from '@vercel/analytics';
-import va from '@vercel/analytics';
-import SettingsModal from './components/Modals/SettingsModal';
 
-inject();
+ReactGA.initialize(process.env.REACT_APP_GA_KEY)
 
 function App() {
-  ReactGA.initialize('G-S6YVM8NMR6');
-  ReactGA.pageview(window.location.pathname + window.location.search);
+  ReactGA.send({ hitType: 'pageview', page: '/', title: 'Home'});
   const isLatestGame = getIsLatestGame()
 
   // eslint-disable-next-line 
@@ -125,7 +122,12 @@ function App() {
     setGameFinished(true);
     setGameWon(true);
     setStats(addStatsForCompletedGame(stats, guesses.length, true));
-    va.track("Game Won", {game: solutionIndex, guesses: guesses.length})
+    ReactGA.event("GameWon",{
+      category: 'GameWonEvent',
+      action: 'Game Won',
+      label: solutionIndex,
+      value: guesses.length
+    });
   }
 
   const gameLost = () => {
