@@ -32,6 +32,7 @@ import {
   getIsLatestGame,
   isWinningPlayer,
   solution,
+  solutionIndex
 } from './lib/words'
 
 import { MAX_CHALLENGES } from './constants/settings';
@@ -122,7 +123,7 @@ function App() {
     setGameFinished(true);
     setGameWon(true);
     setStats(addStatsForCompletedGame(stats, guesses.length, true));
-    va.track("Game Won", {guesses: guesses.length})
+    va.track("Game Won", {game: solutionIndex, guesses: guesses.length})
   }
 
   const gameLost = () => {
@@ -236,9 +237,11 @@ function App() {
     }
     if (isWinningPlayer(player)) {
       gameWon();
+      return;
     }
     if (currentGuess === 5 && !isWinningPlayer(player)) {
       gameLost();
+      return;
     }
     setCurrentGuess(currentGuess + 1);
   }
