@@ -36,6 +36,7 @@ import {
 
 import { MAX_CHALLENGES } from './constants/settings';
 import { inject } from '@vercel/analytics';
+import va from '@vercel/analytics';
 import SettingsModal from './components/Modals/SettingsModal';
 
 inject();
@@ -121,6 +122,7 @@ function App() {
     setGameFinished(true);
     setGameWon(true);
     setStats(addStatsForCompletedGame(stats, guesses.length, true));
+    va.track("Game Won", {guesses: guesses.length})
   }
 
   const gameLost = () => {

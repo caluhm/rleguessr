@@ -8,6 +8,8 @@ import {
 
 import { FOOTER_HELP_TEXT, FOOTER_STATS_TEXT, FOOTER_SETTINGS_TEXT } from '../constants/strings'
 
+import va from '@vercel/analytics';
+
 const Footer = ({
     setIsInfoModalOpen, 
     setIsStatsModalOpen,
@@ -29,7 +31,7 @@ const Footer = ({
             
         <button 
             className='uppercase bg-transparent font-semibold sm:text-xs text-[0.7rem] border-none cursor-pointer py-4 px-4 tracking-[0.1375em] hover:text-gray-400 transition-colors' 
-            onClick={() => setIsStatsModalOpen(true)}
+            onClick={() => {setIsStatsModalOpen(true); va.track('StatsModalOpened')}}
         >
             <div className='flex flex-row items-center justify-center gap-2'>
                 <ChartBarSquareIcon
