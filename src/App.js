@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef} from 'react'
 import './App.css';
-
+import ReactGA from 'react-ga';
 import Div100vh from 'react-div-100vh'
 import { MagnifyingGlassIcon } from '@heroicons/react/24/outline'
 
@@ -43,6 +43,8 @@ import SettingsModal from './components/Modals/SettingsModal';
 inject();
 
 function App() {
+  ReactGA.initialize('G-S6YVM8NMR6');
+  ReactGA.pageview(window.location.pathname + window.location.search);
   const isLatestGame = getIsLatestGame()
 
   // eslint-disable-next-line 
