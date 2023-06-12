@@ -108,11 +108,26 @@ function App() {
       return;
     }
   
-    const querySnapshot = await getDocs(
-      query(collection(db, "games"), where("gameID", "==", solutionIndex))
+    const querySnapshotPlayed = await getDocs(
+      query(
+        collection(db, "games"),
+        where("gameID", "==", solutionIndex)
+      )
     );
-  
-    const newData = querySnapshot.docs.map((doc) => ({ ...doc.data(), id: doc.id }));
+
+    const querySnapshotWins = await getDocs(
+      query(
+        collection(db, "games"),
+        where("gameID", "==", solutionIndex),
+        where("gameStatus", "==", true)
+      )
+    );
+
+    const gamesCount = querySnapshotPlayed.size;
+    const winCount = querySnapshotWins.size;
+    const winPercent = (winCount / gamesCount).toFixed(2) * 100;
+
+    const newData = {gamesCount, winCount, winPercent}
     setPublicStats(newData);
   
     // Set the flag in the session storage to indicate that the data has been fetched in this session
