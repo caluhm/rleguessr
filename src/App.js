@@ -1,4 +1,6 @@
 import { useState, useEffect, useRef} from 'react'
+import { collection, getDocs, addDoc, query, where } from "firebase/firestore";
+import { db } from './firebase';
 import './App.css';
 
 import Div100vh from 'react-div-100vh'
@@ -14,6 +16,7 @@ import List from './components/List';
 import FailModal from './components/Modals/FailModal';
 import SuccessModal from './components/Modals/SuccessModal';
 import StatsModal from './components/Modals/StatsModal';
+import GameStatsModal from './components/Modals/GameStatsModal';
 import InfoModal from './components/Modals/InfoModal';
 import Coffee from './images/hl6-j4Ko.png'
 
@@ -32,6 +35,7 @@ import {
   getIsLatestGame,
   isWinningPlayer,
   solution,
+  solutionIndex,
 } from './lib/words'
 
 import { MAX_CHALLENGES } from './constants/settings';
@@ -52,9 +56,6 @@ deleteAllCookies();
 
 function App() {
   const isLatestGame = getIsLatestGame()
-
-  // eslint-disable-next-line 
-  
   const [inputText, setInputText] = useState("");
   const [isInputEmpty, setIsInputEmpty] = useState(true);
   const [currentGuess, setCurrentGuess] = useState(0); 
@@ -72,10 +73,43 @@ function App() {
   const [showHowtoPlayModal, setShowHowtoPlayModal] = useState(false);
   const [showStatsModal, setShowStatsModal] = useState(false);
   const [showSettingsModal, setShowSettingsModal] = useState(false);
+  const [showGameStatsModal, setShowGameStatsModal] = useState(false);
   const [stats, setStats] = useState(() => loadStats())
   const [isHighContrastMode, setIsHighContrastMode] = useState(
     getStoredIsHighContrastMode()
   )
+  const [publicStats, setPublicStats] = useState()
+
+  const saveGame = async (won) => {
+    try {
+      const docRef = addDoc(collection(db, "games"), {
+        gameID: solutionIndex,  
+        gameStatus: won,
+        guessNum: guesses.length,
+      })
+      console.log("Document written with ID: ", docRef.id);
+    } catch {
+      console.error("Error adding document");
+    }
+  }
+
+  const retrieveWins = async () => {
+    // If data is already fetched, no need to make a new request
+    if (publicStats) {
+      return;
+    }
+  
+    const querySnapshot = await getDocs(
+      query(collection(db, "games"), where("gameID", "==", solutionIndex))
+    );
+    
+    const newData = querySnapshot.docs.map((doc) => ({ ...doc.data(), id: doc.id }));
+    setPublicStats(newData);
+  };
+
+  useEffect(() => {
+    retrieveWins()
+  })
 
   const firstDivRef = useRef();
   const secondDivRef = useRef();
@@ -108,38 +142,28 @@ function App() {
     setShowSuccessModal(true);
     setGameFinished(true);
     setGameWon(true);
-    window.addEventListener('load', () => {
-      document.getElementById("search-autocomplete").disabled = true;
-      document.getElementById("search-autocomplete").placeholder = "";
-    });
   }
 
   const gameAlreadyLost = () => {
     setShowFailModal(true);
     setGameFinished(true);
     setGameWon(false);
-    window.addEventListener('load', () => {
-      document.getElementById("search-autocomplete").disabled = true;
-      document.getElementById("search-autocomplete").placeholder = "";
-    });
   }
 
   const gameWon = () => {
-    document.getElementById("search-autocomplete").disabled = true;
-    document.getElementById("search-autocomplete").placeholder = "";
     setShowSuccessModal(true);
     setGameFinished(true);
     setGameWon(true);
     setStats(addStatsForCompletedGame(stats, guesses.length, true));
+    saveGame(true);
   }
 
   const gameLost = () => {
-    document.getElementById("search-autocomplete").disabled = true;
-    document.getElementById("search-autocomplete").placeholder = "";
     setShowFailModal(true);
     setGameFinished(true);
     setGameWon(false);
     setStats(addStatsForCompletedGame(stats, guesses.length + 1, false));
+    saveGame(false);
   }
 
   // eslint-disable-next-line no-unused-vars
@@ -244,9 +268,11 @@ function App() {
     }
     if (isWinningPlayer(player)) {
       gameWon();
+      return;
     }
     if (currentGuess === 5 && !isWinningPlayer(player)) {
       gameLost();
+      return;
     }
     setCurrentGuess(currentGuess + 1);
   }
@@ -268,6 +294,10 @@ function App() {
     setShowSettingsModal(true);
   }
 
+  const handleGameStatsModal = () => {
+    setShowGameStatsModal(true);
+  }
+
   const closeHowToPlayModal = () => {
     setShowHowtoPlayModal(false);
   }
@@ -286,6 +316,10 @@ function App() {
 
   const closeSettingsModal = () => {
     setShowSettingsModal(false);
+  }
+
+  const closeGameStatsModal = () => {
+    setShowGameStatsModal(false);
   }
 
   var inputBorderColour = gameFinished ? 'border-gray-500' : 'border-indigo-500';
@@ -310,17 +344,30 @@ function App() {
           {showHowtoPlayModal && (
           <InfoModal closeModal={closeHowToPlayModal} isHighContrastMode={isHighContrastMode}/>
           )}
+          {showGameStatsModal && (
+          <GameStatsModal id={solutionIndex} closeModal={closeGameStatsModal} stats={publicStats}/>
+          )}
           <a href='https://www.buymeacoffee.com/caluhm' target='_blank' rel='noreferrer' className='absolute top-0 right-0 sm:mt-2 sm:mr-2 mt-1 mr-1'><img src={Coffee} alt='Buy me a coffee' width={135}></img></a>
           <div className='flex flex-col justify-between max-w-[37.5rem] p-3'>
             <HeroSection />
             <div className='flex justify-center items-center w-full relative'>
+            {!gameFinished ? (
               <div className={`relative w-full h-[50px] border-2 ${inputBorderColour} rounded-md flex items-center justify-center`} ref={firstDivRef}>
                 <div className='pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3'>
                   <MagnifyingGlassIcon className={`h-[26px] w-[26px] ${isGrey}`} aria-hidden='true'/>
                 </div>
                 <input className='block w-full h-full bg-transparent text-white p-2 pl-[3.25rem] focus:outline-none' type="search" autoComplete='off' autoFocus id='search-autocomplete' name='search-input' aria-autocomplete='list' autoCapitalize='none' spellCheck='false' placeholder='Enter a player name...' list='search-autocomplete' onChange={inputHandler}/>
               </div>
-            
+            ) : (
+              <div className='flex flex-row items-center justify-center text-white text-center mb-2'>
+                <button 
+                  className='uppercase font-black m-0 sm:text-xl text-base tracking-wide sm:min-h-[48px] min-h-[38px] sm:py-3 py-2 sm:px-8 px-4 text-black bg-indigo-500 hover:bg-indigo-300 outline-none border-none rounded cursor-pointer flex items-center justify-center transition-colors'
+                  onClick={handleGameStatsModal}
+                >
+                  Global Stats for RLE Guessr #{solutionIndex}  
+                </button>
+              </div>
+            )}
             {!isInputEmpty && (
               <div className={`flex-1 p-2 max-h-[250px] text-white text-md text-center bg-[#28335a] rounded-md overflow-y-scroll absolute top-[100%] z-10 drop-shadow-lg`} id='scroll-list' ref={secondDivRef} style={{ width: firstDivWidth + 4 }}>
                 <List input={inputText} handleClick={handleClick} guess0={guess0} guess1={guess1} guess2={guess2} guess3={guess3} guess4={guess4} guess5={guess5}/>

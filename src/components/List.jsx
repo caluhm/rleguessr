@@ -47,7 +47,7 @@ const List = ({input, handleClick, guess0, guess1, guess2, guess3, guess4, guess
             <ul>
                 {filteredData.map((item) => (
                     <li 
-                        tabindex="0" 
+                        tabIndex="0" 
                         className='py-1 cursor-pointer hover:bg-[#151c36] transition-all rounded-sm font-medium tracking-wide' 
                         key={item.id} 
                         onClick={() => handleClick(item.id)}
