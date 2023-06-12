@@ -93,6 +93,11 @@ function App() {
     }
   }
 
+  useEffect(() => {
+    // Clear the session storage item on component mount
+    sessionStorage.removeItem('dataFetched');
+  }, []);
+
   const retrieveWins = async () => {
     // Check if the data is already fetched in the current session
     const dataFetched = sessionStorage.getItem('dataFetched');
