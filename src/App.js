@@ -104,6 +104,9 @@ function App() {
     if (dataFetched) {
       return;
     }
+    if (!gameFinished) {
+      return;
+    }
   
     const querySnapshot = await getDocs(
       query(collection(db, "games"), where("gameID", "==", solutionIndex))
@@ -119,16 +122,12 @@ function App() {
   const debouncedFetch = debounce(retrieveWins, 2500);
 
   useEffect(() => {
-    if(gameFinished) {
       debouncedFetch();
 
       // Clean up the debounce function when the component is unmounted
       return () => {
         debouncedFetch.cancel();
       };
-    } else {
-      return;
-    }
   });
 
   const firstDivRef = useRef();
