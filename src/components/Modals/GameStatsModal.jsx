@@ -1,5 +1,6 @@
 import React, {useEffect, useRef} from 'react'
 import Icon from '../../images/CloseIcon.png';
+import ReactLoading from 'react-loading';
 
 const GameStatsModal = ({id, stats, closeModal}) => {
   const totalGames = stats ? stats.length : 0;
@@ -54,9 +55,9 @@ useOnClickOutside(ref, () => closeModal());
                     <div className='h-[2.25rem] flex items-center justify-center text-white font-semibold uppercase tracking-wider flex-1 text-center m-[0.0625rem] rounded text-xs py-0 px-1 overflow-y-hidden bg-[#28335a]'>Avg Guesses/Win</div>
                   </div>
                   <div className='w-full flex'>
-                    <div className='p-4 bg-[#151c36] flex-1 text-center m-[0.0625rem] text-white rounded overflow-y-hidden font-bold sm:text-3xl text-2xl'>{totalGames}</div>
-                    <div className='p-4 bg-[#151c36] flex-1 text-center m-[0.0625rem] text-white rounded overflow-y-hidden font-bold sm:text-3xl text-2xl'>{totalWins}</div>
-                    <div className='p-4 bg-[#151c36] flex-1 text-center m-[0.0625rem] text-white rounded overflow-y-hidden font-bold sm:text-3xl text-2xl'>{averageGuesses}</div>
+                    <div className='flex items-center justify-center p-4 bg-[#151c36] flex-1 text-center m-[0.0625rem] text-white rounded overflow-y-hidden font-bold sm:text-3xl text-2xl'>{totalGames === 0 ? <ReactLoading type="spin" color="#FFF" height={30} width={30} /> : totalGames}</div>
+                    <div className='flex items-center justify-center p-4 bg-[#151c36] flex-1 text-center m-[0.0625rem] text-white rounded overflow-y-hidden font-bold sm:text-3xl text-2xl'>{totalWins === 0 ? <ReactLoading type="spin" color="#FFF" height={30} width={30} /> : totalWins}</div>
+                    <div className='flex items-center justify-center p-4 bg-[#151c36] flex-1 text-center m-[0.0625rem] text-white rounded overflow-y-hidden font-bold sm:text-3xl text-2xl'>{averageGuesses === 0 ? <ReactLoading type="spin" color="#FFF" height={30} width={30} /> : averageGuesses}</div>
                   </div>
                 </div>
                 <div className='flex justify-center items-center sm:mt-6 mt-4'>
