@@ -128,7 +128,7 @@ function App() {
       return () => {
         debouncedFetch.cancel();
       };
-  });
+  }, [gameFinished, debouncedFetch]);
 
   const firstDivRef = useRef();
   const secondDivRef = useRef();
