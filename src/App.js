@@ -2,7 +2,7 @@ import { useState, useEffect, useRef} from 'react'
 import { collection, getDocs, addDoc, query, where } from "firebase/firestore";
 import { db } from './firebase';
 import './App.css';
-
+import debounce from 'lodash.debounce';
 import Div100vh from 'react-div-100vh'
 import { MagnifyingGlassIcon } from '@heroicons/react/24/outline'
 
@@ -116,9 +116,20 @@ function App() {
     sessionStorage.setItem('dataFetched', 'true');
   };
 
+  const debouncedFetch = debounce(retrieveWins, 2500);
+
   useEffect(() => {
-    retrieveWins()
-  })
+    if(gameFinished) {
+      debouncedFetch();
+
+      // Clean up the debounce function when the component is unmounted
+      return () => {
+        debouncedFetch.cancel();
+      };
+    } else {
+      return;
+    }
+  });
 
   const firstDivRef = useRef();
   const secondDivRef = useRef();
