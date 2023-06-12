@@ -94,17 +94,21 @@ function App() {
   }
 
   const retrieveWins = async () => {
-    // If data is already fetched, no need to make a new request
-    if (publicStats) {
+    // Check if the data is already fetched in the current session
+    const dataFetched = sessionStorage.getItem('dataFetched');
+    if (dataFetched) {
       return;
     }
   
     const querySnapshot = await getDocs(
       query(collection(db, "games"), where("gameID", "==", solutionIndex))
     );
-    
+  
     const newData = querySnapshot.docs.map((doc) => ({ ...doc.data(), id: doc.id }));
     setPublicStats(newData);
+  
+    // Set the flag in the session storage to indicate that the data has been fetched in this session
+    sessionStorage.setItem('dataFetched', 'true');
   };
 
   useEffect(() => {

@@ -4,7 +4,7 @@ import Icon from '../../images/CloseIcon.png';
 const GameStatsModal = ({id, stats, closeModal}) => {
   const totalGames = stats ? stats.length : 0;
   const totalWins = stats ? stats.filter(stat => stat.gameStatus === true).length : 0;
-  const averageGuesses = stats.length ? (stats.reduce((acc, stat) => acc + stat.guessNum, 0) / totalGames).toFixed(1) : 0;
+  const averageGuesses = stats ? (stats.length ? (stats.reduce((acc, stat) => acc + stat.guessNum, 0) / totalGames).toFixed(1) : 0) : 0;
   const ref = useRef()
 
   function useOnClickOutside(ref, handler) {
