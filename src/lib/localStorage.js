@@ -48,3 +48,18 @@ export const getStoredIsHighContrastMode = () => {
   const highContrast = localStorage.getItem(highContrastKey)
   return highContrast === '1'
 }
+
+const googleAnalyticsKey = 'gaConsent'
+
+export const setStoredGoogleAnalyticsConsent = (consent) => {
+  if (consent) {
+    localStorage.setItem(googleAnalyticsKey, true)
+  } else {
+    localStorage.setItem(googleAnalyticsKey, false)
+  }
+}
+
+export const getStoredGoogleAnalyticsConsent = () => {
+  const consent = localStorage.getItem(googleAnalyticsKey);
+  return consent ? consent === "true" : null;
+}

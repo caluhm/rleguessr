@@ -1,8 +1,10 @@
-import { useState, useEffect, useRef} from 'react'
+import { useState, useEffect, useRef, useCallback} from 'react'
 import { collection, getCountFromServer, addDoc, query, where } from "firebase/firestore";
 import { db } from './firebase';
+import ReactGA from "react-ga4";
 import './App.css';
 import debounce from 'lodash.debounce';
+import Cookies from 'js-cookie';
 import Div100vh from 'react-div-100vh'
 import { MagnifyingGlassIcon } from '@heroicons/react/24/outline'
 
@@ -18,6 +20,7 @@ import SuccessModal from './components/Modals/SuccessModal';
 import StatsModal from './components/Modals/StatsModal';
 import GameStatsModal from './components/Modals/GameStatsModal';
 import InfoModal from './components/Modals/InfoModal';
+import SettingsModal from './components/Modals/SettingsModal';
 import Coffee from './images/hl6-j4Ko.png'
 
 import {
@@ -26,7 +29,9 @@ import {
   saveInfoModalStatusToLocalStorage,
   loadInfoModalStatusFromLocalStorage,
   getStoredIsHighContrastMode, 
-  setStoredIsHighContrastMode
+  setStoredIsHighContrastMode,
+  setStoredGoogleAnalyticsConsent,
+  getStoredGoogleAnalyticsConsent
 } from './lib/localStorage'
 
 import { addStatsForCompletedGame, loadStats } from './lib/stats'
@@ -39,20 +44,8 @@ import {
 } from './lib/words'
 
 import { MAX_CHALLENGES } from './constants/settings';
-import SettingsModal from './components/Modals/SettingsModal';
-
-function deleteAllCookies() {
-  const cookies = document.cookie.split(";");
-
-  for (let i = 0; i < cookies.length; i++) {
-      const cookie = cookies[i];
-      const eqPos = cookie.indexOf("=");
-      const name = eqPos > -1 ? cookie.substr(0, eqPos) : cookie;
-      document.cookie = name + "=;expires=Thu, 01 Jan 1970 00:00:00 GMT";
-  }
-}
-
-deleteAllCookies();
+import CookieConsentModal from './components/Modals/CookieConsentModal';
+import PrivacyModal from './components/Modals/PrivacyModal';
 
 function App() {
   const isLatestGame = getIsLatestGame()
@@ -74,11 +67,46 @@ function App() {
   const [showStatsModal, setShowStatsModal] = useState(false);
   const [showSettingsModal, setShowSettingsModal] = useState(false);
   const [showGameStatsModal, setShowGameStatsModal] = useState(false);
+  const [showCookieModal, setShowCookieModal] = useState(false);
+  const [showPolicyModal, setShowPolicyModal] = useState(false);
   const [stats, setStats] = useState(() => loadStats())
   const [isHighContrastMode, setIsHighContrastMode] = useState(
     getStoredIsHighContrastMode()
   )
   const [publicStats, setPublicStats] = useState()
+
+  const handleAcceptCookies = useCallback(() => {
+    ReactGA.initialize(process.env.REACT_APP_GA_MEASUREMENT_ID);
+    ReactGA.set({ anonymizeIp: "true" })
+    ReactGA.send({ hitType: "pageview", page: "/"});
+    setStoredGoogleAnalyticsConsent(true);
+    closeCookieModal();
+  }, []);
+
+  const handleDeclineCookies = useCallback(() => {
+    setStoredGoogleAnalyticsConsent(false);
+    Cookies.remove("_ga");
+    Cookies.remove("_gat");
+    Cookies.remove("_gid");
+    Object.keys(Cookies.get()).forEach((cookieName) => {
+      Cookies.remove(cookieName);
+    });
+    closeCookieModal();
+  }, []);
+
+  useEffect(() => {
+    const isConsent = getStoredGoogleAnalyticsConsent();
+    if (isConsent === true) {
+      handleAcceptCookies();
+      return;
+    } if (isConsent === false) {
+      handleDeclineCookies();
+      return;
+    } if (isConsent === null) {
+      setShowCookieModal(true);
+      return;
+    }
+  }, [handleAcceptCookies, handleDeclineCookies]);
 
   const saveGame = async (won) => {
     try {
@@ -325,6 +353,10 @@ function App() {
     setShowGameStatsModal(true);
   }
 
+  const handlePolicyModal = () => {
+    setShowPolicyModal(true);
+  }
+
   const closeHowToPlayModal = () => {
     setShowHowtoPlayModal(false);
   }
@@ -347,6 +379,14 @@ function App() {
 
   const closeGameStatsModal = () => {
     setShowGameStatsModal(false);
+  }
+
+  const closeCookieModal = () => {
+    setShowCookieModal(false);
+  }
+
+  const closePolicyModal = () => {
+    setShowPolicyModal(false);
   }
 
   var inputBorderColour = gameFinished ? 'border-gray-500' : 'border-indigo-500';
@@ -373,6 +413,12 @@ function App() {
           )}
           {showGameStatsModal && (
           <GameStatsModal id={solutionIndex} closeModal={closeGameStatsModal} stats={publicStats}/>
+          )}
+          {showCookieModal && (
+          <CookieConsentModal handleAcceptCookies={handleAcceptCookies} handleDeclineCookies={handleDeclineCookies} handlePolicyModal={handlePolicyModal}/>
+          )}
+          {showPolicyModal && (
+          <PrivacyModal closeModal={closePolicyModal}/>
           )}
           <a href='https://www.buymeacoffee.com/caluhm' target='_blank' rel='noreferrer' className='absolute top-0 right-0 sm:mt-2 sm:mr-2 mt-1 mr-1'><img src={Coffee} alt='Buy me a coffee' width={135}></img></a>
           <div className='flex flex-col justify-between max-w-[37.5rem] p-3'>
