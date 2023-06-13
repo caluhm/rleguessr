@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef} from 'react'
-import { collection, getDocs, addDoc, query, where } from "firebase/firestore";
+import { collection, getCountFromServer, addDoc, query, where } from "firebase/firestore";
 import { db } from './firebase';
 import './App.css';
 import debounce from 'lodash.debounce';
@@ -94,56 +94,49 @@ function App() {
   }
 
   useEffect(() => {
-    // Clear the session storage item on component mount
     sessionStorage.removeItem('dataFetched');
   }, []);
 
   const retrieveWins = async () => {
-    // Check if the data is already fetched in the current session
     const dataFetched = sessionStorage.getItem('dataFetched');
-    if (dataFetched) {
+    if (dataFetched || !gameFinished) {
       return;
     }
-    if (!gameFinished) {
-      return;
-    }
+
+    const dbRef = collection(db, 'games');
+
+    const totalPlayedQuery = query(
+      dbRef,
+      where('gameID', '==', solutionIndex)
+    );
+    const totalPlayedSnapshot = await getCountFromServer(totalPlayedQuery);
+    const gamesCount = totalPlayedSnapshot.data().count;
+
+    const totalWonQuery = query(
+      dbRef,
+      where('gameID', '==', solutionIndex),
+      where('gameStatus', '==', true)
+    );
+    const totalWonSnapshot = await getCountFromServer(totalWonQuery);
+    const winCount = totalWonSnapshot.data().count;
+
+    const winPercent = Math.round((winCount / gamesCount) * 100);
   
-    const querySnapshotPlayed = await getDocs(
-      query(
-        collection(db, "games"),
-        where("gameID", "==", solutionIndex)
-      )
-    );
-
-    const querySnapshotWins = await getDocs(
-      query(
-        collection(db, "games"),
-        where("gameID", "==", solutionIndex),
-        where("gameStatus", "==", true)
-      )
-    );
-
-    const gamesCount = querySnapshotPlayed.size;
-    const winCount = querySnapshotWins.size;
-    const winPercent = (winCount / gamesCount).toFixed(2) * 100;
-
-    const newData = {gamesCount, winCount, winPercent}
+    const newData = { gamesCount, winCount, winPercent };
     setPublicStats(newData);
   
-    // Set the flag in the session storage to indicate that the data has been fetched in this session
     sessionStorage.setItem('dataFetched', 'true');
   };
-
+  
   const debouncedFetch = debounce(retrieveWins, 2500);
 
   useEffect(() => {
       debouncedFetch();
 
-      // Clean up the debounce function when the component is unmounted
       return () => {
         debouncedFetch.cancel();
       };
-  }, [gameFinished, debouncedFetch]);
+  }, [debouncedFetch]);
 
   const firstDivRef = useRef();
   const secondDivRef = useRef();
