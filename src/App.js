@@ -400,16 +400,16 @@ function App() {
           <SettingsModal isHighContrastMode={isHighContrastMode} handleHighContrastMode={handleHighContrastMode} closeModal={closeSettingsModal}/>
           )}
           {showFailModal && (
-          <FailModal closeModal={closeFailModal} answer={solution} guesses={guesses} isGameLost={!isGameWon} isHighContrastMode={isHighContrastMode}/>
+          <FailModal closeModal={closeFailModal} answer={solution} guesses={guesses} isGameLost={!isGameWon} isHighContrastMode={isHighContrastMode} isCookieModalOpen={showCookieModal}/>
           )}
           {showSuccessModal && (
-          <SuccessModal  closeModal={closeSuccessModal} answer={solution} guesses={guesses} isGameLost={!isGameWon} stats={stats} isHighContrastMode={isHighContrastMode}/>
+          <SuccessModal  closeModal={closeSuccessModal} answer={solution} guesses={guesses} isGameLost={!isGameWon} stats={stats} isHighContrastMode={isHighContrastMode} isCookieModalOpen={showCookieModal}/>
           )}
           {showStatsModal && (
           <StatsModal  closeModal={closeStatsModal} stats={stats}/>
           )}
           {showHowtoPlayModal && (
-          <InfoModal closeModal={closeHowToPlayModal} isHighContrastMode={isHighContrastMode}/>
+          <InfoModal closeModal={closeHowToPlayModal} isHighContrastMode={isHighContrastMode} isCookieModalOpen={showCookieModal}/>
           )}
           {showGameStatsModal && (
           <GameStatsModal id={solutionIndex} closeModal={closeGameStatsModal} stats={publicStats}/>

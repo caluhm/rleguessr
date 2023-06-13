@@ -16,13 +16,14 @@ import {
 import { shareStatus } from '../../lib/share';
 import { tomorrow } from '../../lib/words'
 
-const FailModal = ({answer, guesses, isGameLost, closeModal, isHighContrastMode}) => {
+const FailModal = ({answer, guesses, isGameLost, closeModal, isHighContrastMode, isCookieModalOpen}) => {
     const ref = useRef()
     const answerRegObj = Data.find((el) => el.name === answer.nationality)
 
     function useOnClickOutside(ref, handler) {
         useEffect(
           () => {
+            if (isCookieModalOpen) return;
             const listener = (event) => {
               // Do nothing if clicking ref's element or descendent elements
               if (!ref.current || ref.current.contains(event.target)) {

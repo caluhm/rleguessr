@@ -3,12 +3,13 @@ import Icon from '../../images/CloseIcon.png';
 import Cursor from '../../images/icons8-hand-cursor.svg';
 import Video from '../../images/93be8917b3b30485f653082415d79ff1.gif';
 
-const InfoModal = ({closeModal, isHighContrastMode}) => {
+const InfoModal = ({closeModal, isHighContrastMode, isCookieModalOpen}) => {
     const ref = useRef()
 
     function useOnClickOutside(ref, handler) {
         useEffect(
           () => {
+            if (isCookieModalOpen) return;
             const listener = (event) => {
               // Do nothing if clicking ref's element or descendent elements
               if (!ref.current || ref.current.contains(event.target)) {

@@ -15,7 +15,7 @@ import { shareStatus } from '../../lib/share';
 import { tomorrow } from '../../lib/words'
 import Twitter from '../../images/iconmonstr-twitter-1-240.png'
 
-const SuccessModal = ({answer, guesses, isGameLost, closeModal, stats, isHighContrastMode}) => {
+const SuccessModal = ({answer, guesses, isGameLost, closeModal, stats, isHighContrastMode, isCookieModalOpen}) => {
     const ref = useRef()
     const answerRegObj = Data.find((el) => el.name === answer.nationality)
     var numOfGuesses = guesses.length;
@@ -23,6 +23,7 @@ const SuccessModal = ({answer, guesses, isGameLost, closeModal, stats, isHighCon
     function useOnClickOutside(ref, handler) {
         useEffect(
           () => {
+            if (isCookieModalOpen) return;
             const listener = (event) => {
               // Do nothing if clicking ref's element or descendent elements
               if (!ref.current || ref.current.contains(event.target)) {
