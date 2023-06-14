@@ -21,7 +21,6 @@ import StatsModal from './components/Modals/StatsModal';
 import GameStatsModal from './components/Modals/GameStatsModal';
 import InfoModal from './components/Modals/InfoModal';
 import SettingsModal from './components/Modals/SettingsModal';
-import Coffee from './images/hl6-j4Ko.png'
 
 import {
   loadGameStateFromLocalStorage,
@@ -420,7 +419,12 @@ function App() {
           {showPolicyModal && (
           <PrivacyModal closeModal={closePolicyModal}/>
           )}
-          <a href='https://www.buymeacoffee.com/caluhm' target='_blank' rel='noreferrer' className='absolute top-0 right-0 sm:mt-2 sm:mr-2 mt-1 mr-1'><img src={Coffee} alt='Buy me a coffee' width={135}></img></a>
+          <a 
+            className='absolute top-0 right-0 sm:mt-2 sm:mr-2 mt-1 mr-1 uppercase font-black m-0 sm:text-base text-sm tracking-wide sm:min-h-[48px] min-h-[36px] sm:py-3 sm:px-8 py-2 px-4 text-black bg-indigo-500 hover:bg-indigo-300 outline-none border-none rounded cursor-pointer flex items-center justify-center transition-colors'
+            href='https://www.buymeacoffee.com/caluhm' target='_blank' rel='noreferrer'
+          >
+              Donate
+          </a>
           <div className='flex flex-col justify-between max-w-[37.5rem] p-3'>
             <HeroSection />
             <div className='flex justify-center items-center w-full relative'>
