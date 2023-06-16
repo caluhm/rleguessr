@@ -15,6 +15,7 @@ import {
 } from "../../constants/strings";
 import { shareStatus } from '../../lib/share';
 import { tomorrow } from '../../lib/words'
+import LiquipediaLink from '../LiquipediaLink';
 
 const FailModal = ({answer, guesses, isGameLost, closeModal, isHighContrastMode, isCookieModalOpen}) => {
     const ref = useRef()
@@ -76,12 +77,13 @@ const FailModal = ({answer, guesses, isGameLost, closeModal, isHighContrastMode,
                 <div className='text-center text-white uppercase font-bold sm:mt-8 mt-4 tracking-[0.04em] text-sm'>{FAIL_MODAL_BODY_TEXT_1}</div>
                 <div className='text-center text-white uppercase font-bold mt-4 tracking-[0.04em] text-sm'>{FAIL_MODAL_BODY_TEXT_2}</div>
                 <div className='flex w-full h-[6.25rem] max-w-[37.5rem] overflow-hidden bg-[#28335a] my-[1.5rem] mx-auto text-white rounded-md'>
-                    <div className='flex flex-col justify-center items-center w-full border-2 border-red-500 gap-1'>
+                    <div className='flex flex-col justify-between items-center w-full border-2 border-red-500 pt-1.5 pb-2'>
                         <p className='uppercase font-black tracking-normal sm:text-3xl text-2xl p-0 m-0'>{answer.name}</p>
-                        <div className='flex flex-row items-center'>
+                        <div className='flex flex-row items-center pb-0.5 m-0'>
                             <Flag code={answerRegObj.code} width={30} className='border border-white mr-2.5' title={'Flag of ' + answer.nationality}/>
-                            <p className='tracking-normal text-sm font-medium text-white p-0 m-0'>{answer.fullName}</p>
+                            <p className='tracking-normal text-sm font-medium text-white pb-0 m-0'>{answer.fullName}</p>
                         </div>
+                        <LiquipediaLink answer={answer}/>
                     </div>
                 </div>
                 <p className='text-center text-white uppercase font-bold sm:my-8 my-4 tracking-[0.04em] text-sm'>{FAIL_MODAL_BODY_TEXT_3}</p>

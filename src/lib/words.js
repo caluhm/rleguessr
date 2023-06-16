@@ -106,3 +106,10 @@ import {
   
   export const { solution, solutionGameDate, solutionIndex, tomorrow } =
     getSolution(getGameDate())
+
+  export const setLiquipediaLink = (player) => {
+    const parsedName = (player.name).replace(' ', '_').replace('.', '');
+    const link = 'https://liquipedia.net/rocketleague/' + parsedName;
+
+    return link;
+  }

@@ -14,6 +14,7 @@ import {
 import { shareStatus } from '../../lib/share';
 import { tomorrow } from '../../lib/words'
 import Twitter from '../../images/iconmonstr-twitter-1-240.png'
+import LiquipediaLink from '../LiquipediaLink';
 
 const SuccessModal = ({answer, guesses, isGameLost, closeModal, stats, isHighContrastMode, isCookieModalOpen}) => {
     const ref = useRef()
@@ -75,12 +76,13 @@ const SuccessModal = ({answer, guesses, isGameLost, closeModal, stats, isHighCon
                 <div className='h-[0.0625rem] w-full bg-white/20 sm:my-8 my-4 mx-auto'></div>
                 <div className='text-center text-white uppercase font-bold sm:mt-8 mt-4 tracking-[0.04em] text-sm'>YOU GOT TODAY'S RLE GUESSR WITH <span className='text-indigo-500'>{numOfGuesses}</span> TRIES! YOU ARE ON A <span className='text-indigo-500'>{stats.currentStreak}</span> DAY STREAK!</div>
                 <div className='flex w-full h-[6.25rem] max-w-[37.5rem] overflow-hidden bg-[#28335a] my-[1.5rem] mx-auto text-white rounded-md'>
-                    <div className='flex flex-col justify-center items-center w-full border-2 border-green-500 gap-1'>
+                    <div className='flex flex-col justify-between items-center w-full border-2 border-green-500 pt-1.5 pb-2'>
                         <p className='uppercase font-black tracking-normal sm:text-3xl text-2xl p-0 m-0'>{answer.name}</p>
-                        <div className='flex flex-row items-center'>
+                        <div className='flex flex-row items-center pb-0.5 m-0'>
                         <Flag code={answerRegObj.code} width={30} className='border border-white mr-2.5' title={'Flag of ' + answer.nationality}/>
-                            <p className='tracking-normal text-sm font-medium text-white p-0 m-0'>{answer.fullName}</p>
+                            <p className='tracking-normal text-sm font-medium text-white pb-0 m-0'>{answer.fullName}</p>
                         </div>
+                        <LiquipediaLink answer={answer}/>
                     </div>
                 </div>
                 <p className='text-center text-white uppercase font-bold sm:my-8 my-4 tracking-[0.04em] text-sm'>{SUCCESS_MODAL_BODY_TEXT}</p>
