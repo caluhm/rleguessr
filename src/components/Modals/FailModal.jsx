@@ -7,17 +7,17 @@ import Icon from '../../images/CloseIcon.png';
 import Flag from 'react-world-flags'
 import {
   FAIL_MODAL_TITLE_TEXT,
-  FAIL_MODAL_BODY_TEXT_1,
   FAIL_MODAL_BODY_TEXT_2,
   FAIL_MODAL_BODY_TEXT_3,
   FAIL_MODAL_BUTTON_TEXT,
+  FAIL_MODAL_BUTTON_2_TEXT,
   FAIL_MODAL_FOOTER_TEXT,
 } from "../../constants/strings";
 import { shareStatus } from '../../lib/share';
 import { tomorrow } from '../../lib/words'
 import LiquipediaLink from '../LiquipediaLink';
 
-const FailModal = ({answer, guesses, isGameLost, closeModal, isHighContrastMode, isCookieModalOpen}) => {
+const FailModal = ({answer, guesses, isGameLost, closeModal, isHighContrastMode, isCookieModalOpen, handleGameStatsModal}) => {
     const ref = useRef()
     const answerRegObj = Data.find((el) => el.name === answer.nationality)
 
@@ -71,10 +71,9 @@ const FailModal = ({answer, guesses, isGameLost, closeModal, isHighContrastMode,
             <button className='flex items-center justify-center cursor-pointer absolute top-4 right-4 hover:opacity-70 transition-opacity' onClick={closeModal}><img src={Icon} height={24} width={24} alt='Exit Modal' className='invert'/></button>
             <div className='z-1 mt-6'>
                 <div className='relative flex flex-col items-center h-fit'>
-                    <h1 className='sm:text-3xl text-2xl font-bold bg-clip-text text-white'>{FAIL_MODAL_TITLE_TEXT}</h1>
+                    <h1 className='sm:text-3xl text-2xl font-bold bg-clip-text text-white'>{FAIL_MODAL_TITLE_TEXT[Math.floor(Math.random() * FAIL_MODAL_TITLE_TEXT.length)]}</h1>
                 </div>
                 <div className='h-[0.0625rem] w-full bg-white/20 sm:my-8 my-4 mx-auto'></div>
-                <div className='text-center text-white uppercase font-bold sm:mt-8 mt-4 tracking-[0.04em] text-sm'>{FAIL_MODAL_BODY_TEXT_1}</div>
                 <div className='text-center text-white uppercase font-bold mt-4 tracking-[0.04em] text-sm'>{FAIL_MODAL_BODY_TEXT_2}</div>
                 <div className='flex w-full h-[6.25rem] max-w-[37.5rem] overflow-hidden bg-[#28335a] my-[1.5rem] mx-auto text-white rounded-md'>
                     <div className='flex flex-col justify-between items-center w-full border-2 border-red-500 pt-1.5 pb-2'>
@@ -87,7 +86,7 @@ const FailModal = ({answer, guesses, isGameLost, closeModal, isHighContrastMode,
                     </div>
                 </div>
                 <p className='text-center text-white uppercase font-bold sm:my-8 my-4 tracking-[0.04em] text-sm'>{FAIL_MODAL_BODY_TEXT_3}</p>
-                <div className='flex justify-center items-center'>
+                <div className='flex justify-center items-center mb-5'>
                     <button 
                       className='uppercase font-black m-0 sm:text-xl text-lg tracking-wide min-h-[48px] py-3 px-8 text-black bg-indigo-500 hover:bg-indigo-300 outline-none border-none rounded cursor-pointer flex items-center justify-center transition-colors'
                       onClick={() => {
@@ -101,6 +100,17 @@ const FailModal = ({answer, guesses, isGameLost, closeModal, isHighContrastMode,
                       }}
                     >
                       {FAIL_MODAL_BUTTON_TEXT}
+                    </button>
+                </div>
+                <div className='flex justify-center items-center'>
+                    <button 
+                      className='uppercase font-black m-0 sm:text-lg text-base tracking-wide sm:min-h-[48px] min-h-[40px] py-3 px-8 text-black bg-blue-500 hover:bg-blue-300 outline-none border-none rounded cursor-pointer flex items-center justify-center transition-colors'
+                      onClick={() => {
+                        handleGameStatsModal();
+                        closeModal();
+                      }}
+                    >
+                      {FAIL_MODAL_BUTTON_2_TEXT}
                     </button>
                 </div>
                 <div className='h-[0.0625rem] w-full bg-white/20 sm:my-8 my-4 mx-auto'></div>

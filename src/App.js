@@ -478,10 +478,10 @@ function App() {
           <SettingsModal isHighContrastMode={isHighContrastMode} handleHighContrastMode={handleHighContrastMode} closeModal={closeSettingsModal}/>
           )}
           {showFailModal && (
-          <FailModal closeModal={closeFailModal} answer={solution} guesses={guesses} isGameLost={!isGameWon} isHighContrastMode={isHighContrastMode} isCookieModalOpen={showCookieModal}/>
+          <FailModal closeModal={closeFailModal} answer={solution} guesses={guesses} isGameLost={!isGameWon} isHighContrastMode={isHighContrastMode} isCookieModalOpen={showCookieModal} handleGameStatsModal={handleGameStatsModal}/>
           )}
           {showSuccessModal && (
-          <SuccessModal  closeModal={closeSuccessModal} answer={solution} guesses={guesses} isGameLost={!isGameWon} stats={stats} isHighContrastMode={isHighContrastMode} isCookieModalOpen={showCookieModal}/>
+          <SuccessModal  closeModal={closeSuccessModal} answer={solution} guesses={guesses} isGameLost={!isGameWon} stats={stats} isHighContrastMode={isHighContrastMode} isCookieModalOpen={showCookieModal} handleGameStatsModal={handleGameStatsModal}/>
           )}
           {showStatsModal && (
           <StatsModal  closeModal={closeStatsModal} stats={stats}/>

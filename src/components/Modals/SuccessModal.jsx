@@ -10,12 +10,13 @@ import {
   SUCCESS_MODAL_BODY_TEXT,
   SUCCESS_MODAL_BUTTON_TEXT,
   SUCCESS_MODAL_FOOTER_TEXT,
+  SUCCESS_MODAL_BUTTON_2_TEXT,
 } from "../../constants/strings";
 import { shareStatus } from '../../lib/share';
 import { tomorrow } from '../../lib/words'
 import LiquipediaLink from '../LiquipediaLink';
 
-const SuccessModal = ({answer, guesses, isGameLost, closeModal, stats, isHighContrastMode, isCookieModalOpen}) => {
+const SuccessModal = ({answer, guesses, isGameLost, closeModal, stats, isHighContrastMode, isCookieModalOpen, handleGameStatsModal}) => {
     const ref = useRef()
     const answerRegObj = Data.find((el) => el.name === answer.nationality)
     var numOfGuesses = guesses.length;
@@ -70,7 +71,7 @@ const SuccessModal = ({answer, guesses, isGameLost, closeModal, stats, isHighCon
             <button className='flex items-center justify-center cursor-pointer absolute top-4 right-4 hover:opacity-70 transition-opacity' onClick={closeModal}><img src={Icon} height={24} width={24} alt='Exit Modal' className='invert'/></button>
             <div className='z-1 mt-6'>
                 <div className='relative flex flex-col items-center h-fit'>
-                    <h1 className='sm:text-3xl text-2xl font-bold bg-clip-text text-white'>{SUCCESS_MODAL_TITLE_TEXT}</h1>
+                    <h1 className='sm:text-3xl text-2xl font-bold bg-clip-text text-white'>{SUCCESS_MODAL_TITLE_TEXT[Math.floor(Math.random() * SUCCESS_MODAL_TITLE_TEXT.length)]}</h1>
                 </div>
                 <div className='h-[0.0625rem] w-full bg-white/20 sm:my-8 my-4 mx-auto'></div>
                 <div className='text-center text-white uppercase font-bold sm:mt-8 mt-4 tracking-[0.04em] text-sm'>YOU GOT TODAY'S RLE GUESSR WITH <span className='text-indigo-500'>{numOfGuesses}</span> TRIES! YOU ARE ON A <span className='text-indigo-500'>{stats.currentStreak}</span> DAY STREAK!</div>
@@ -85,7 +86,7 @@ const SuccessModal = ({answer, guesses, isGameLost, closeModal, stats, isHighCon
                     </div>
                 </div>
                 <p className='text-center text-white uppercase font-bold sm:my-8 my-4 tracking-[0.04em] text-sm'>{SUCCESS_MODAL_BODY_TEXT}</p>
-                <div className='flex justify-center items-center'>
+                <div className='flex justify-center items-center mb-5'>
                     <button 
                       className='uppercase font-black m-0 sm:text-xl text-lg tracking-wide min-h-[48px] py-3 px-8 text-black bg-indigo-500 hover:bg-indigo-300 outline-none border-none rounded cursor-pointer flex items-center justify-center transition-colors'
                       onClick={() => {
@@ -98,7 +99,18 @@ const SuccessModal = ({answer, guesses, isGameLost, closeModal, stats, isHighCon
                         )
                       }}
                     >
-                        {SUCCESS_MODAL_BUTTON_TEXT}
+                      {SUCCESS_MODAL_BUTTON_TEXT}
+                    </button>
+                </div>
+                <div className='flex justify-center items-center'>
+                    <button 
+                      className='uppercase font-black m-0 sm:text-lg text-base tracking-wide sm:min-h-[48px] min-h-[40px] py-3 px-8 text-black bg-blue-500 hover:bg-blue-300 outline-none border-none rounded cursor-pointer flex items-center justify-center transition-colors'
+                      onClick={() => {
+                        handleGameStatsModal();
+                        closeModal();
+                      }}
+                    >
+                      {SUCCESS_MODAL_BUTTON_2_TEXT}
                     </button>
                 </div>
                 <div className='h-[0.0625rem] w-full bg-white/20 sm:my-8 my-4 mx-auto'></div>
