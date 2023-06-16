@@ -39,7 +39,7 @@ useOnClickOutside(ref, () => closeModal());
             <button className='flex items-center justify-center cursor-pointer absolute top-4 right-4 hover:opacity-70 transition-opacity' onClick={closeModal}><img src={Icon} height={24} width={24} alt='Exit Modal' className='invert'/></button>
             <div className='z-1 mt-6'>
                 <div className='relative flex flex-col items-center text-center h-fit italic sm:pb-6 pb-2'>
-                  <h1 className='uppercase sm:text-3xl text-2xl font-bold bg-clip-text text-white'>You've played <span className='text-green-500'>{stats.totalGames}</span> games and won <span className='text-green-500'>{stats.successRate}%</span> of them </h1>
+                  <h1 className='uppercase sm:text-3xl text-2xl font-bold bg-clip-text text-white'>You've played <span className='text-green-500 not-italic'>{stats.totalGames}</span> games and won <span className='text-green-500 not-italic'>{stats.successRate}%</span> of them </h1>
                 </div>
                 <div className='py-6 px-0'>
                   <div className='w-full flex'>
@@ -49,14 +49,14 @@ useOnClickOutside(ref, () => closeModal());
                     <div className='h-[2.25rem] flex items-center justify-center text-white font-semibold uppercase tracking-wider flex-1 text-center m-[0.0625rem] rounded text-xs py-0 px-1 overflow-y-hidden bg-[#28335a]'>Win %</div>
                   </div>
                   <div className='w-full flex'>
-                    <div className='p-4 bg-[#151c36] flex-1 text-center m-[0.0625rem] text-white rounded overflow-y-hidden font-bold sm:text-3xl text-2xl'>{stats.currentStreak}</div>
-                    <div className='p-4 bg-[#151c36] flex-1 text-center m-[0.0625rem] text-white rounded overflow-y-hidden font-bold sm:text-3xl text-2xl'>{stats.bestStreak}</div>
-                    <div className='p-4 bg-[#151c36] flex-1 text-center m-[0.0625rem] text-white rounded overflow-y-hidden font-bold sm:text-3xl text-2xl'>{stats.totalGames}</div>
-                    <div className='p-4 bg-[#151c36] flex-1 text-center m-[0.0625rem] text-white rounded overflow-y-hidden font-bold sm:text-3xl text-2xl'>{stats.successRate}</div>
+                    <div className='p-4 bg-[#151c36] flex-1 text-center m-[0.0625rem] text-white rounded overflow-hidden font-bold sm:text-3xl text-2xl'>{stats.currentStreak}</div>
+                    <div className='p-4 bg-[#151c36] flex-1 text-center m-[0.0625rem] text-white rounded overflow-hidden font-bold sm:text-3xl text-2xl'>{stats.bestStreak}</div>
+                    <div className='p-4 bg-[#151c36] flex-1 text-center m-[0.0625rem] text-white rounded overflow-hidden font-bold sm:text-3xl text-2xl'>{stats.totalGames}</div>
+                    <div className='flex items-center justify-center p-4 bg-[#151c36] flex-1 text-center m-[0.0625rem] text-white rounded overflow-hidden font-bold sm:text-3xl text-2xl'>{stats.successRate + '%'}</div>
                   </div>
                 </div>
                 <div className='flex justify-center items-center sm:mt-6 mt-4'>
-                    <button className='uppercase font-black m-0 sm:text-xl text-lg tracking-wide min-h-[48px] py-3 px-8 text-black bg-indigo-500 hover:bg-indigo-300 outline-none border-none rounded cursor-pointer flex items-center justify-center transition-all' onClick={closeModal}>close</button>
+                    <button className='uppercase font-black m-0 sm:text-xl text-lg tracking-wide min-h-[48px] py-3 px-8 text-black bg-indigo-500 hover:bg-indigo-300 outline-none border-none rounded cursor-pointer flex items-center justify-center transition-colors' onClick={closeModal}>close</button>
                 </div>
             </div>
         </div>

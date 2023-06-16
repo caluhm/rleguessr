@@ -6,6 +6,7 @@ const GameStatsModal = ({id, stats, closeModal}) => {
   const totalGames = stats ? stats.gamesCount : 0
   const totalWins = stats? stats.winCount : 0
   const winPercent = stats? stats.winPercent : 0
+  const averageGuessPerWin = stats? stats.averageGuessPerWin : 0
   const ref = useRef()
 
   function useOnClickOutside(ref, handler) {
@@ -52,16 +53,18 @@ useOnClickOutside(ref, () => closeModal());
                   <div className='w-full flex'>
                     <div className='h-[2.25rem] flex items-center justify-center text-white font-semibold uppercase tracking-wider flex-1 text-center m-[0.0625rem] rounded text-xs py-0 px-1 overflow-y-hidden bg-[#28335a]'>Games Played</div>
                     <div className='h-[2.25rem] flex items-center justify-center text-white font-semibold uppercase tracking-wider flex-1 text-center m-[0.0625rem] rounded text-xs py-0 px-1 overflow-y-hidden bg-[#28335a]'>Games Won</div>
-                    <div className='h-[2.25rem] flex items-center justify-center text-white font-semibold uppercase tracking-wider flex-1 text-center m-[0.0625rem] rounded text-xs py-0 px-1 overflow-y-hidden bg-[#28335a]'>Global Win%</div>
+                    <div className='h-[2.25rem] flex items-center justify-center text-white font-semibold uppercase tracking-wider flex-1 text-center m-[0.0625rem] rounded text-xs py-0 px-1 overflow-y-hidden bg-[#28335a]'>Global Win %</div>
+                    <div className='h-[2.25rem] flex items-center justify-center text-white font-semibold uppercase tracking-wider flex-1 text-center m-[0.0625rem] rounded text-xs py-0 px-1 overflow-y-hidden bg-[#28335a]'>Guesses / Win</div>
                   </div>
                   <div className='w-full flex'>
-                    <div className='flex items-center justify-center p-4 bg-[#151c36] flex-1 text-center m-[0.0625rem] text-white rounded overflow-y-hidden font-bold sm:text-3xl text-2xl'>{totalGames === 0 ? <ReactLoading type="spin" color="#FFF" height={30} width={30} /> : totalGames}</div>
-                    <div className='flex items-center justify-center p-4 bg-[#151c36] flex-1 text-center m-[0.0625rem] text-white rounded overflow-y-hidden font-bold sm:text-3xl text-2xl'>{totalWins === 0 ? <ReactLoading type="spin" color="#FFF" height={30} width={30} /> : totalWins}</div>
-                    <div className='flex items-center justify-center p-4 bg-[#151c36] flex-1 text-center m-[0.0625rem] text-white rounded overflow-y-hidden font-bold sm:text-3xl text-2xl'>{winPercent === 0 ? <ReactLoading type="spin" color="#FFF" height={30} width={30} /> : winPercent + '%'}</div>
+                    <div className='flex items-center justify-center p-4 bg-[#151c36] flex-1 text-center m-[0.0625rem] text-white rounded overflow-hidden font-bold sm:text-3xl text-2xl'>{totalGames === 0 ? <ReactLoading type="spin" color="#FFF" height={30} width={30} /> : totalGames}</div>
+                    <div className='flex items-center justify-center p-4 bg-[#151c36] flex-1 text-center m-[0.0625rem] text-white rounded overflow-hidden font-bold sm:text-3xl text-2xl'>{totalWins === 0 ? <ReactLoading type="spin" color="#FFF" height={30} width={30} /> : totalWins}</div>
+                    <div className='flex items-center justify-center p-4 bg-[#151c36] flex-1 text-center m-[0.0625rem] text-white rounded overflow-hidden font-bold sm:text-3xl text-2xl'>{winPercent === 0 ? <ReactLoading type="spin" color="#FFF" height={30} width={30} /> : winPercent + '%'}</div>
+                    <div className='flex items-center justify-center p-4 bg-[#151c36] flex-1 text-center m-[0.0625rem] text-white rounded overflow-hidden font-bold sm:text-3xl text-2xl'>{averageGuessPerWin === 0 ? <ReactLoading type="spin" color="#FFF" height={30} width={30} /> : averageGuessPerWin}</div>
                   </div>
                 </div>
                 <div className='flex justify-center items-center sm:mt-6 mt-4'>
-                    <button className='uppercase font-black m-0 sm:text-xl text-lg tracking-wide min-h-[48px] py-3 px-8 text-black bg-indigo-500 hover:bg-indigo-300 outline-none border-none rounded cursor-pointer flex items-center justify-center transition-all' onClick={closeModal}>close</button>
+                    <button className='uppercase font-black m-0 sm:text-xl text-lg tracking-wide min-h-[48px] py-3 px-8 text-black bg-indigo-500 hover:bg-indigo-300 outline-none border-none rounded cursor-pointer flex items-center justify-center transition-colors' onClick={closeModal}>close</button>
                 </div>
             </div>
         </div>

@@ -81,7 +81,7 @@ const FailModal = ({answer, guesses, isGameLost, closeModal, isHighContrastMode,
                         <p className='uppercase font-black tracking-normal sm:text-3xl text-2xl p-0 m-0'>{answer.name}</p>
                         <div className='flex flex-row items-center pb-0.5 m-0'>
                             <Flag code={answerRegObj.code} width={30} className='border border-white mr-2.5' title={'Flag of ' + answer.nationality}/>
-                            <p className='tracking-normal text-sm font-medium text-white pb-0 m-0'>{answer.fullName}</p>
+                            <p className='tracking-normal text-sm font-medium text-white p-0 m-0'>{answer.fullName}</p>
                         </div>
                         <LiquipediaLink answer={answer}/>
                     </div>

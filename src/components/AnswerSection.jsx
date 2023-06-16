@@ -27,15 +27,13 @@ const AnswerSection = ({
         <div className='flex flex-col items-center justify-center sm:min-w-[6.25rem] sm:w-[6.25rem] sm:h-[6.25rem] h-[5rem] min-w-[5rem] w-[5rem] bg-indigo-500 mr-6'>
             <img src={Profile} width={90} height={90} alt={ANSWER_SECTION_IMAGE_ALT_TEXT} className='invert'/>
         </div>
-        <div className='flex flex-col justify-center items-start w-full gap-1'>
-            <div className='flex flex-row gap-3 uppercase font-black tracking-normal sm:text-3xl text-2xl p-0 m-0'>
-                <p>{answer?.name}</p>
-                <LiquipediaLink answer={answer} onClick={(event) => event.stopPropagation()}/>
-            </div>
-            <div className='flex flex-row items-center'>
+        <div className='flex flex-col justify-between items-start w-full sm:pt-1.5 sm:pb-2 pt-0 pb-1'>
+            <p className='uppercase font-black tracking-normal sm:text-3xl text-2xl p-0 m-0'>{answer?.name}</p>
+            <div className='flex flex-row items-center pb-0.5 m-0'>
                 <Flag code={answerRegObj.code} width={30} className='border border-white mr-2.5' title={'Flag of ' + answer.nationality}/>
                 <p className='tracking-normal sm:text-sm text-xs font-medium text-white p-0 m-0'>{answer?.fullName}</p>
             </div>
+            <LiquipediaLink answer={answer} onClick={(event) => event.stopPropagation()}/>
         </div>
     </div>
   )

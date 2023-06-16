@@ -124,9 +124,19 @@ function App() {
     sessionStorage.removeItem('dataFetched');
   }, []);
 
+  function formatCount(value) {
+    if (value < 1000) {
+      return value;
+    } else if (value < 1000000) {
+      return (value / 1000).toFixed(1) + "K";
+    } else {
+      return (value / 1000000).toFixed(1) + "M";
+    }
+  }
+  
   const retrieveWins = async () => {
     const dataFetched = sessionStorage.getItem('dataFetched');
-    if (dataFetched || !gameFinished) {
+    if (dataFetched || !gameFinished || !showGameStatsModal ) {
       return;
     }
 
@@ -148,11 +158,79 @@ function App() {
     const winCount = totalWonSnapshot.data().count;
 
     const winPercent = Math.round((winCount / gamesCount) * 100);
-  
-    const newData = { gamesCount, winCount, winPercent };
+
+    const total1GuessQuery = query(
+      dbRef,
+      where('gameID', '==', solutionIndex),
+      where('gameStatus', '==', true),
+      where('guessNum', '==', 1)
+    );
+
+    const total1GuessSnapshot = await getCountFromServer(total1GuessQuery);
+    const win1GuessCount = total1GuessSnapshot.data().count;
+
+    const total2GuessQuery = query(
+      dbRef,
+      where('gameID', '==', solutionIndex),
+      where('gameStatus', '==', true),
+      where('guessNum', '==', 2)
+    );
+
+    const total2GuessSnapshot = await getCountFromServer(total2GuessQuery);
+    const win2GuessCount = total2GuessSnapshot.data().count;
+
+    const total3GuessQuery = query(
+      dbRef,
+      where('gameID', '==', solutionIndex),
+      where('gameStatus', '==', true),
+      where('guessNum', '==', 3)
+    );
+
+    const total3GuessSnapshot = await getCountFromServer(total3GuessQuery);
+    const win3GuessCount = total3GuessSnapshot.data().count;
+
+    const total4GuessQuery = query(
+      dbRef,
+      where('gameID', '==', solutionIndex),
+      where('gameStatus', '==', true),
+      where('guessNum', '==', 4)
+    );
+
+    const total4GuessSnapshot = await getCountFromServer(total4GuessQuery);
+    const win4GuessCount = total4GuessSnapshot.data().count;
+
+    const total5GuessQuery = query(
+      dbRef,
+      where('gameID', '==', solutionIndex),
+      where('gameStatus', '==', true),
+      where('guessNum', '==', 5)
+    );
+
+    const total5GuessSnapshot = await getCountFromServer(total5GuessQuery);
+    const win5GuessCount = total5GuessSnapshot.data().count;
+
+    const total6GuessQuery = query(
+      dbRef,
+      where('gameID', '==', solutionIndex),
+      where('gameStatus', '==', true),
+      where('guessNum', '==', 6)
+    );
+
+    const total6GuessSnapshot = await getCountFromServer(total6GuessQuery);
+    const win6GuessCount = total6GuessSnapshot.data().count;
+
+    const averageGuessPerWin = parseFloat(
+      ((win1GuessCount + win2GuessCount * 2 + win3GuessCount * 3 + win4GuessCount * 4 + win5GuessCount * 5 + win6GuessCount * 6) / winCount).toFixed(1)
+    );
+
+    const gamesCountFormatted = formatCount(gamesCount);
+    const winCountFormatted = formatCount(winCount);
+    
+    const newData = { gamesCount: gamesCountFormatted, winCount: winCountFormatted, winPercent, win1GuessCount, win2GuessCount, win3GuessCount, win4GuessCount, win5GuessCount, win6GuessCount, averageGuessPerWin };
     setPublicStats(newData);
   
     sessionStorage.setItem('dataFetched', 'true');
+    console.log(newData)
   };
   
   const debouncedFetch = debounce(retrieveWins, 2500);
