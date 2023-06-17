@@ -484,7 +484,7 @@ function App() {
           <SuccessModal  closeModal={closeSuccessModal} answer={solution} guesses={guesses} isGameLost={!isGameWon} stats={stats} isHighContrastMode={isHighContrastMode} isCookieModalOpen={showCookieModal} handleGameStatsModal={handleGameStatsModal}/>
           )}
           {showStatsModal && (
-          <StatsModal  closeModal={closeStatsModal} stats={stats}/>
+          <StatsModal closeModal={closeStatsModal} stats={stats} isGameWon={isGameWon} isLatestGame={isLatestGame} numberOfGuessesMade={guesses.length}/>
           )}
           {showHowtoPlayModal && (
           <InfoModal closeModal={closeHowToPlayModal} isHighContrastMode={isHighContrastMode} isCookieModalOpen={showCookieModal}/>
