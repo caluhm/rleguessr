@@ -64,7 +64,7 @@ useOnClickOutside(ref, () => closeModal());
                     <div className='flex items-center justify-center p-4 bg-[#151c36] flex-1 text-center m-[0.0625rem] text-white rounded overflow-hidden font-bold sm:text-3xl text-2xl'>{averageGuessPerWin === 0 ? <ReactLoading type="spin" color="#FFF" height={30} width={30} /> : averageGuessPerWin}</div>
                   </div>
                 </div>
-                <h2 className='uppercase sm:text-xl text-lg font-bold text-center text-white'>Guess Distribution</h2>
+                <h2 className='uppercase sm:text-xl text-lg font-bold text-center text-white'>Guess Distribution / Win</h2>
                 <div className='py-1 sm:mt-1 mt-0.5 rounded bg-[#151c36]'>
                   <HistogramGlobal
                     isLatestGame={isLatestGame}
