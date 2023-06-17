@@ -1,8 +1,9 @@
 import React, {useEffect, useRef} from 'react'
 import Icon from '../../images/CloseIcon.png';
+import HistogramGlobal from './HistogramGlobal';
 import ReactLoading from 'react-loading';
 
-const GameStatsModal = ({id, stats, closeModal}) => {
+const GameStatsModal = ({id, stats, closeModal, isLatestGame, isGameWon, numberOfGuessesMade}) => {
   const totalGames = stats ? stats.gamesCount : 0
   const totalWins = stats? stats.winCount : 0
   const winPercent = stats? stats.winPercent : 0
@@ -63,7 +64,16 @@ useOnClickOutside(ref, () => closeModal());
                     <div className='flex items-center justify-center p-4 bg-[#151c36] flex-1 text-center m-[0.0625rem] text-white rounded overflow-hidden font-bold sm:text-3xl text-2xl'>{averageGuessPerWin === 0 ? <ReactLoading type="spin" color="#FFF" height={30} width={30} /> : averageGuessPerWin}</div>
                   </div>
                 </div>
-                <div className='flex justify-center items-center sm:mt-6 mt-4'>
+                <h2 className='uppercase sm:text-xl text-lg font-bold text-center text-white'>Guess Distribution</h2>
+                <div className='py-1 sm:mt-1 mt-0.5 rounded bg-[#151c36]'>
+                  <HistogramGlobal
+                    isLatestGame={isLatestGame}
+                    gameStats={stats ? [stats.win1GuessCount, stats.win2GuessCount, stats.win3GuessCount, stats.win4GuessCount, stats.win5GuessCount, stats.win6GuessCount] : []}
+                    isGameWon={isGameWon}
+                    numberOfGuessesMade={numberOfGuessesMade}
+                  />
+                </div>
+                <div className='flex justify-center items-center sm:mt-8 mt-6'>
                     <button className='uppercase font-black m-0 sm:text-xl text-lg tracking-wide min-h-[48px] py-3 px-8 text-black bg-indigo-500 hover:bg-indigo-300 outline-none border-none rounded cursor-pointer flex items-center justify-center transition-colors' onClick={closeModal}>close</button>
                 </div>
             </div>

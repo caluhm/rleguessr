@@ -490,7 +490,7 @@ function App() {
           <InfoModal closeModal={closeHowToPlayModal} isHighContrastMode={isHighContrastMode} isCookieModalOpen={showCookieModal}/>
           )}
           {showGameStatsModal && (
-          <GameStatsModal id={solutionIndex} closeModal={closeGameStatsModal} stats={publicStats}/>
+          <GameStatsModal id={solutionIndex} closeModal={closeGameStatsModal} stats={publicStats} isGameWon={isGameWon} isLatestGame={isLatestGame} numberOfGuessesMade={guesses.length}/>
           )}
           {showCookieModal && (
           <CookieConsentModal handleAcceptCookies={handleAcceptCookies} handleDeclineCookies={handleDeclineCookies} handlePolicyModal={handlePolicyModal}/>
