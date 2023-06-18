@@ -1,5 +1,6 @@
 import React, {useEffect, useRef} from 'react'
 import { ToastContainer, toast } from 'react-toastify';
+import { useSpring, animated } from 'react-spring';
 import 'react-toastify/dist/ReactToastify.css';
 import Countdown from 'react-countdown';
 import Data from "../../constants/countries.json";
@@ -20,6 +21,20 @@ const SuccessModal = ({answer, guesses, isGameLost, closeModal, stats, isHighCon
     const ref = useRef()
     const answerRegObj = Data.find((el) => el.name === answer.nationality)
     var numOfGuesses = guesses.length;
+
+    useEffect(() => {
+      const handleKeyDown = (event) => {
+        if (event.key === 'Escape') {
+          closeModal();
+        }
+      };
+  
+      document.addEventListener('keydown', handleKeyDown);
+  
+      return () => {
+        document.removeEventListener('keydown', handleKeyDown);
+      };
+    }, [closeModal]);
 
     function useOnClickOutside(ref, handler) {
         useEffect(
@@ -51,6 +66,12 @@ const SuccessModal = ({answer, guesses, isGameLost, closeModal, stats, isHighCon
 
     useOnClickOutside(ref, () => closeModal());
 
+    const modalProps = useSpring({
+      from: { opacity: 0, transform: 'scale(0.5)' },
+      to: { opacity: 1, transform: 'scale(1)' },
+      config: { tension: 300, friction: 20 }, // Adjust the tension and friction values as desired
+    });
+
     const handleShareToClipboard = () => toast.success("Game copied to clipboard! 📋");
   return (
     <div className='fixed w-[100vw] h-full min-h-[100vh] top-0 left-0 z-[500] bg-white/10 backdrop-blur-sm flex flex-col justify-start items-center p-4'>
@@ -67,7 +88,11 @@ const SuccessModal = ({answer, guesses, isGameLost, closeModal, stats, isHighCon
         theme="colored"
         closeButton={false}
       />
-        <div className='relative m-auto overflow-hidden sm:p-10 p-5 bg-[#0c101f] w-full max-w-[31.25rem] max-h-[calc(100vh-2.5rem)] outline-none flex flex-col rounded-md drop-shadow-lg' ref={ref}>
+        <animated.div 
+          className='relative m-auto overflow-hidden sm:p-10 p-5 bg-[#0c101f] w-full max-w-[31.25rem] max-h-[calc(100vh-2.5rem)] outline-none flex flex-col rounded-md drop-shadow-lg' 
+          ref={ref}
+          style={modalProps}
+        >
             <button className='flex items-center justify-center cursor-pointer absolute top-4 right-4 hover:opacity-70 transition-opacity' onClick={closeModal}><img src={Icon} height={24} width={24} alt='Exit Modal' className='invert'/></button>
             <div className='z-1 mt-6'>
                 <div className='relative flex flex-col items-center h-fit'>
@@ -123,7 +148,7 @@ const SuccessModal = ({answer, guesses, isGameLost, closeModal, stats, isHighCon
                     />
                 </div>
             </div>
-        </div>
+        </animated.div>
     </div>  
   )
 }

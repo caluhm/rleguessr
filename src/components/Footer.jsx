@@ -16,7 +16,7 @@ const Footer = ({
   return (
     <div className='flex w-full flex-row items-center justify-between gap-0 sm:justify-center sm:gap-8 sm:pt-3 pt-0 text-white'>
         <button 
-            className='uppercase bg-transparent font-semibold sm:text-xs text-[0.7rem] border-none cursor-pointer py-4 px-4 tracking-[0.1375em] hover:text-gray-400 transition-colors' 
+            className='uppercase bg-transparent font-semibold sm:text-xs text-[0.7rem] border-none cursor-pointer py-4 px-4 tracking-[0.1375em] hover:scale-[1.075] transition-transform ease-in-out duration-200 focus:scale-[1.075]' 
             onClick={() => setIsInfoModalOpen(true)}
         >
             <div className='flex flex-row items-center justify-center gap-2'>
@@ -28,7 +28,7 @@ const Footer = ({
         </button>
             
         <button 
-            className='uppercase bg-transparent font-semibold sm:text-xs text-[0.7rem] border-none cursor-pointer py-4 px-4 tracking-[0.1375em] hover:text-gray-400 transition-colors' 
+            className='uppercase bg-transparent font-semibold sm:text-xs text-[0.7rem] border-none cursor-pointer py-4 px-4 tracking-[0.1375em] hover:scale-[1.075] transition-transform ease-in-out duration-200 focus:scale-[1.075]' 
             onClick={() => setIsStatsModalOpen(true)}
         >
             <div className='flex flex-row items-center justify-center gap-2'>
@@ -39,7 +39,7 @@ const Footer = ({
             </div>
         </button>
         <button 
-            className='uppercase bg-transparent font-semibold sm:text-xs text-[0.7rem] border-none cursor-pointer py-4 px-4 tracking-[0.1375em] hover:text-gray-400 transition-colors' 
+            className='uppercase bg-transparent font-semibold sm:text-xs text-[0.7rem] border-none cursor-pointer py-4 px-4 tracking-[0.1375em] hover:scale-[1.075] transition-transform ease-in-out duration-200 focus:scale-[1.075]' 
             onClick={() => setIsSettingsModalOpen(true)}
         >
             <div className='flex flex-row items-center justify-center gap-2'>

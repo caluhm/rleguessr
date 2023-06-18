@@ -1,4 +1,5 @@
 import React, {useEffect, useRef} from 'react'
+import { useSpring, animated } from 'react-spring';
 import Icon from '../../images/CloseIcon.png';
 import Histogram from './Histogram';
 import {
@@ -7,6 +8,20 @@ import {
 
 const StatsModal = ({closeModal, stats, isLatestGame, isGameWon, numberOfGuessesMade}) => {
   const ref = useRef()
+
+  useEffect(() => {
+    const handleKeyDown = (event) => {
+      if (event.key === 'Escape') {
+        closeModal();
+      }
+    };
+
+    document.addEventListener('keydown', handleKeyDown);
+
+    return () => {
+      document.removeEventListener('keydown', handleKeyDown);
+    };
+  }, [closeModal]);
 
   function useOnClickOutside(ref, handler) {
     useEffect(
@@ -37,9 +52,19 @@ const StatsModal = ({closeModal, stats, isLatestGame, isGameWon, numberOfGuesses
 
 useOnClickOutside(ref, () => closeModal());
 
+const modalProps = useSpring({
+  from: { opacity: 0, transform: 'scale(0.5)' },
+  to: { opacity: 1, transform: 'scale(1)' },
+  config: { tension: 300, friction: 20 }, // Adjust the tension and friction values as desired
+});
+
   return (
     <div className={`fixed w-[100vw] h-full min-h-[100vh] top-0 left-0 z-[500] bg-white/10 backdrop-blur-sm flex flex-col justify-start items-center p-4`}>
-        <div className='relative m-auto overflow-hidden sm:p-10 p-5 bg-[#0c101f] w-full max-w-[31.25rem] max-h-[calc(100vh-2.5rem)] outline-none flex flex-col rounded-md drop-shadow-lg' ref={ref}>
+        <animated.div
+          className='relative m-auto overflow-hidden sm:p-10 p-5 bg-[#0c101f] w-full max-w-[31.25rem] max-h-[calc(100vh-2.5rem)] outline-none flex flex-col rounded-md drop-shadow-lg' 
+          ref={ref}
+          style={modalProps}
+        >
             <button className='flex items-center justify-center cursor-pointer absolute top-4 right-4 hover:opacity-70 transition-opacity' onClick={closeModal}><img src={Icon} height={24} width={24} alt='Exit Modal' className='invert'/></button>
             <div className='z-1 mt-6'>
                 <div className='relative flex flex-col items-center text-center h-fit italic sm:pb-4 pb-2'>
@@ -76,7 +101,7 @@ useOnClickOutside(ref, () => closeModal());
                     <button className='uppercase font-black m-0 sm:text-xl text-lg tracking-wide min-h-[48px] py-3 px-8 text-black bg-indigo-500 hover:bg-indigo-300 outline-none border-none rounded cursor-pointer flex items-center justify-center transition-colors' onClick={closeModal}>close</button>
                 </div>
             </div>
-        </div>
+        </animated.div>
     </div>
   )
 }       
