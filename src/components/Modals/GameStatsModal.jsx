@@ -91,12 +91,18 @@ const modalProps = useSpring({
                 </div>
                 <h2 className='uppercase sm:text-xl text-lg font-bold text-center text-white'>Guess Distribution / Win</h2>
                 <div className='py-1 sm:mt-1 mt-0.5 rounded bg-[#151c36]'>
+                  {stats ? (
                   <HistogramGlobal
                     isLatestGame={isLatestGame}
-                    gameStats={stats ? [stats.win1GuessCount, stats.win2GuessCount, stats.win3GuessCount, stats.win4GuessCount, stats.win5GuessCount, stats.win6GuessCount] : []}
+                    gameStats={[stats.win1GuessCount, stats.win2GuessCount, stats.win3GuessCount, stats.win4GuessCount, stats.win5GuessCount, stats.win6GuessCount]}
                     isGameWon={isGameWon}
                     numberOfGuessesMade={numberOfGuessesMade}
                   />
+                  ) : (
+                    <div className='flex items-center justify-center'>
+                      <ReactLoading type="spin" color="#FFF" height={30} width={30} />
+                    </div>
+                  )}
                 </div>
                 <div className='flex justify-center items-center sm:mt-8 mt-6'>
                     <button className='uppercase font-black m-0 sm:text-xl text-lg tracking-wide min-h-[48px] py-3 px-8 text-black bg-indigo-500 hover:bg-indigo-300 outline-none border-none rounded cursor-pointer flex items-center justify-center transition-colors' onClick={closeModal}>close</button>
