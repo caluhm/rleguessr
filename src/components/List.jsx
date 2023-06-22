@@ -11,7 +11,9 @@ const List = ({input, handleClick, guess0, guess1, guess2, guess3, guess4, guess
                 .toLowerCase()
                 .replace(/[éé]/g, 'e')
                 .replace(/0/g, 'o')
-                .includes(input.replace(/[éé]/g, 'e').replace(/0/g, 'o'));
+                .replace(/1/g, 'i')
+                .replace(/3/g, 'e')
+                .includes(input.replace(/[éé]/g, 'e').replace(/0/g, 'o').replace(/1/g, 'i').replace(/3/g, 'e'));
 
             if (guess0.length !== 0) {
                 filtered = filtered && el.id !== guess0.id;
