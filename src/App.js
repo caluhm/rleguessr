@@ -7,7 +7,6 @@ import debounce from 'lodash.debounce';
 import Cookies from 'js-cookie';
 import Div100vh from 'react-div-100vh'
 import { MagnifyingGlassIcon } from '@heroicons/react/24/outline'
-import Twitter from './images/iconmonstr-twitter-1-240.png'
 
 import Data from "./constants/players.json";
 import HeroSection from './components/HeroSection';
@@ -503,12 +502,6 @@ function App() {
             href='https://www.buymeacoffee.com/caluhm' target='_blank' rel='noreferrer'
           >
               Donate
-          </a>
-          <a 
-            className='absolute top-0 left-0 sm:mt-2 sm:ml-2 mt-1 ml-1 uppercase font-black m-0 sm:text-base text-sm tracking-wide sm:min-h-[48px] min-h-[36px] sm:py-3 sm:px-5 py-2 px-2.5 text-black bg-blue-500 hover:bg-blue-300 outline-none border-none rounded cursor-pointer flex items-center justify-center transition-colors ease-in-out duration-200'
-            href='https://twitter.com/RL_Cal' target='_blank' rel="noreferrer"  
-          >
-              <img src={Twitter} height={22} width={22} alt='Twitter Logo'/> <span className='text-black sm:ml-1.5 ml-1'>@RL_Cal</span>
           </a>
           <div className='flex flex-col justify-between max-w-[37.5rem] p-3'>
             <HeroSection />
