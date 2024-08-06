@@ -63,7 +63,7 @@ def _get_rlcs_lans():
         "div[class='divRow tournament-card-premier tournament-card-premier']"
     ):
         # If the tournament hasn't happened yet, don't include it.
-        # The obivous way to check this would be to parse the date column and
+        # The obvious way to check this would be to parse the date column and
         # compare it to the current date. But instead of doing all of that we
         # can also just check the winner column.
         winner_tbd = (
