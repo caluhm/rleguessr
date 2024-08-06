@@ -63,7 +63,7 @@ def _get_rlcs_lans():
         "div[class='divRow tournament-card-premier tournament-card-premier']"
     ):
         # If the tournament hasn't happened yet, don't include it.
-        # The obivous way to check this would be to parse the date column and
+        # The obvious way to check this would be to parse the date column and
         # compare it to the current date. But instead of doing all of that we
         # can also just check the winner column.
         winner_tbd = (
@@ -108,12 +108,6 @@ def _get_lan_players(lan):
         if not hasattr(child, "select"):
             continue
 
-        # In https://liquipedia.net/rocketleague/Rocket_League_Championship_Series/Season_3
-        # there are 2 teams who played a showmatch. We don't want to include
-        # those so we go through the page and stop if we get to the Results.
-        if child.select("span[id='Results']"):
-            break
-
         teams = child.select("div[class='teamcard-inner']")
         # Go through each team one by one
         for team in teams:
@@ -137,6 +131,18 @@ def _get_lan_players(lan):
                         url = tr.select("a")[-1].get("href").split("/rocketleague/")[-1]
                         players.append(url)
 
+        # In https://liquipedia.net/rocketleague/Rocket_League_Championship_Series/Season_3
+        # there are 2 teams who played a showmatch. We don't want to include
+        # those so we go through the page and stop if we get to the Results.
+        # In https://liquipedia.net/rocketleague/Rocket_League_Championship_Series/2024/Major_2
+        # the results are in the same child as the teams, so checking for this
+        # after checking for the teams.
+        if child.select("span[id='Results']"):
+            break
+
+    # For safety in case in the future the current code isn't able to extract
+    # the players from the page.
+    assert players
     return players
 
 
