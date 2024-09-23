@@ -28,6 +28,18 @@ REGIONS = {
     "Middle East": "MENA",
     "Africa": "SSA",
 }
+EXPECTED_FIELDS = set(
+    [
+        "DOB",
+        "fullName",
+        "id",
+        "name",
+        "nationality",
+        "region",
+        "rlcsLanAppearances",
+        "team",
+    ]
+)
 
 
 def _get_page(page):
@@ -184,13 +196,31 @@ def _get_player_info(page, rlcs_lan_appearances):
             # Some players have double nationality, we only keep the first one
             info["nationality"] = div.split("\xa0")[1]
         elif div.startswith("Born:"):
-            info["DOB"] = datetime.strptime(
-                div.split(" (age")[0], "Born:%B %d, %Y"
-            ).strftime("%d-%m-%Y")
+            try:
+                info["DOB"] = datetime.strptime(
+                    div.split(" (age")[0], "Born:%B %d, %Y"
+                ).strftime("%d-%m-%Y")
+            except ValueError:
+                # As of 2024-09-23, https://liquipedia.net/rocketleague/Mesho
+                # doesn't have a proper DOB, only a year.
+                print(f"{datetime.now()} {info['name']} missing proper DOB: '{div}'")
+                info["DOB"] = datetime.strptime(
+                    div.split(" (age")[0], "Born:%Y"
+                ).strftime("%Y")
         elif div.startswith("Region:"):
             info["region"] = REGIONS[div.split("\xa0")[1]]
         elif div.startswith("Team:"):
             info["team"] = div.split("Team:")[1]
+
+    diff_fields = EXPECTED_FIELDS - set(info.keys())
+    if diff_fields:
+        # We weren't able to get some of the fields, most likely Liquipedia is
+        # missing the information we need (for example it is missing the DOB
+        # for quite a few players).
+        # Continue the execution but print a message warning about the missing
+        # data.
+        print(f"{datetime.now()} {info['name']} missing {diff_fields} fields")
+        # TODO: Ignore players that are missing DOB?
 
     return info
 
