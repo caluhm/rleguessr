@@ -1,53 +1,43 @@
 [
   {
-    "DOB": "24-04-2001",
-    "fullName": "Andy Landais",
-    "id": 28286,
-    "name": "Kassio",
-    "nationality": "France",
-    "region": "EU",
-    "rlcsLanAppearances": 4,
-    "team": "Team BDS"
+    "DOB": "16-03-2002",
+    "fullName": "Tshaka Lateef Taylor Jr",
+    "id": 36421,
+    "name": "Arsenal",
+    "nationality": "United States",
+    "region": "NA",
+    "rlcsLanAppearances": 7,
+    "team": "Lil Step Bros"
   },
   {
-    "DOB": "24-11-1997",
-    "fullName": "Jake Edwards",
-    "id": 20017,
-    "name": "Jake",
-    "nationality": "Australia",
-    "region": "OCE",
-    "rlcsLanAppearances": 3,
-    "team": "None"
-  },
-  {
-    "DOB": "07-06-2003",
-    "fullName": "Diego Isla Serrano",
-    "id": 84474,
-    "name": "VKSailen",
+    "DOB": "01-10-2004",
+    "fullName": "Sergio P\u00e9rez Cort\u00e9s",
+    "id": 80221,
+    "name": "AtomiK",
     "nationality": "Spain",
-    "region": "EU",
-    "rlcsLanAppearances": 1,
-    "team": "Team Mobula"
+    "region": "MENA",
+    "rlcsLanAppearances": 2,
+    "team": "Twisted Minds"
   },
   {
-    "DOB": "21-09-2000",
-    "fullName": "Cameron Ingram",
-    "id": 23083,
-    "name": "Kamii",
-    "nationality": "New Zealand",
-    "region": "OCE",
-    "rlcsLanAppearances": 11,
-    "team": "None"
-  },
-  {
-    "DOB": "31-10-1999",
-    "fullName": "Brandon Lachin",
-    "id": 2735,
-    "name": "Lachinio",
-    "nationality": "Canada",
+    "DOB": "05-11-1996",
+    "fullName": "Emiliano Benny",
+    "id": 7439,
+    "name": "Sizz",
+    "nationality": "United States",
     "region": "NA",
     "rlcsLanAppearances": 1,
     "team": "None"
+  },
+  {
+    "DOB": "12-07-2000",
+    "fullName": "Gareth Spiers",
+    "id": 97509,
+    "name": "Snowyy",
+    "nationality": "South Africa",
+    "region": "SSA",
+    "rlcsLanAppearances": 4,
+    "team": "Limitless"
   },
   {
     "DOB": "21-10-2005",
@@ -57,7 +47,37 @@
     "nationality": "France",
     "region": "EU",
     "rlcsLanAppearances": 1,
-    "team": "MadCap"
+    "team": "CALIENTE"
+  },
+  {
+    "DOB": "08-08-2003",
+    "fullName": "Facundo Vallerino",
+    "id": 103354,
+    "name": "shad",
+    "nationality": "Argentina",
+    "region": "SAM",
+    "rlcsLanAppearances": 1,
+    "team": "None"
+  },
+  {
+    "DOB": "05-09-2005",
+    "fullName": "Nick Iwanski",
+    "id": 76584,
+    "name": "Chronic",
+    "nationality": "United States",
+    "region": "NA",
+    "rlcsLanAppearances": 7,
+    "team": "The Ultimates"
+  },
+  {
+    "DOB": "10-08-2004",
+    "fullName": "Yan Xisto Nolasco",
+    "id": 93578,
+    "name": "yanxnz",
+    "nationality": "Brazil",
+    "region": "SAM",
+    "rlcsLanAppearances": 8,
+    "team": "FURIA Esports"
   },
   {
     "DOB": "11-08-2002",
@@ -67,77 +87,167 @@
     "nationality": "Saudi Arabia",
     "region": "MENA",
     "rlcsLanAppearances": 2,
+    "team": "BOV"
+  },
+  {
+    "DOB": "05-04-1996",
+    "fullName": "Marius Ranheim",
+    "id": 1530,
+    "name": "gReazymeister",
+    "nationality": "Norway",
+    "region": "EU",
+    "rlcsLanAppearances": 3,
     "team": "None"
   },
   {
-    "DOB": "20-09-1997",
-    "fullName": "Kais Zehri",
-    "id": 1483,
-    "name": "Sadjunior",
+    "DOB": "19-09-1995",
+    "fullName": "Alexandre Bellemare",
+    "id": 29538,
+    "name": "AxB",
     "nationality": "Canada",
     "region": "NA",
-    "rlcsLanAppearances": 3,
-    "team": "Spacestation Gaming"
-  },
-  {
-    "DOB": "20-05-2001",
-    "fullName": "Caio Vinicius Testi da Silva",
-    "id": 31031,
-    "name": "CAiOTG1",
-    "nationality": "Brazil",
-    "region": "SAM",
-    "rlcsLanAppearances": 5,
-    "team": "None"
-  },
-  {
-    "DOB": "20-10-2002",
-    "fullName": "Diogo Sanches Ferme",
-    "id": 35126,
-    "name": "PJ",
-    "nationality": "Brazil",
-    "region": "SAM",
     "rlcsLanAppearances": 1,
     "team": "None"
   },
   {
-    "DOB": "01-06-1996",
-    "fullName": "David Lawrie",
-    "id": 4359,
-    "name": "miztik",
-    "nationality": "Scotland",
+    "DOB": "01-07-1999",
+    "fullName": "Fahad Ahmed",
+    "id": 51349,
+    "name": "Zez0nix",
+    "nationality": "Saudi Arabia",
+    "region": "MENA",
+    "rlcsLanAppearances": 1,
+    "team": "3goats"
+  },
+  {
+    "DOB": "10-06-2007",
+    "fullName": "Saleh Abdullah Bakhashwin",
+    "id": 110418,
+    "name": "Rw9",
+    "nationality": "Saudi Arabia",
+    "region": "MENA",
+    "rlcsLanAppearances": 5,
+    "team": "Team Falcons"
+  },
+  {
+    "DOB": "10-06-2007",
+    "fullName": "Yazid Abdullah Bakhashwin",
+    "id": 110854,
+    "name": "Kiileerrz",
+    "nationality": "Saudi Arabia",
+    "region": "MENA",
+    "rlcsLanAppearances": 5,
+    "team": "Team Falcons"
+  },
+  {
+    "DOB": "31-03-1997",
+    "fullName": "Linus M\u00f6llergren",
+    "id": 3728,
+    "name": "al0t",
+    "nationality": "Sweden",
     "region": "EU",
+    "rlcsLanAppearances": 2,
+    "team": "None"
+  },
+  {
+    "DOB": "22-05-1998",
+    "fullName": "Alexandre Courant",
+    "id": 4041,
+    "name": "Kaydop",
+    "nationality": "France",
+    "region": "EU",
+    "rlcsLanAppearances": 8,
+    "team": "CALIENTE"
+  },
+  {
+    "DOB": "28-05-2001",
+    "fullName": "Ahmed Ayed",
+    "id": 104903,
+    "name": "Senzo",
+    "nationality": "Saudi Arabia",
+    "region": "MENA",
+    "rlcsLanAppearances": 3,
+    "team": "Twisted Minds"
+  },
+  {
+    "DOB": "01-06-1995",
+    "fullName": "Gabriel Vallozzi",
+    "id": 7207,
+    "name": "CorruptedG",
+    "nationality": "Canada",
+    "region": "NA",
     "rlcsLanAppearances": 3,
     "team": "None"
   },
   {
-    "DOB": "26-12-2002",
-    "fullName": "Ma\u00ebllo Ernst",
-    "id": 40330,
-    "name": "AztraL",
-    "nationality": "Belgium",
-    "region": "EU",
+    "DOB": "05-09-2005",
+    "fullName": "Cristian Fern\u00e1ndez Raigal",
+    "id": 100762,
+    "name": "crr",
+    "nationality": "Spain",
+    "region": "SAM",
+    "rlcsLanAppearances": 4,
+    "team": "Complexity Gaming"
+  },
+  {
+    "DOB": "22-08-1998",
+    "fullName": "Jonathan Slade",
+    "id": 20010,
+    "name": "Express",
+    "nationality": "Australia",
+    "region": "OCE",
     "rlcsLanAppearances": 4,
     "team": "None"
   },
   {
-    "DOB": "25-12-2005",
-    "fullName": "Joe Young",
-    "id": 84967,
-    "name": "Joyo",
-    "nationality": "England",
+    "DOB": "27-03-2001",
+    "fullName": "Marc Domingo Ruiz",
+    "id": 47800,
+    "name": "MaRc_By_8.",
+    "nationality": "Spain",
     "region": "EU",
-    "rlcsLanAppearances": 8,
+    "rlcsLanAppearances": 3,
+    "team": "JJROX"
+  },
+  {
+    "DOB": "18-03-2005",
+    "fullName": "Ezequiel Aranda-Lovito",
+    "id": 83713,
+    "name": "Fib\u00e9rr",
+    "nationality": "Australia",
+    "region": "OCE",
+    "rlcsLanAppearances": 4,
+    "team": "Helfie Chiefs"
+  },
+  {
+    "DOB": "31-08-2004",
+    "fullName": "Osama Ahmed Al-Humaidan",
+    "id": 89077,
+    "name": "Smw",
+    "nationality": "Saudi Arabia",
+    "region": "MENA",
+    "rlcsLanAppearances": 3,
     "team": "None"
   },
   {
-    "DOB": "23-09-2003",
-    "fullName": "Jack Benton",
-    "id": 85949,
-    "name": "ApparentlyJack",
-    "nationality": "England",
-    "region": "NA",
-    "rlcsLanAppearances": 10,
-    "team": "Gen.G Mobil1 Racing"
+    "DOB": "22-06-1999",
+    "fullName": "Nathan Logan",
+    "id": 20966,
+    "name": "shadey",
+    "nationality": "Australia",
+    "region": "OCE",
+    "rlcsLanAppearances": 1,
+    "team": "None"
+  },
+  {
+    "DOB": "15-02-2002",
+    "fullName": "Leonardo Raffael Christ Ramos",
+    "id": 84370,
+    "name": "Catalysm",
+    "nationality": "Germany",
+    "region": "APAC",
+    "rlcsLanAppearances": 1,
+    "team": "Luminosity Gaming"
   },
   {
     "DOB": "07-12-1999",
@@ -150,54 +260,83 @@
     "team": "None"
   },
   {
-    "DOB": "2004",
-    "fullName": "Mishal Alqahtani",
-    "id": 130846,
-    "name": "Mesho",
-    "nationality": "Saudi Arabia",
-    "region": "MENA",
-    "rlcsLanAppearances": 1,
-    "team": "None"
-  },
-  {
-    "DOB": "27-05-1995",
-    "fullName": "Remco den Boer",
-    "id": 1497,
-    "name": "remkoe",
-    "nationality": "Netherlands",
+    "DOB": "11-03-2005",
+    "fullName": "Archie Pickthall",
+    "id": 85194,
+    "name": "Archie",
+    "nationality": "England",
     "region": "EU",
-    "rlcsLanAppearances": 5,
-    "team": "None"
+    "rlcsLanAppearances": 8,
+    "team": "Geekay Esports"
   },
   {
-    "DOB": "19-02-1997",
-    "fullName": "Francesco Cinquemani",
-    "id": 1359,
-    "name": "kuxir97",
-    "nationality": "Italy",
-    "region": "EU",
-    "rlcsLanAppearances": 4,
-    "team": "None"
-  },
-  {
-    "DOB": "13-10-1999",
-    "fullName": "David du Plessis",
-    "id": 97511,
-    "name": "Happymeal",
-    "nationality": "South Africa",
-    "region": "SSA",
-    "rlcsLanAppearances": 1,
-    "team": "Onlyphans"
-  },
-  {
-    "DOB": "03-08-2005",
-    "fullName": "Landon Konerman",
-    "id": 84761,
-    "name": "BeastMode",
-    "nationality": "United States",
+    "DOB": "09-08-1998",
+    "fullName": "Pierre Silfver",
+    "id": 1755,
+    "name": "Turbopolsa",
+    "nationality": "Sweden",
     "region": "NA",
     "rlcsLanAppearances": 7,
-    "team": "G2 Stride"
+    "team": "None"
+  },
+  {
+    "DOB": "30-08-1997",
+    "fullName": "Cameron Bills",
+    "id": 687,
+    "name": "Kronovi",
+    "nationality": "United States",
+    "region": "NA",
+    "rlcsLanAppearances": 5,
+    "team": "Pioneers"
+  },
+  {
+    "DOB": "25-12-2005",
+    "fullName": "Joe Young",
+    "id": 84967,
+    "name": "Joyo",
+    "nationality": "England",
+    "region": "EU",
+    "rlcsLanAppearances": 8,
+    "team": "Geekay Esports"
+  },
+  {
+    "DOB": "12-01-2004",
+    "fullName": "Andrea Radovanovi\u0107",
+    "id": 90125,
+    "name": "Radosin",
+    "nationality": "France",
+    "region": "EU",
+    "rlcsLanAppearances": 6,
+    "team": "Gentle Mates Alpine"
+  },
+  {
+    "DOB": "20-04-2001",
+    "fullName": "Maclean Rees",
+    "id": 56915,
+    "name": "Le Duck",
+    "nationality": "Australia",
+    "region": "OCE",
+    "rlcsLanAppearances": 1,
+    "team": "None"
+  },
+  {
+    "DOB": "10-02-1996",
+    "fullName": "Caleb Nichols",
+    "id": 1691,
+    "name": "Moses",
+    "nationality": "United States",
+    "region": "NA",
+    "rlcsLanAppearances": 2,
+    "team": "None"
+  },
+  {
+    "DOB": "14-01-2009",
+    "id": 146111,
+    "name": "Sphinx",
+    "nationality": "Malaysia",
+    "region": "APAC",
+    "rlcsLanAppearances": 1,
+    "team": "Luminosity Gaming"
   },
   {
     "DOB": "16-08-1999",
@@ -210,39 +349,50 @@
     "team": "None"
   },
   {
-    "DOB": "14-01-2009",
-    "id": 146111,
-    "name": "Sphinx",
-    "nationality": "Malaysia",
-    "region": "APAC",
-    "rlcsLanAppearances": 1,
-    "team": "XO Esports"
-  },
-  {
-    "DOB": "23-04-2005",
-    "fullName": "Logan Wilt",
-    "id": 84978,
-    "name": "Lj",
-    "nationality": "United States",
-    "region": "NA",
-    "rlcsLanAppearances": 5,
-    "team": "Spacestation Gaming"
-  },
-  {
-    "DOB": "05-10-2002",
-    "fullName": "Matheus Gon\u00e7alves",
-    "id": 46466,
-    "name": "math",
+    "DOB": "22-10-2003",
+    "fullName": "Valter Junior",
+    "id": 46469,
+    "name": "valt",
     "nationality": "Brazil",
     "region": "SAM",
-    "rlcsLanAppearances": 5,
+    "rlcsLanAppearances": 1,
     "team": "None"
   },
   {
-    "DOB": "13-10-2002",
-    "fullName": "Jirair Papazian",
-    "id": 36235,
-    "name": "Gyro.",
+    "DOB": "06-06-2000",
+    "fullName": "Kyle Storer",
+    "id": 7118,
+    "name": "torment",
+    "nationality": "United States",
+    "region": "NA",
+    "rlcsLanAppearances": 8,
+    "team": "None"
+  },
+  {
+    "DOB": "26-01-2000",
+    "fullName": "Maurice Weihs",
+    "id": 24763,
+    "name": "Yukeo",
+    "nationality": "Austria",
+    "region": "EU",
+    "rlcsLanAppearances": 2,
+    "team": "Shaman Esports"
+  },
+  {
+    "DOB": "29-03-1993",
+    "fullName": "Robert Louis Gomez",
+    "id": 7110,
+    "name": "Chrome",
+    "nationality": "United States",
+    "region": "NA",
+    "rlcsLanAppearances": 1,
+    "team": "None"
+  },
+  {
+    "DOB": "22-02-1999",
+    "fullName": "Chris Mendoza",
+    "id": 7427,
+    "name": "Dappur",
     "nationality": "United States",
     "region": "NA",
     "rlcsLanAppearances": 1,
@@ -259,22 +409,381 @@
     "team": "Twisted Minds"
   },
   {
-    "DOB": "22-10-2003",
-    "fullName": "Valter Junior",
-    "id": 46469,
-    "name": "valt",
+    "DOB": "20-10-2002",
+    "fullName": "Diogo Sanches Ferme",
+    "id": 35126,
+    "name": "PJ",
     "nationality": "Brazil",
     "region": "SAM",
     "rlcsLanAppearances": 1,
-    "team": "Exile"
+    "team": "Erased"
   },
   {
-    "DOB": "11-09-1998",
-    "fullName": "Isaac Cooper",
-    "id": 86857,
-    "name": "sigms",
+    "DOB": "17-10-1997",
+    "fullName": "Euan Ingram",
+    "id": 28299,
+    "name": "Tadpole",
+    "nationality": "Wales",
+    "region": "EU",
+    "rlcsLanAppearances": 1,
+    "team": "None"
+  },
+  {
+    "DOB": "05-08-2003",
+    "fullName": "Caden Pellegrin",
+    "id": 35789,
+    "name": "Sypical",
     "nationality": "United States",
+    "region": "NA",
+    "rlcsLanAppearances": 7,
+    "team": "None"
+  },
+  {
+    "DOB": "06-12-2004",
+    "fullName": "Lachlan Aitchison",
+    "id": 77240,
+    "name": "Fever",
+    "nationality": "Australia",
+    "region": "OCE",
+    "rlcsLanAppearances": 9,
+    "team": "Wildcard"
+  },
+  {
+    "DOB": "05-10-2002",
+    "fullName": "Matheus Gon\u00e7alves",
+    "id": 46466,
+    "name": "math",
+    "nationality": "Brazil",
+    "region": "SAM",
+    "rlcsLanAppearances": 5,
+    "team": "None"
+  },
+  {
+    "DOB": "02-08-1996",
+    "fullName": "Nicholas Blackerby",
+    "id": 23353,
+    "name": "Wonder",
+    "nationality": "United States",
+    "region": "NA",
+    "rlcsLanAppearances": 1,
+    "team": "None"
+  },
+  {
+    "DOB": "18-08-2002",
+    "fullName": "Louis Christian Thamrun",
+    "id": 78019,
+    "name": "LCT",
+    "nationality": "Indonesia",
     "region": "APAC",
+    "rlcsLanAppearances": 5,
+    "team": "3RATS"
+  },
+  {
+    "DOB": "11-10-2006",
+    "fullName": "Jo\u00e3o Vitor Brito Motta",
+    "id": 116600,
+    "name": "Motta",
+    "nationality": "Brazil",
+    "region": "SAM",
+    "rlcsLanAppearances": 4,
+    "team": "Team Secret"
+  },
+  {
+    "DOB": "09-03-2006",
+    "fullName": "Andres Jordan",
+    "id": 87183,
+    "name": "dreaz",
+    "nationality": "United States",
+    "region": "NA",
+    "rlcsLanAppearances": 4,
+    "team": "None"
+  },
+  {
+    "DOB": "28-06-2003",
+    "fullName": "Max Ng",
+    "id": 51797,
+    "name": "Maxeew",
+    "nationality": "Ireland",
+    "region": "APAC",
+    "rlcsLanAppearances": 6,
+    "team": "Elevate"
+  },
+  {
+    "DOB": "01-07-2001",
+    "fullName": "Abdullah Alsubaie",
+    "id": 88633,
+    "name": "ams",
+    "nationality": "Saudi Arabia",
+    "region": "MENA",
+    "rlcsLanAppearances": 1,
+    "team": "Espada"
+  },
+  {
+    "DOB": "13-08-2003",
+    "fullName": "Amine Benayachi",
+    "id": 28893,
+    "name": "itachi",
+    "nationality": "Morocco",
+    "region": "EU",
+    "rlcsLanAppearances": 9,
+    "team": "Ninjas in Pyjamas"
+  },
+  {
+    "DOB": "19-02-2004",
+    "fullName": "Ivan Ruiz Jim\u00e9nez",
+    "id": 117953,
+    "name": "DORITO",
+    "nationality": "Spain",
+    "region": "EU",
+    "rlcsLanAppearances": 3,
+    "team": "Synergy"
+  },
+  {
+    "DOB": "31-10-1996",
+    "fullName": "Victor Francal",
+    "id": 18504,
+    "name": "Ferra",
+    "nationality": "France",
+    "region": "EU",
+    "rlcsLanAppearances": 5,
+    "team": "Karmine Corp"
+  },
+  {
+    "DOB": "01-11-2004",
+    "fullName": "Pedro Henrique Lima",
+    "id": 85250,
+    "name": "brad",
+    "nationality": "Brazil",
+    "region": "SAM",
+    "rlcsLanAppearances": 5,
+    "team": "Corinthians Esports"
+  },
+  {
+    "DOB": "03-09-1999",
+    "fullName": "Braxton Lagarec",
+    "id": 22798,
+    "name": "Allushin",
+    "nationality": "Canada",
+    "region": "NA",
+    "rlcsLanAppearances": 3,
+    "team": "Gen.G Mobil1 Racing"
+  },
+  {
+    "DOB": "02-08-1996",
+    "fullName": "Sandro Holzwarth",
+    "id": 6683,
+    "name": "FreaKii.",
+    "nationality": "Germany",
+    "region": "EU",
+    "rlcsLanAppearances": 3,
+    "team": "RIZON"
+  },
+  {
+    "DOB": "01-10-2003",
+    "fullName": "Robert Kyser",
+    "id": 64519,
+    "name": "comm",
+    "nationality": "United States",
+    "region": "NA",
+    "rlcsLanAppearances": 7,
+    "team": "tech"
+  },
+  {
+    "DOB": "22-02-2002",
+    "fullName": "Aidan Hui",
+    "id": 23078,
+    "name": "zenulous",
+    "nationality": "Australia",
+    "region": "OCE",
+    "rlcsLanAppearances": 1,
+    "team": "Antic x Odium"
+  },
+  {
+    "DOB": "01-04-2004",
+    "fullName": "Andrew Nolan",
+    "id": 75287,
+    "name": "Andy",
+    "nationality": "United States",
+    "region": "NA",
+    "rlcsLanAppearances": 1,
+    "team": "Deleted Gaming"
+  },
+  {
+    "DOB": "07-06-2003",
+    "fullName": "Diego Isla Serrano",
+    "id": 84474,
+    "name": "VKSailen",
+    "nationality": "Spain",
+    "region": "EU",
+    "rlcsLanAppearances": 1,
+    "team": "Maestros Del Esf\u00e9rico"
+  },
+  {
+    "DOB": "19-03-2003",
+    "fullName": "Renan Rossi de Oliveira",
+    "id": 35124,
+    "name": "renaN",
+    "nationality": "Brazil",
+    "region": "SAM",
+    "rlcsLanAppearances": 1,
+    "team": "LUK eSports"
+  },
+  {
+    "DOB": "12-12-1998",
+    "fullName": "Otto Kaipiainen",
+    "id": 7304,
+    "name": "Metsanauris",
+    "nationality": "Finland",
+    "region": "EU",
+    "rlcsLanAppearances": 7,
+    "team": "None"
+  },
+  {
+    "DOB": "13-05-2001",
+    "fullName": "Jackson Carter",
+    "id": 29550,
+    "name": "ayjacks",
+    "nationality": "United States",
+    "region": "NA",
+    "rlcsLanAppearances": 1,
+    "team": "Louisiana State University"
+  },
+  {
+    "DOB": "16-08-1997",
+    "fullName": "Connor Montgomery",
+    "id": 20006,
+    "name": "Montyconnor",
+    "nationality": "New Zealand",
+    "region": "OCE",
+    "rlcsLanAppearances": 1,
+    "team": "None"
+  },
+  {
+    "DOB": "04-08-1996",
+    "fullName": "Braden Schenetzki",
+    "id": 1490,
+    "name": "Pluto",
+    "nationality": "United States",
+    "region": "NA",
+    "rlcsLanAppearances": 3,
+    "team": "None"
+  },
+  {
+    "DOB": "20-05-2001",
+    "fullName": "Caio Vinicius Testi da Silva",
+    "id": 31031,
+    "name": "CAiOTG1",
+    "nationality": "Brazil",
+    "region": "SAM",
+    "rlcsLanAppearances": 5,
+    "team": "Novus Aevi"
+  },
+  {
+    "DOB": "07-07-2005",
+    "fullName": "Bruno Alexandre dos Santos Lopes",
+    "id": 97702,
+    "name": "AcroniK.",
+    "nationality": "Portugal",
+    "region": "EU",
+    "rlcsLanAppearances": 5,
+    "team": "Startpoint"
+  },
+  {
+    "fullName": "Shantanu Modak",
+    "id": 125315,
+    "name": "Commutator",
+    "nationality": "Singapore",
+    "region": "APAC",
+    "rlcsLanAppearances": 1,
+    "team": "None"
+  },
+  {
+    "DOB": "10-09-2000",
+    "fullName": "Abhai Ponna",
+    "id": 106488,
+    "name": "AbsCrazy",
+    "nationality": "India",
+    "region": "APAC",
+    "rlcsLanAppearances": 1,
+    "team": "Revenue Redeemers"
+  },
+  {
+    "DOB": "23-01-2006",
+    "fullName": "Jon Anastasakis",
+    "id": 100249,
+    "name": "bananahead",
+    "nationality": "Australia",
+    "region": "OCE",
+    "rlcsLanAppearances": 9,
+    "team": "Wildcard"
+  },
+  {
+    "DOB": "21-06-2003",
+    "fullName": "Ivan Sabri",
+    "id": 87858,
+    "name": "ivn",
+    "nationality": "Austria",
+    "region": "EU",
+    "rlcsLanAppearances": 1,
+    "team": "WYLDE"
+  },
+  {
+    "DOB": "10-02-1996",
+    "fullName": "Mark Exton",
+    "id": 1296,
+    "name": "Markydooda",
+    "nationality": "Scotland",
+    "region": "EU",
+    "rlcsLanAppearances": 3,
+    "team": "None"
+  },
+  {
+    "DOB": "21-09-2000",
+    "fullName": "Aldin Hodzic",
+    "id": 28356,
+    "name": "Ronaky",
+    "nationality": "Denmark",
+    "region": "EU",
+    "rlcsLanAppearances": 1,
+    "team": "None"
+  },
+  {
+    "DOB": "31-10-2002",
+    "fullName": "Brice Bigeard",
+    "id": 71533,
+    "name": "ExoTiiK",
+    "nationality": "France",
+    "region": "EU",
+    "rlcsLanAppearances": 8,
+    "team": "Team Vitality"
+  },
+  {
+    "DOB": "31-10-1999",
+    "fullName": "Brandon Lachin",
+    "id": 2735,
+    "name": "Lachinio",
+    "nationality": "Canada",
+    "region": "NA",
+    "rlcsLanAppearances": 1,
+    "team": "None"
+  },
+  {
+    "DOB": "25-12-2004",
+    "fullName": "Christopher Acevedo",
+    "id": 81757,
+    "name": "MaJicBear",
+    "nationality": "United States",
+    "region": "NA",
+    "rlcsLanAppearances": 2,
+    "team": "Gen.G Mobil1 Racing"
+  },
+  {
+    "DOB": "02-09-1996",
+    "fullName": "Ted Keil",
+    "id": 3320,
+    "name": "0ver Zer0",
+    "nationality": "United States",
+    "region": "NA",
     "rlcsLanAppearances": 1,
     "team": "None"
   },
@@ -289,296 +798,6 @@
     "team": "None"
   },
   {
-    "DOB": "06-12-2004",
-    "fullName": "Lachlan Aitchison",
-    "id": 77240,
-    "name": "Fever",
-    "nationality": "Australia",
-    "region": "OCE",
-    "rlcsLanAppearances": 9,
-    "team": "PWR"
-  },
-  {
-    "DOB": "14-08-2007",
-    "fullName": "Hunter Tomeski",
-    "id": 99636,
-    "name": "hntr",
-    "nationality": "Australia",
-    "region": "OCE",
-    "rlcsLanAppearances": 3,
-    "team": "Chiefs Esports Club"
-  },
-  {
-    "DOB": "08-09-2005",
-    "fullName": "Roberto Lima de Souza",
-    "id": 88316,
-    "name": "Sad",
-    "nationality": "Brazil",
-    "region": "SAM",
-    "rlcsLanAppearances": 6,
-    "team": "LOUD"
-  },
-  {
-    "DOB": "30-04-2002",
-    "fullName": "Riccardo Mazzotta",
-    "id": 47794,
-    "name": "Rizex45",
-    "nationality": "Germany",
-    "region": "EU",
-    "rlcsLanAppearances": 1,
-    "team": "None"
-  },
-  {
-    "DOB": "21-08-2003",
-    "fullName": "Nelson Lasko",
-    "id": 58301,
-    "name": "virtuoso",
-    "nationality": "Ireland",
-    "region": "APAC",
-    "rlcsLanAppearances": 5,
-    "team": "None"
-  },
-  {
-    "DOB": "19-03-2003",
-    "fullName": "Renan Rossi de Oliveira",
-    "id": 35124,
-    "name": "renaN",
-    "nationality": "Brazil",
-    "region": "SAM",
-    "rlcsLanAppearances": 1,
-    "team": "LUK eSports"
-  },
-  {
-    "DOB": "13-09-1999",
-    "fullName": "Alex Tsoutsouras",
-    "id": 29925,
-    "name": "Decka",
-    "nationality": "Australia",
-    "region": "OCE",
-    "rlcsLanAppearances": 1,
-    "team": "None"
-  },
-  {
-    "DOB": "30-09-1999",
-    "fullName": "Jacob Knapman",
-    "id": 7436,
-    "name": "JKnaps",
-    "nationality": "Canada",
-    "region": "NA",
-    "rlcsLanAppearances": 14,
-    "team": "OG"
-  },
-  {
-    "DOB": "18-12-2001",
-    "fullName": "Kenyo Ito",
-    "id": 85273,
-    "name": "OLPiX",
-    "nationality": "Japan",
-    "region": "APAC",
-    "rlcsLanAppearances": 1,
-    "team": "None"
-  },
-  {
-    "DOB": "31-08-2004",
-    "fullName": "Osama Ahmed Al-Humaidan",
-    "id": 89077,
-    "name": "Smw",
-    "nationality": "Saudi Arabia",
-    "region": "MENA",
-    "rlcsLanAppearances": 3,
-    "team": "Twisted Minds"
-  },
-  {
-    "DOB": "30-08-2000",
-    "fullName": "Daniel Parsons",
-    "id": 20015,
-    "name": "Torsos",
-    "nationality": "Australia",
-    "region": "OCE",
-    "rlcsLanAppearances": 14,
-    "team": "PWR"
-  },
-  {
-    "DOB": "04-11-1996",
-    "fullName": "Connor Lansink",
-    "id": 1293,
-    "name": "Jessie",
-    "nationality": "Netherlands",
-    "region": "EU",
-    "rlcsLanAppearances": 1,
-    "team": "Dignitas"
-  },
-  {
-    "DOB": "26-06-2002",
-    "fullName": "Pablo Le\u00f3n Briones",
-    "id": 133207,
-    "name": "Leoro",
-    "nationality": "Spain",
-    "region": "EU",
-    "rlcsLanAppearances": 1,
-    "team": "Team Mobula"
-  },
-  {
-    "DOB": "23-04-2003",
-    "fullName": "Andr\u00e9 da Silva Mendon\u00e7a",
-    "id": 74947,
-    "name": "snipjz.",
-    "nationality": "Brazil",
-    "region": "SAM",
-    "rlcsLanAppearances": 1,
-    "team": "None"
-  },
-  {
-    "DOB": "18-08-2002",
-    "fullName": "Louis Christian Thamrun",
-    "id": 78019,
-    "name": "LCT",
-    "nationality": "Indonesia",
-    "region": "APAC",
-    "rlcsLanAppearances": 5,
-    "team": "None"
-  },
-  {
-    "DOB": "05-08-2003",
-    "fullName": "Caden Pellegrin",
-    "id": 35789,
-    "name": "Sypical",
-    "nationality": "United States",
-    "region": "NA",
-    "rlcsLanAppearances": 7,
-    "team": "None"
-  },
-  {
-    "DOB": "05-03-2005",
-    "fullName": "Charles Sabiani",
-    "id": 114101,
-    "name": "juicy",
-    "nationality": "France",
-    "region": "EU",
-    "rlcsLanAppearances": 5,
-    "team": "Gentle Mates Alpine"
-  },
-  {
-    "DOB": "11-12-2001",
-    "fullName": "Dan Bluett",
-    "id": 7318,
-    "name": "bluey.",
-    "nationality": "England",
-    "region": "EU",
-    "rlcsLanAppearances": 2,
-    "team": "Motorsport"
-  },
-  {
-    "DOB": "21-09-2000",
-    "fullName": "Aldin Hodzic",
-    "id": 28356,
-    "name": "Ronaky",
-    "nationality": "Denmark",
-    "region": "EU",
-    "rlcsLanAppearances": 1,
-    "team": "None"
-  },
-  {
-    "DOB": "31-10-1996",
-    "fullName": "Victor Francal",
-    "id": 18504,
-    "name": "Ferra",
-    "nationality": "France",
-    "region": "EU",
-    "rlcsLanAppearances": 5,
-    "team": "Karmine Corp"
-  },
-  {
-    "DOB": "01-10-2003",
-    "fullName": "Robert Kyser",
-    "id": 64519,
-    "name": "comm",
-    "nationality": "United States",
-    "region": "NA",
-    "rlcsLanAppearances": 7,
-    "team": "OG"
-  },
-  {
-    "DOB": "19-06-2004",
-    "fullName": "Lautaro Gusinsky",
-    "id": 76751,
-    "name": "ajg.",
-    "nationality": "Argentina",
-    "region": "SAM",
-    "rlcsLanAppearances": 4,
-    "team": "None"
-  },
-  {
-    "DOB": "16-10-2005",
-    "fullName": "Lachlan Gordon",
-    "id": 97534,
-    "name": "Superlachie",
-    "nationality": "Australia",
-    "region": "OCE",
-    "rlcsLanAppearances": 7,
-    "team": "QuikTrip Pioneers Gaming"
-  },
-  {
-    "DOB": "20-02-2006",
-    "fullName": "Danilo Michelini",
-    "id": 114756,
-    "name": "kv1",
-    "nationality": "Brazil",
-    "region": "SAM",
-    "rlcsLanAppearances": 6,
-    "team": "Team Secret"
-  },
-  {
-    "DOB": "05-08-2002",
-    "fullName": "Justin Morales",
-    "id": 23369,
-    "name": "jstn.",
-    "nationality": "United States",
-    "region": "NA",
-    "rlcsLanAppearances": 7,
-    "team": "Shopify Rebellion"
-  },
-  {
-    "DOB": "25-04-1995",
-    "fullName": "Christopher Jacobs",
-    "id": 4849,
-    "name": "Zanejackey",
-    "nationality": "United States",
-    "region": "NA",
-    "rlcsLanAppearances": 2,
-    "team": "None"
-  },
-  {
-    "DOB": "23-01-2006",
-    "fullName": "Jon Anastasakis",
-    "id": 100249,
-    "name": "bananahead",
-    "nationality": "Australia",
-    "region": "OCE",
-    "rlcsLanAppearances": 9,
-    "team": "PWR"
-  },
-  {
-    "DOB": "25-07-2004",
-    "fullName": "Kevin Ameye",
-    "id": 114494,
-    "name": "Kevin",
-    "nationality": "Thailand",
-    "region": "APAC",
-    "rlcsLanAppearances": 1,
-    "team": "XO Esports"
-  },
-  {
-    "DOB": "08-08-2000",
-    "fullName": "Dogukan Yilmaz",
-    "id": 1292,
-    "name": "Dogu",
-    "nationality": "Netherlands",
-    "region": "EU",
-    "rlcsLanAppearances": 1,
-    "team": "None"
-  },
-  {
     "DOB": "26-05-1998",
     "fullName": "Victor Locquet",
     "id": 11613,
@@ -586,775 +805,7 @@
     "nationality": "France",
     "region": "EU",
     "rlcsLanAppearances": 6,
-    "team": "Team Vitality"
-  },
-  {
-    "DOB": "31-10-2002",
-    "fullName": "Brice Bigeard",
-    "id": 71533,
-    "name": "ExoTiiK",
-    "nationality": "France",
-    "region": "EU",
-    "rlcsLanAppearances": 8,
-    "team": "Team BDS"
-  },
-  {
-    "DOB": "01-11-2004",
-    "fullName": "Kamran Christopher Naidoo",
-    "id": 113174,
-    "name": "kamz",
-    "nationality": "South Africa",
-    "region": "SSA",
-    "rlcsLanAppearances": 1,
-    "team": "Nkosi Ballers"
-  },
-  {
-    "DOB": "22-05-1998",
-    "fullName": "Alexandre Courant",
-    "id": 4041,
-    "name": "Kaydop",
-    "nationality": "France",
-    "region": "EU",
-    "rlcsLanAppearances": 8,
-    "team": "Solary"
-  },
-  {
-    "DOB": "07-10-2003",
-    "fullName": "Shoki Minamigawa",
-    "id": 85276,
-    "name": "Burn",
-    "nationality": "Japan",
-    "region": "APAC",
-    "rlcsLanAppearances": 1,
-    "team": "None"
-  },
-  {
-    "DOB": "20-10-2003",
-    "fullName": "Guilherme Siqueira",
-    "id": 74258,
-    "name": "droppz",
-    "nationality": "Brazil",
-    "region": "SAM",
-    "rlcsLanAppearances": 3,
-    "team": "LOUD"
-  },
-  {
-    "DOB": "03-06-2005",
-    "fullName": "Abdulmohsen Al-Khamis",
-    "id": 90016,
-    "name": "M7sn",
-    "nationality": "Saudi Arabia",
-    "region": "MENA",
-    "rlcsLanAppearances": 4,
-    "team": "Twisted Minds"
-  },
-  {
-    "DOB": "27-09-1999",
-    "fullName": "Jack Pearton",
-    "id": 23002,
-    "name": "FlamE",
-    "nationality": "England",
-    "region": "EU",
-    "rlcsLanAppearances": 1,
-    "team": "100%"
-  },
-  {
-    "DOB": "30-10-2001",
-    "fullName": "Kurtis Cannon",
-    "id": 67370,
-    "name": "Kash",
-    "nationality": "England",
-    "region": "EU",
-    "rlcsLanAppearances": 3,
-    "team": "None"
-  },
-  {
-    "DOB": "10-06-2007",
-    "fullName": "Yazid Abdullah Bakhashwin",
-    "id": 110854,
-    "name": "Kiileerrz",
-    "nationality": "Saudi Arabia",
-    "region": "MENA",
-    "rlcsLanAppearances": 5,
-    "team": "Team Falcons"
-  },
-  {
-    "DOB": "22-08-1998",
-    "fullName": "Jonathan Slade",
-    "id": 20010,
-    "name": "Express",
-    "nationality": "Australia",
-    "region": "OCE",
-    "rlcsLanAppearances": 4,
-    "team": "None"
-  },
-  {
-    "DOB": "13-05-2001",
-    "fullName": "Jackson Carter",
-    "id": 29550,
-    "name": "ayjacks",
-    "nationality": "United States",
-    "region": "NA",
-    "rlcsLanAppearances": 1,
-    "team": "Louisiana State University"
-  },
-  {
-    "DOB": "22-02-1999",
-    "fullName": "Chris Mendoza",
-    "id": 7427,
-    "name": "Dappur",
-    "nationality": "United States",
-    "region": "NA",
-    "rlcsLanAppearances": 1,
-    "team": "None"
-  },
-  {
-    "DOB": "06-08-1998",
-    "fullName": "Cameron Johns",
-    "id": 23087,
-    "name": "CJCJ",
-    "nationality": "Australia",
-    "region": "OCE",
-    "rlcsLanAppearances": 6,
-    "team": "None"
-  },
-  {
-    "fullName": "Shantanu Modak",
-    "id": 125315,
-    "name": "Commutator",
-    "nationality": "Singapore",
-    "region": "APAC",
-    "rlcsLanAppearances": 1,
-    "team": "None"
-  },
-  {
-    "DOB": "05-07-1995",
-    "fullName": "Philip Paschmeyer",
-    "id": 1574,
-    "name": "Paschy90",
-    "nationality": "Germany",
-    "region": "EU",
-    "rlcsLanAppearances": 4,
-    "team": "None"
-  },
-  {
-    "DOB": "15-02-2002",
-    "fullName": "Leonardo Christ Ramos",
-    "id": 84370,
-    "name": "Catalysm",
-    "nationality": "Germany",
-    "region": "EU",
-    "rlcsLanAppearances": 1,
-    "team": "None"
-  },
-  {
-    "DOB": "29-03-2005",
-    "fullName": "Gabriel Buzon",
-    "id": 97754,
-    "name": "Lostt",
-    "nationality": "Brazil",
-    "region": "SAM",
-    "rlcsLanAppearances": 6,
-    "team": "FURIA Esports"
-  },
-  {
-    "DOB": "02-09-2005",
-    "fullName": "Ethan Klumpp",
-    "id": 92726,
-    "name": "Scrub",
-    "nationality": "Australia",
-    "region": "OCE",
-    "rlcsLanAppearances": 7,
-    "team": "Kibbgang"
-  },
-  {
-    "DOB": "02-08-1996",
-    "fullName": "Sandro Holzwarth",
-    "id": 6683,
-    "name": "FreaKii.",
-    "nationality": "Germany",
-    "region": "EU",
-    "rlcsLanAppearances": 3,
-    "team": "RIZON"
-  },
-  {
-    "DOB": "04-08-1996",
-    "fullName": "Braden Schenetzki",
-    "id": 1490,
-    "name": "Pluto",
-    "nationality": "United States",
-    "region": "NA",
-    "rlcsLanAppearances": 3,
-    "team": "None"
-  },
-  {
-    "DOB": "21-07-2003",
-    "fullName": "Luke Riddell",
-    "id": 80384,
-    "name": "Amphis",
-    "nationality": "Australia",
-    "region": "OCE",
-    "rlcsLanAppearances": 7,
-    "team": "QuikTrip Pioneers Gaming"
-  },
-  {
-    "DOB": "10-02-1996",
-    "fullName": "Caleb Nichols",
-    "id": 1691,
-    "name": "Moses",
-    "nationality": "United States",
-    "region": "NA",
-    "rlcsLanAppearances": 2,
-    "team": "None"
-  },
-  {
-    "DOB": "18-11-2002",
-    "fullName": "Ahmad Abdullah",
-    "id": 50606,
-    "name": "Ahmad",
-    "nationality": "Saudi Arabia",
-    "region": "MENA",
-    "rlcsLanAppearances": 9,
-    "team": "None"
-  },
-  {
-    "DOB": "22-06-1999",
-    "fullName": "Nathan Logan",
-    "id": 20966,
-    "name": "shadey",
-    "nationality": "Australia",
-    "region": "OCE",
-    "rlcsLanAppearances": 1,
-    "team": "None"
-  },
-  {
-    "DOB": "15-08-1996",
-    "fullName": "Nicolai Vistesen Andersen",
-    "id": 3407,
-    "name": "Snaski",
-    "nationality": "Denmark",
-    "region": "EU",
-    "rlcsLanAppearances": 1,
-    "team": "None"
-  },
-  {
-    "DOB": "05-09-2005",
-    "fullName": "Nick Iwanski",
-    "id": 76584,
-    "name": "Chronic",
-    "nationality": "United States",
-    "region": "NA",
-    "rlcsLanAppearances": 7,
-    "team": "Gen.G Mobil1 Racing"
-  },
-  {
-    "DOB": "11-10-2006",
-    "fullName": "Jo\u00e3o Vitor Brito Motta",
-    "id": 116600,
-    "name": "Motta",
-    "nationality": "Brazil",
-    "region": "SAM",
-    "rlcsLanAppearances": 4,
-    "team": "Team Secret"
-  },
-  {
-    "DOB": "10-09-2000",
-    "fullName": "Abhai Ponna",
-    "id": 106488,
-    "name": "AbsCrazy",
-    "nationality": "India",
-    "region": "APAC",
-    "rlcsLanAppearances": 1,
-    "team": "None"
-  },
-  {
-    "DOB": "04-12-2001",
-    "fullName": "Thomas Binkhorst",
-    "id": 40305,
-    "name": "ThO.",
-    "nationality": "Netherlands",
-    "region": "APAC",
-    "rlcsLanAppearances": 2,
-    "team": "None"
-  },
-  {
-    "DOB": "05-04-1996",
-    "fullName": "Marius Ranheim",
-    "id": 1530,
-    "name": "gReazymeister",
-    "nationality": "Norway",
-    "region": "EU",
-    "rlcsLanAppearances": 3,
-    "team": "None"
-  },
-  {
-    "DOB": "02-06-2003",
-    "fullName": "Finn Mawer",
-    "id": 92509,
-    "name": "finn",
-    "nationality": "Australia",
-    "region": "OCE",
-    "rlcsLanAppearances": 1,
-    "team": "None"
-  },
-  {
-    "DOB": "25-12-2004",
-    "fullName": "Christopher Acevedo",
-    "id": 81757,
-    "name": "MaJicBear",
-    "nationality": "United States",
-    "region": "NA",
-    "rlcsLanAppearances": 2,
-    "team": "RetalsMajicCheese"
-  },
-  {
-    "DOB": "10-06-2007",
-    "fullName": "Saleh Abdullah Bakhashwin",
-    "id": 110418,
-    "name": "Rw9",
-    "nationality": "Saudi Arabia",
-    "region": "MENA",
-    "rlcsLanAppearances": 5,
-    "team": "Team Falcons"
-  },
-  {
-    "DOB": "02-04-1999",
-    "fullName": "Jason Klass",
-    "id": 4404,
-    "name": "Klassux",
-    "nationality": "United States",
-    "region": "NA",
-    "rlcsLanAppearances": 4,
-    "team": "None"
-  },
-  {
-    "DOB": "13-11-1997",
-    "fullName": "Kevin Carvalho",
-    "id": 1540,
-    "name": "Skyline",
-    "nationality": "Switzerland",
-    "region": "EU",
-    "rlcsLanAppearances": 1,
-    "team": "None"
-  },
-  {
-    "DOB": "13-11-2002",
-    "fullName": "Matheus Rodrigues",
-    "id": 56035,
-    "name": "matix",
-    "nationality": "Brazil",
-    "region": "SAM",
-    "rlcsLanAppearances": 2,
-    "team": "Elysium"
-  },
-  {
-    "DOB": "17-10-1997",
-    "fullName": "Euan Ingram",
-    "id": 28299,
-    "name": "Tadpole",
-    "nationality": "Wales",
-    "region": "EU",
-    "rlcsLanAppearances": 1,
-    "team": "None"
-  },
-  {
-    "DOB": "08-08-2003",
-    "fullName": "Facundo Vallerino",
-    "id": 103354,
-    "name": "shad",
-    "nationality": "Argentina",
-    "region": "SAM",
-    "rlcsLanAppearances": 1,
-    "team": "None"
-  },
-  {
-    "DOB": "01-06-1995",
-    "fullName": "Gabriel Vallozzi",
-    "id": 7207,
-    "name": "CorruptedG",
-    "nationality": "Canada",
-    "region": "NA",
-    "rlcsLanAppearances": 3,
-    "team": "None"
-  },
-  {
-    "DOB": "06-02-2001",
-    "fullName": "Garrett Gordon",
-    "id": 2935,
-    "name": "GarrettG",
-    "nationality": "United States",
-    "region": "NA",
-    "rlcsLanAppearances": 11,
-    "team": "NRG"
-  },
-  {
-    "DOB": "27-06-2003",
-    "fullName": "Yanis Champenois",
-    "id": 34888,
-    "name": "Alpha54",
-    "nationality": "France",
-    "region": "EU",
-    "rlcsLanAppearances": 8,
-    "team": "Team Vitality"
-  },
-  {
-    "DOB": "02-11-1998",
-    "fullName": "Jos van Meurs",
-    "id": 7128,
-    "name": "ViolentPanda",
-    "nationality": "Netherlands",
-    "region": "EU",
-    "rlcsLanAppearances": 5,
-    "team": "Dignitas"
-  },
-  {
-    "DOB": "09-03-2006",
-    "fullName": "Andres Jordan",
-    "id": 87183,
-    "name": "dreaz",
-    "nationality": "United States",
-    "region": "NA",
-    "rlcsLanAppearances": 4,
-    "team": "None"
-  },
-  {
-    "DOB": "12-07-2000",
-    "fullName": "David Morrow",
-    "id": 7060,
-    "name": "Deevo",
-    "nationality": "England",
-    "region": "EU",
-    "rlcsLanAppearances": 4,
-    "team": "None"
-  },
-  {
-    "DOB": "07-02-1997",
-    "fullName": "Daniel Hawkeswood",
-    "id": 29923,
-    "name": "Walcott",
-    "nationality": "Australia",
-    "region": "OCE",
-    "rlcsLanAppearances": 1,
-    "team": "Service 8s"
-  },
-  {
-    "DOB": "20-09-2000",
-    "fullName": "Tenhou Igushi",
-    "id": 97551,
-    "name": "Tenhow",
-    "nationality": "Japan",
-    "region": "APAC",
-    "rlcsLanAppearances": 2,
-    "team": "None"
-  },
-  {
-    "DOB": "19-11-2003",
-    "fullName": "Josh Watters",
-    "id": 101475,
-    "name": "kaka",
-    "nationality": "Australia",
-    "region": "OCE",
-    "rlcsLanAppearances": 3,
-    "team": "Chiefs Esports Club"
-  },
-  {
-    "DOB": "03-09-1999",
-    "fullName": "Braxton Lagarec",
-    "id": 22798,
-    "name": "Allushin",
-    "nationality": "Canada",
-    "region": "NA",
-    "rlcsLanAppearances": 3,
-    "team": "Gen.G Mobil1 Racing"
-  },
-  {
-    "DOB": "01-11-2004",
-    "fullName": "Pedro Henrique Lima",
-    "id": 85250,
-    "name": "brad",
-    "nationality": "Brazil",
-    "region": "SAM",
-    "rlcsLanAppearances": 5,
-    "team": "Team Secret"
-  },
-  {
-    "DOB": "09-02-2004",
-    "fullName": "Mohammed Zaid Al-Saeed",
-    "id": 89626,
-    "name": "Twiz",
-    "nationality": "Saudi Arabia",
-    "region": "MENA",
-    "rlcsLanAppearances": 1,
-    "team": "Bravado Gaming"
-  },
-  {
-    "fullName": "Michael Behrouzi",
-    "id": 3288,
-    "name": "Quinn Lobdell",
-    "nationality": "United States",
-    "region": "NA",
-    "rlcsLanAppearances": 1,
-    "team": "None"
-  },
-  {
-    "DOB": "13-08-2003",
-    "fullName": "Amine Benayachi",
-    "id": 28893,
-    "name": "itachi",
-    "nationality": "Morocco",
-    "region": "EU",
-    "rlcsLanAppearances": 9,
-    "team": "Gentle Mates Alpine"
-  },
-  {
-    "DOB": "27-12-2002",
-    "fullName": "Ethan Deysel",
-    "id": 109617,
-    "name": "Darth.",
-    "nationality": "South Africa",
-    "region": "SSA",
-    "rlcsLanAppearances": 2,
-    "team": "None"
-  },
-  {
-    "DOB": "01-01-1997",
-    "fullName": "Jacob McDowell",
-    "id": 1484,
-    "name": "Jacob",
-    "nationality": "United States",
-    "region": "NA",
-    "rlcsLanAppearances": 4,
-    "team": "None"
-  },
-  {
-    "DOB": "31-12-1998",
-    "fullName": "Enzo Toledo",
-    "id": 31229,
-    "name": "tander",
-    "nationality": "Brazil",
-    "region": "SAM",
-    "rlcsLanAppearances": 2,
-    "team": "w7m esports"
-  },
-  {
-    "DOB": "26-01-2000",
-    "fullName": "Maurice Weihs",
-    "id": 24763,
-    "name": "Yukeo",
-    "nationality": "Austria",
-    "region": "EU",
-    "rlcsLanAppearances": 2,
-    "team": "unc status"
-  },
-  {
-    "DOB": "22-02-1996",
-    "fullName": "Emil Moselund",
-    "id": 30985,
-    "name": "fruity",
-    "nationality": "Denmark",
-    "region": "EU",
-    "rlcsLanAppearances": 3,
-    "team": "Jobless"
-  },
-  {
-    "DOB": "22-02-2007",
-    "fullName": "Tristan Soyez",
-    "id": 97231,
-    "name": "Atow.",
-    "nationality": "Belgium",
-    "region": "EU",
-    "rlcsLanAppearances": 7,
-    "team": "Karmine Corp"
-  },
-  {
-    "DOB": "20-02-2004",
-    "fullName": "Victor Duran Parra",
-    "id": 76286,
-    "name": "Reysbull",
-    "nationality": "Chile",
-    "region": "SAM",
-    "rlcsLanAppearances": 5,
-    "team": "Complexity Gaming"
-  },
-  {
-    "DOB": "06-06-2000",
-    "fullName": "Kyle Storer",
-    "id": 7118,
-    "name": "torment",
-    "nationality": "United States",
-    "region": "NA",
-    "rlcsLanAppearances": 8,
-    "team": "OG"
-  },
-  {
-    "DOB": "30-08-1997",
-    "fullName": "Cameron Bills",
-    "id": 687,
-    "name": "Kronovi",
-    "nationality": "United States",
-    "region": "NA",
-    "rlcsLanAppearances": 5,
-    "team": "None"
-  },
-  {
-    "DOB": "01-08-2003",
-    "fullName": "Gabriel Vieira Cardoso",
-    "id": 35116,
-    "name": "caard",
-    "nationality": "Brazil",
-    "region": "SAM",
-    "rlcsLanAppearances": 7,
-    "team": "None"
-  },
-  {
-    "DOB": "05-09-2004",
-    "fullName": "Finlay Ferguson",
-    "id": 85652,
-    "name": "rise.",
-    "nationality": "England",
-    "region": "EU",
-    "rlcsLanAppearances": 9,
-    "team": "Karmine Corp"
-  },
-  {
-    "DOB": "05-09-2005",
-    "fullName": "Cristian Fernandez",
-    "id": 100762,
-    "name": "crr",
-    "nationality": "Spain",
-    "region": "SAM",
-    "rlcsLanAppearances": 4,
-    "team": "Complexity Gaming"
-  },
-  {
-    "DOB": "10-12-2002",
-    "fullName": "Austin Aebi",
-    "id": 25962,
-    "name": "AYYJAYY",
-    "nationality": "United States",
-    "region": "NA",
-    "rlcsLanAppearances": 6,
-    "team": "None"
-  },
-  {
-    "DOB": "14-05-2006",
-    "fullName": "Axel Touret",
-    "id": 104921,
-    "name": "Vatira",
-    "nationality": "France",
-    "region": "EU",
-    "rlcsLanAppearances": 9,
-    "team": "Karmine Corp"
-  },
-  {
-    "DOB": "14-11-1996",
-    "fullName": "Niel-Rob\u00e8rt Burger",
-    "id": 97498,
-    "name": "SkillSteal",
-    "nationality": "South Africa",
-    "region": "SSA",
-    "rlcsLanAppearances": 1,
-    "team": "None"
-  },
-  {
-    "DOB": "19-12-2002",
-    "fullName": "Khalid Qasim",
-    "id": 50625,
-    "name": "oKhaliD",
-    "nationality": "Saudi Arabia",
-    "region": "MENA",
-    "rlcsLanAppearances": 7,
-    "team": "None"
-  },
-  {
-    "DOB": "09-08-1998",
-    "fullName": "Pierre Silfver",
-    "id": 1755,
-    "name": "Turbopolsa",
-    "nationality": "Sweden",
-    "region": "NA",
-    "rlcsLanAppearances": 7,
-    "team": "None"
-  },
-  {
-    "DOB": "19-09-2003",
-    "fullName": "Gabr\u00edel Sindri Benediktsson",
-    "id": 84432,
-    "name": "OSM",
-    "nationality": "Iceland",
-    "region": "EU",
-    "rlcsLanAppearances": 2,
-    "team": "None"
-  },
-  {
-    "DOB": "14-10-1995",
-    "fullName": "Jasper van Riet",
-    "id": 1225,
-    "name": "Vogan",
-    "nationality": "Netherlands",
-    "region": "EU",
-    "rlcsLanAppearances": 1,
-    "team": "None"
-  },
-  {
-    "DOB": "06-03-2000",
-    "fullName": "Matt Dixon",
-    "id": 7213,
-    "name": "matt",
-    "nationality": "United States",
-    "region": "NA",
-    "rlcsLanAppearances": 1,
-    "team": "None"
-  },
-  {
-    "DOB": "18-10-1997",
-    "fullName": "Jayson Nunez",
-    "id": 1485,
-    "name": "Fireburner",
-    "nationality": "United States",
-    "region": "NA",
-    "rlcsLanAppearances": 7,
-    "team": "NRG"
-  },
-  {
-    "DOB": "09-01-2003",
-    "fullName": "Rub\u00e9n Santana Navarro",
-    "id": 80268,
-    "name": "ASN_RuBiiX",
-    "nationality": "Spain",
-    "region": "EU",
-    "rlcsLanAppearances": 1,
-    "team": "Team Mobula"
-  },
-  {
-    "DOB": "23-02-2007",
-    "fullName": "Oskar Gozdowski",
-    "id": 100882,
-    "name": "Oski",
-    "nationality": "Poland",
-    "region": "EU",
-    "rlcsLanAppearances": 7,
-    "team": "None"
-  },
-  {
-    "DOB": "20-10-2002",
-    "fullName": "Umar Rasool",
-    "id": 97539,
-    "name": "Werty ^^",
-    "nationality": "South Africa",
-    "region": "SSA",
-    "rlcsLanAppearances": 1,
-    "team": "None"
-  },
-  {
-    "DOB": "05-11-1996",
-    "fullName": "Emiliano Benny",
-    "id": 7439,
-    "name": "Sizz",
-    "nationality": "United States",
-    "region": "NA",
-    "rlcsLanAppearances": 1,
-    "team": "None"
+    "team": "Super Team"
   },
   {
     "DOB": "02-10-1999",
@@ -1367,134 +818,14 @@
     "team": "Nimmt55"
   },
   {
-    "DOB": "09-03-2000",
-    "fullName": "Matthew Den-Kaat",
-    "id": 20013,
-    "name": "Drippay",
-    "nationality": "Australia",
-    "region": "OCE",
-    "rlcsLanAppearances": 4,
-    "team": "None"
-  },
-  {
-    "DOB": "02-02-2002",
-    "fullName": "Joseph Kidd",
-    "id": 51246,
-    "name": "noly",
-    "nationality": "England",
+    "DOB": "20-09-1997",
+    "fullName": "Kais Zehri",
+    "id": 1483,
+    "name": "Sadjunior",
+    "nationality": "Canada",
     "region": "NA",
-    "rlcsLanAppearances": 9,
-    "team": "OG"
-  },
-  {
-    "DOB": "01-04-2004",
-    "fullName": "Andrew Nolan",
-    "id": 75287,
-    "name": "Andy",
-    "nationality": "United States",
-    "region": "NA",
-    "rlcsLanAppearances": 1,
-    "team": "Pirates on a Boat"
-  },
-  {
-    "DOB": "12-01-2004",
-    "fullName": "Andrea Radovanovi\u0107",
-    "id": 90125,
-    "name": "Radosin",
-    "nationality": "France",
-    "region": "EU",
-    "rlcsLanAppearances": 6,
-    "team": "Team Vitality"
-  },
-  {
-    "DOB": "30-09-1999",
-    "fullName": "Bandar Turki Al-Shaikh",
-    "id": 51090,
-    "name": "impressive",
-    "nationality": "Saudi Arabia",
-    "region": "MENA",
-    "rlcsLanAppearances": 1,
-    "team": "None"
-  },
-  {
-    "DOB": "12-06-2001",
-    "fullName": "Reed Wilen",
-    "id": 23362,
-    "name": "Chicago",
-    "nationality": "United States",
-    "region": "NA",
-    "rlcsLanAppearances": 11,
-    "team": "Spacestation Gaming"
-  },
-  {
-    "DOB": "26-01-1999",
-    "fullName": "Jesus Gutierrez",
-    "id": 7430,
-    "name": "Mijo.",
-    "nationality": "United States",
-    "region": "NA",
-    "rlcsLanAppearances": 1,
-    "team": "None"
-  },
-  {
-    "DOB": "11-03-2005",
-    "fullName": "Archie Pickthall",
-    "id": 85194,
-    "name": "archie",
-    "nationality": "England",
-    "region": "EU",
-    "rlcsLanAppearances": 8,
-    "team": "None"
-  },
-  {
-    "DOB": "12-07-2000",
-    "fullName": "Gareth Spiers",
-    "id": 97509,
-    "name": "Snowyy",
-    "nationality": "South Africa",
-    "region": "SSA",
-    "rlcsLanAppearances": 4,
-    "team": "Limitless"
-  },
-  {
-    "DOB": "12-12-1998",
-    "fullName": "Otto Kaipiainen",
-    "id": 7304,
-    "name": "Metsanauris",
-    "nationality": "Finland",
-    "region": "EU",
-    "rlcsLanAppearances": 7,
-    "team": "None"
-  },
-  {
-    "DOB": "10-02-1996",
-    "fullName": "Mark Exton",
-    "id": 1296,
-    "name": "Markydooda",
-    "nationality": "Scotland",
-    "region": "EU",
     "rlcsLanAppearances": 3,
-    "team": "None"
-  },
-  {
-    "DOB": "27-03-2001",
-    "fullName": "Marc Domingo Ruiz",
-    "id": 47800,
-    "name": "MaRc_By_8.",
-    "nationality": "Spain",
-    "region": "EU",
-    "rlcsLanAppearances": 3,
-    "team": "JJROX"
-  },
-  {
-    "DOB": "22-02-2002",
-    "fullName": "Aidan Hui",
-    "id": 23078,
-    "name": "zenulous",
-    "nationality": "Australia",
-    "region": "OCE",
-    "rlcsLanAppearances": 1,
-    "team": "None"
+    "team": "The Ultimates"
   },
   {
     "fullName": "Trevor Carmody",
@@ -1506,194 +837,64 @@
     "team": "None"
   },
   {
-    "DOB": "29-03-1993",
-    "fullName": "Robert Louis Gomez",
-    "id": 7110,
-    "name": "Chrome",
-    "nationality": "United States",
-    "region": "NA",
-    "rlcsLanAppearances": 1,
-    "team": "Gen.G Mobil1 Racing"
-  },
-  {
-    "DOB": "02-09-1996",
-    "fullName": "Ted Keil",
-    "id": 3320,
-    "name": "0ver Zer0",
-    "nationality": "United States",
-    "region": "NA",
-    "rlcsLanAppearances": 1,
-    "team": "None"
-  },
-  {
-    "DOB": "23-01-2002",
-    "fullName": "Colby James",
-    "id": 41523,
-    "name": "hockser",
-    "nationality": "United States",
-    "region": "NA",
-    "rlcsLanAppearances": 5,
-    "team": "Spacestation Gaming"
-  },
-  {
-    "DOB": "29-06-2002",
-    "fullName": "Dylan Pickering",
-    "id": 34467,
-    "name": "eekso",
-    "nationality": "England",
-    "region": "EU",
-    "rlcsLanAppearances": 2,
-    "team": "Jobless"
-  },
-  {
-    "DOB": "28-05-2001",
-    "fullName": "Ahmed Ayed",
-    "id": 104903,
-    "name": "Senzo",
-    "nationality": "Saudi Arabia",
-    "region": "MENA",
-    "rlcsLanAppearances": 3,
-    "team": "None"
-  },
-  {
-    "DOB": "31-03-1997",
-    "fullName": "Linus M\u00f6llergren",
-    "id": 3728,
-    "name": "al0t",
-    "nationality": "Sweden",
-    "region": "EU",
-    "rlcsLanAppearances": 2,
-    "team": "None"
-  },
-  {
-    "DOB": "07-08-2005",
-    "fullName": "Joshua Kleynhans",
-    "id": 115204,
-    "name": "Sweaty_Clarence",
-    "nationality": "South Africa",
-    "region": "SSA",
-    "rlcsLanAppearances": 3,
-    "team": "Limitless"
-  },
-  {
-    "DOB": "12-11-2001",
-    "fullName": "Alexandre Paoli",
-    "id": 56290,
-    "name": "Extra",
-    "nationality": "France",
-    "region": "EU",
-    "rlcsLanAppearances": 4,
-    "team": "None"
-  },
-  {
-    "DOB": "17-09-1999",
-    "fullName": "Christopher Magee",
-    "id": 23071,
-    "name": "Siki",
-    "nationality": "Australia",
-    "region": "OCE",
-    "rlcsLanAppearances": 2,
-    "team": "None"
-  },
-  {
-    "DOB": "07-07-2005",
-    "fullName": "Bruno Alexandre dos Santos Lopes",
-    "id": 97702,
-    "name": "AcroniK.",
-    "nationality": "Portugal",
-    "region": "EU",
-    "rlcsLanAppearances": 5,
-    "team": "Luna Galaxy"
-  },
-  {
-    "DOB": "24-11-2003",
-    "fullName": "Ole van Doorn",
-    "id": 80578,
-    "name": "oaly.",
-    "nationality": "Netherlands",
-    "region": "EU",
-    "rlcsLanAppearances": 2,
-    "team": "Jobless"
-  },
-  {
-    "DOB": "03-02-2000",
-    "fullName": "Tom Jullienne",
-    "id": 27334,
-    "name": "Julz",
-    "nationality": "Australia",
-    "region": "OCE",
-    "rlcsLanAppearances": 2,
-    "team": "None"
-  },
-  {
-    "DOB": "28-06-2003",
-    "fullName": "Max Ng",
-    "id": 51797,
-    "name": "Maxeew",
-    "nationality": "Ireland",
-    "region": "APAC",
-    "rlcsLanAppearances": 6,
-    "team": "None"
-  },
-  {
-    "DOB": "20-04-2001",
-    "fullName": "Maclean Rees",
-    "id": 56915,
-    "name": "Le Duck",
-    "nationality": "Australia",
-    "region": "OCE",
-    "rlcsLanAppearances": 1,
-    "team": "None"
-  },
-  {
-    "DOB": "01-10-2004",
-    "fullName": "Sergio P\u00e9rez Cort\u00e9s",
-    "id": 80221,
-    "name": "AtomiK",
-    "nationality": "Spain",
-    "region": "EU",
-    "rlcsLanAppearances": 2,
-    "team": "Luna Galaxy"
-  },
-  {
-    "DOB": "03-05-2001",
-    "fullName": "Shogo Ikeyama",
-    "id": 28623,
-    "name": "ReaLize",
-    "nationality": "Japan",
-    "region": "APAC",
-    "rlcsLanAppearances": 5,
-    "team": "None"
-  },
-  {
-    "DOB": "08-03-2005",
-    "fullName": "Joris Robben",
-    "id": 85648,
-    "name": "Joreuz",
-    "nationality": "Netherlands",
-    "region": "EU",
-    "rlcsLanAppearances": 6,
-    "team": "None"
-  },
-  {
-    "DOB": "15-05-2004",
-    "fullName": "Luiz Fellipe Lopes Gomes",
-    "id": 83292,
-    "name": "Aztromick",
+    "DOB": "08-02-2002",
+    "fullName": "Felipe Pereira Chaves",
+    "id": 35118,
+    "name": "repi",
     "nationality": "Brazil",
     "region": "SAM",
-    "rlcsLanAppearances": 5,
+    "rlcsLanAppearances": 1,
+    "team": "Shaman Esports"
+  },
+  {
+    "DOB": "05-12-2006",
+    "fullName": "Daniel Piecenski",
+    "id": 93667,
+    "name": "Daniel",
+    "nationality": "United States",
+    "region": "NA",
+    "rlcsLanAppearances": 7,
+    "team": "NRG"
+  },
+  {
+    "DOB": "11-09-1998",
+    "fullName": "Isaac Cooper",
+    "id": 86857,
+    "name": "sigms",
+    "nationality": "United States",
+    "region": "APAC",
+    "rlcsLanAppearances": 1,
     "team": "None"
   },
   {
-    "DOB": "19-12-2004",
-    "fullName": "Jason Corral",
-    "id": 36472,
-    "name": "Firstkiller",
+    "DOB": "18-10-1997",
+    "fullName": "Jayson Nunez",
+    "id": 1485,
+    "name": "Fireburner",
     "nationality": "United States",
     "region": "NA",
-    "rlcsLanAppearances": 10,
-    "team": "Gen.G Mobil1 Racing"
+    "rlcsLanAppearances": 7,
+    "team": "9Lives"
+  },
+  {
+    "DOB": "20-10-2002",
+    "fullName": "Umar Rasool",
+    "id": 97539,
+    "name": "Werty ^^",
+    "nationality": "South Africa",
+    "region": "SSA",
+    "rlcsLanAppearances": 1,
+    "team": "CosmiCo Esports"
+  },
+  {
+    "DOB": "05-06-2006",
+    "fullName": "Bernardo Siqueira Marta",
+    "id": 114558,
+    "name": "Bemmz",
+    "nationality": "Brazil",
+    "region": "SAM",
+    "rlcsLanAppearances": 3,
+    "team": "Godfidence"
   },
   {
     "DOB": "16-09-2002",
@@ -1701,18 +902,78 @@
     "id": 74940,
     "name": "RelatingWave",
     "nationality": "England",
-    "region": "EU",
+    "region": "NA",
     "rlcsLanAppearances": 5,
-    "team": "None"
+    "team": "Team Evo"
   },
   {
-    "DOB": "04-12-2000",
-    "fullName": "Shun Yokota",
-    "id": 80090,
-    "name": "mikan",
-    "nationality": "Japan",
-    "region": "APAC",
+    "DOB": "09-02-2004",
+    "fullName": "Mohammed Zaid Al-Saeed",
+    "id": 89626,
+    "name": "Twiz",
+    "nationality": "Saudi Arabia",
+    "region": "MENA",
     "rlcsLanAppearances": 1,
+    "team": "Team X"
+  },
+  {
+    "DOB": "19-06-2004",
+    "fullName": "Lautaro Francisco Gusinsky",
+    "id": 76751,
+    "name": "ajg",
+    "nationality": "Argentina",
+    "region": "EU",
+    "rlcsLanAppearances": 4,
+    "team": "Synergy"
+  },
+  {
+    "DOB": "23-04-2005",
+    "fullName": "Logan Wilt",
+    "id": 84978,
+    "name": "Lj",
+    "nationality": "United States",
+    "region": "NA",
+    "rlcsLanAppearances": 5,
+    "team": "The Ultimates"
+  },
+  {
+    "DOB": "26-05-1997",
+    "fullName": "Dillon Rizzo",
+    "id": 2451,
+    "name": "Rizzo",
+    "nationality": "United States",
+    "region": "NA",
+    "rlcsLanAppearances": 5,
+    "team": "Shopify Rebellion"
+  },
+  {
+    "DOB": "13-10-1999",
+    "fullName": "David du Plessis",
+    "id": 97511,
+    "name": "Happymeal",
+    "nationality": "South Africa",
+    "region": "SSA",
+    "rlcsLanAppearances": 1,
+    "team": "Onlyphans"
+  },
+  {
+    "DOB": "20-10-2003",
+    "fullName": "Guilherme Siqueira",
+    "id": 74258,
+    "name": "droppz",
+    "nationality": "Brazil",
+    "region": "SAM",
+    "rlcsLanAppearances": 3,
+    "team": "Corinthians Esports"
+  },
+  {
+    "DOB": "02-04-1999",
+    "fullName": "Jason Klass",
+    "id": 4404,
+    "name": "Klassux",
+    "nationality": "United States",
+    "region": "NA",
+    "rlcsLanAppearances": 4,
     "team": "None"
   },
   {
@@ -1726,73 +987,64 @@
     "team": "None"
   },
   {
-    "DOB": "16-08-1997",
-    "fullName": "Connor Montgomery",
-    "id": 20006,
-    "name": "Montyconnor",
-    "nationality": "New Zealand",
-    "region": "OCE",
-    "rlcsLanAppearances": 1,
-    "team": "None"
-  },
-  {
-    "DOB": "21-06-2003",
-    "fullName": "Ivan Sabri",
-    "id": 87858,
-    "name": "ivn.",
-    "nationality": "Austria",
+    "DOB": "24-04-2001",
+    "fullName": "Andy Landais",
+    "id": 28286,
+    "name": "Kassio",
+    "nationality": "France",
     "region": "EU",
-    "rlcsLanAppearances": 1,
-    "team": "None"
+    "rlcsLanAppearances": 4,
+    "team": "Team Vitality"
   },
   {
-    "DOB": "26-07-2005",
-    "fullName": "Mohammed Alotaibi",
-    "id": 100098,
-    "name": "trk511",
-    "nationality": "Saudi Arabia",
-    "region": "MENA",
-    "rlcsLanAppearances": 10,
-    "team": "Team Falcons"
+    "DOB": "19-11-2003",
+    "fullName": "Josh Watters",
+    "id": 101475,
+    "name": "kaka",
+    "nationality": "Australia",
+    "region": "OCE",
+    "rlcsLanAppearances": 3,
+    "team": "TSM"
   },
   {
-    "DOB": "12-08-2003",
-    "fullName": "Massimo Franceschi",
-    "id": 52237,
-    "name": "Atomic",
+    "DOB": "04-07-2006",
+    "fullName": "Ol\u00edmpio Torres",
+    "id": 113840,
+    "name": "nxghtt",
+    "nationality": "Brazil",
+    "region": "SAM",
+    "rlcsLanAppearances": 6,
+    "team": "LF ORG"
+  },
+  {
+    "DOB": "13-10-2002",
+    "fullName": "Jirair Papazian",
+    "id": 36235,
+    "name": "Gyro.",
     "nationality": "United States",
     "region": "NA",
-    "rlcsLanAppearances": 10,
-    "team": "G2 Stride"
+    "rlcsLanAppearances": 1,
+    "team": "Deleted Gaming"
   },
   {
-    "fullName": "Alexander Karelin",
-    "id": 2518,
-    "name": "Sikii",
-    "nationality": "Germany",
+    "DOB": "01-06-1996",
+    "fullName": "David Lawrie",
+    "id": 4359,
+    "name": "miztik",
+    "nationality": "Scotland",
     "region": "EU",
     "rlcsLanAppearances": 3,
     "team": "None"
   },
   {
-    "DOB": "28-06-2005",
-    "fullName": "Arthur Langsch Miguel",
-    "id": 89805,
-    "name": "drufinho",
-    "nationality": "Brazil",
-    "region": "SAM",
-    "rlcsLanAppearances": 6,
-    "team": "FURIA Esports"
-  },
-  {
-    "DOB": "04-06-1997",
-    "fullName": "Nicolai Bang",
-    "id": 1532,
-    "name": "Maestro",
-    "nationality": "Denmark",
-    "region": "EU",
-    "rlcsLanAppearances": 2,
-    "team": "None"
+    "DOB": "03-05-2001",
+    "fullName": "Shogo Ikeyama",
+    "id": 28623,
+    "name": "ReaLize",
+    "nationality": "Japan",
+    "region": "APAC",
+    "rlcsLanAppearances": 5,
+    "team": "KINOTROPE gaming"
   },
   {
     "DOB": "07-02-2000",
@@ -1805,14 +1057,14 @@
     "team": "None"
   },
   {
-    "DOB": "02-01-2003",
-    "fullName": "Slater Thomas",
-    "id": 34065,
-    "name": "Retals",
-    "nationality": "United States",
-    "region": "NA",
-    "rlcsLanAppearances": 6,
-    "team": "RetalsMajicCheese"
+    "DOB": "05-07-1995",
+    "fullName": "Philip Paschmeyer",
+    "id": 1574,
+    "name": "Paschy90",
+    "nationality": "Germany",
+    "region": "EU",
+    "rlcsLanAppearances": 4,
+    "team": "None"
   },
   {
     "DOB": "06-09-1996",
@@ -1821,6 +1073,623 @@
     "name": "Roll Dizz",
     "nationality": "United States",
     "region": "NA",
+    "rlcsLanAppearances": 1,
+    "team": "Deleted Gaming"
+  },
+  {
+    "DOB": "10-12-2002",
+    "fullName": "Austin Aebi",
+    "id": 25962,
+    "name": "AYYJAYY",
+    "nationality": "United States",
+    "region": "NA",
+    "rlcsLanAppearances": 6,
+    "team": "G.A.S."
+  },
+  {
+    "DOB": "08-08-2000",
+    "fullName": "Dogukan Yilmaz",
+    "id": 1292,
+    "name": "Dogu",
+    "nationality": "Netherlands",
+    "region": "EU",
+    "rlcsLanAppearances": 1,
+    "team": "None"
+  },
+  {
+    "DOB": "27-06-2003",
+    "fullName": "Yanis Champenois",
+    "id": 34888,
+    "name": "Alpha54",
+    "nationality": "France",
+    "region": "EU",
+    "rlcsLanAppearances": 8,
+    "team": "Team Vitality"
+  },
+  {
+    "DOB": "23-09-2003",
+    "fullName": "Jack Benton",
+    "id": 85949,
+    "name": "ApparentlyJack",
+    "nationality": "England",
+    "region": "NA",
+    "rlcsLanAppearances": 10,
+    "team": "Dignitas"
+  },
+  {
+    "DOB": "04-06-1997",
+    "fullName": "Nicolai Bang",
+    "id": 1532,
+    "name": "Maestro",
+    "nationality": "Denmark",
+    "region": "EU",
+    "rlcsLanAppearances": 2,
+    "team": "None"
+  },
+  {
+    "DOB": "25-04-1995",
+    "fullName": "Christopher Jacobs",
+    "id": 4849,
+    "name": "Zanejackey",
+    "nationality": "United States",
+    "region": "NA",
+    "rlcsLanAppearances": 2,
+    "team": "None"
+  },
+  {
+    "DOB": "06-08-1998",
+    "fullName": "Cameron Johns",
+    "id": 23087,
+    "name": "CJCJ",
+    "nationality": "Australia",
+    "region": "OCE",
+    "rlcsLanAppearances": 6,
+    "team": "Shopify Rebellion"
+  },
+  {
+    "DOB": "06-03-2000",
+    "fullName": "Matt Dixon",
+    "id": 7213,
+    "name": "matt",
+    "nationality": "United States",
+    "region": "NA",
+    "rlcsLanAppearances": 1,
+    "team": "None"
+  },
+  {
+    "DOB": "14-11-1996",
+    "fullName": "Niel-Rob\u00e8rt Burger",
+    "id": 97498,
+    "name": "SkillSteal",
+    "nationality": "South Africa",
+    "region": "SSA",
+    "rlcsLanAppearances": 1,
+    "team": "None"
+  },
+  {
+    "DOB": "22-02-1996",
+    "fullName": "Emil Moselund",
+    "id": 30985,
+    "name": "fruity",
+    "nationality": "Denmark",
+    "region": "EU",
+    "rlcsLanAppearances": 3,
+    "team": "None"
+  },
+  {
+    "DOB": "26-01-1999",
+    "fullName": "Jesus Gutierrez",
+    "id": 7430,
+    "name": "Mijo.",
+    "nationality": "United States",
+    "region": "NA",
+    "rlcsLanAppearances": 1,
+    "team": "None"
+  },
+  {
+    "DOB": "20-09-2000",
+    "fullName": "Tenhou Igushi",
+    "id": 97551,
+    "name": "Tenhow",
+    "nationality": "Japan",
+    "region": "APAC",
+    "rlcsLanAppearances": 2,
+    "team": "None"
+  },
+  {
+    "DOB": "13-09-1999",
+    "fullName": "Alex Tsoutsouras",
+    "id": 29925,
+    "name": "Decka",
+    "nationality": "Australia",
+    "region": "OCE",
+    "rlcsLanAppearances": 1,
+    "team": "PWR"
+  },
+  {
+    "DOB": "12-07-2000",
+    "fullName": "David Morrow",
+    "id": 7060,
+    "name": "Deevo",
+    "nationality": "England",
+    "region": "EU",
+    "rlcsLanAppearances": 4,
+    "team": "None"
+  },
+  {
+    "DOB": "02-09-2005",
+    "fullName": "Ethan Klumpp",
+    "id": 92726,
+    "name": "Scrub",
+    "nationality": "Australia",
+    "region": "OCE",
+    "rlcsLanAppearances": 7,
+    "team": "PWR"
+  },
+  {
+    "DOB": "29-11-2000",
+    "fullName": "Mariano Arruda",
+    "id": 9111,
+    "name": "SquishyMuffinz",
+    "nationality": "Canada",
+    "region": "NA",
+    "rlcsLanAppearances": 7,
+    "team": "G.A.S."
+  },
+  {
+    "DOB": "2004",
+    "fullName": "Mishal Alqahtani",
+    "id": 130846,
+    "name": "Mesho",
+    "nationality": "Saudi Arabia",
+    "region": "MENA",
+    "rlcsLanAppearances": 1,
+    "team": "Twisted Minds"
+  },
+  {
+    "DOB": "09-01-2003",
+    "fullName": "Rub\u00e9n Santana Navarro",
+    "id": 80268,
+    "name": "ASN_RuBiiX",
+    "nationality": "Spain",
+    "region": "EU",
+    "rlcsLanAppearances": 1,
+    "team": "Dunno Chief"
+  },
+  {
+    "DOB": "13-11-2002",
+    "fullName": "Matheus Rodrigues",
+    "id": 56035,
+    "name": "matix",
+    "nationality": "Brazil",
+    "region": "SAM",
+    "rlcsLanAppearances": 2,
+    "team": "Elysium"
+  },
+  {
+    "fullName": "Alexander Karelin",
+    "id": 2518,
+    "name": "Sikii",
+    "nationality": "Germany",
+    "region": "EU",
+    "rlcsLanAppearances": 3,
+    "team": "None"
+  },
+  {
+    "DOB": "07-10-2003",
+    "fullName": "Shoki Minamigawa",
+    "id": 85276,
+    "name": "Burn",
+    "nationality": "Japan",
+    "region": "APAC",
+    "rlcsLanAppearances": 1,
+    "team": "None"
+  },
+  {
+    "DOB": "26-07-2005",
+    "fullName": "Mohammed Khalid Alotaibi",
+    "id": 100098,
+    "name": "trk511",
+    "nationality": "Saudi Arabia",
+    "region": "MENA",
+    "rlcsLanAppearances": 10,
+    "team": "Team Falcons"
+  },
+  {
+    "fullName": "Alex McDonald",
+    "id": 23085,
+    "name": "Kia",
+    "nationality": "Australia",
+    "region": "OCE",
+    "rlcsLanAppearances": 1,
+    "team": "None"
+  },
+  {
+    "DOB": "03-08-2005",
+    "fullName": "Landon Konerman",
+    "id": 84761,
+    "name": "BeastMode",
+    "nationality": "United States",
+    "region": "NA",
+    "rlcsLanAppearances": 7,
+    "team": "NRG"
+  },
+  {
+    "DOB": "16-10-2005",
+    "fullName": "Lachlan Gordon",
+    "id": 97534,
+    "name": "Superlachie",
+    "nationality": "Australia",
+    "region": "OCE",
+    "rlcsLanAppearances": 7,
+    "team": "TSM"
+  },
+  {
+    "DOB": "20-02-2007",
+    "fullName": "Alexis Bernier",
+    "id": 105966,
+    "name": "zen",
+    "nationality": "France",
+    "region": "EU",
+    "rlcsLanAppearances": 5,
+    "team": "Team Vitality"
+  },
+  {
+    "DOB": "15-06-2005",
+    "fullName": "Carlos Aguado",
+    "id": 106655,
+    "name": "CHEESE.",
+    "nationality": "United States",
+    "region": "NA",
+    "rlcsLanAppearances": 1,
+    "team": "Gen.G Mobil1 Racing"
+  },
+  {
+    "DOB": "09-03-2000",
+    "fullName": "Matthew Den-Kaat",
+    "id": 20013,
+    "name": "Drippay",
+    "nationality": "Australia",
+    "region": "OCE",
+    "rlcsLanAppearances": 4,
+    "team": "None"
+  },
+  {
+    "DOB": "14-05-2006",
+    "fullName": "Axel Touret",
+    "id": 104921,
+    "name": "Vatira",
+    "nationality": "France",
+    "region": "EU",
+    "rlcsLanAppearances": 9,
+    "team": "Karmine Corp"
+  },
+  {
+    "DOB": "27-12-2002",
+    "fullName": "Ethan Deysel",
+    "id": 109617,
+    "name": "Darth.",
+    "nationality": "South Africa",
+    "region": "SSA",
+    "rlcsLanAppearances": 2,
+    "team": "None"
+  },
+  {
+    "DOB": "06-10-2007",
+    "fullName": "Samy Hajji",
+    "id": 109454,
+    "name": "dralii",
+    "nationality": "Morocco",
+    "region": "EU",
+    "rlcsLanAppearances": 3,
+    "team": "Karmine Corp"
+  },
+  {
+    "DOB": "29-06-2002",
+    "fullName": "Dylan Pickering",
+    "id": 34467,
+    "name": "eekso",
+    "nationality": "England",
+    "region": "EU",
+    "rlcsLanAppearances": 2,
+    "team": "Strictly Business"
+  },
+  {
+    "DOB": "07-08-2005",
+    "fullName": "Joshua Kleynhans",
+    "id": 115204,
+    "name": "Sweaty_Clarence",
+    "nationality": "South Africa",
+    "region": "SSA",
+    "rlcsLanAppearances": 3,
+    "team": "Limitless"
+  },
+  {
+    "DOB": "01-08-2005",
+    "fullName": "Enzo Tremblay",
+    "id": 119868,
+    "name": "Wiiilooo",
+    "nationality": "R\u00e9union",
+    "region": "SSA",
+    "rlcsLanAppearances": 1,
+    "team": "Decimate Gaming"
+  },
+  {
+    "DOB": "01-01-1997",
+    "fullName": "Jacob McDowell",
+    "id": 1484,
+    "name": "Jacob",
+    "nationality": "United States",
+    "region": "NA",
+    "rlcsLanAppearances": 4,
+    "team": "None"
+  },
+  {
+    "DOB": "16-03-2001",
+    "fullName": "Thibault Grzesiak",
+    "id": 7080,
+    "name": "Chausette45",
+    "nationality": "France",
+    "region": "EU",
+    "rlcsLanAppearances": 6,
+    "team": "Super Team"
+  },
+  {
+    "DOB": "23-04-2003",
+    "fullName": "Andr\u00e9 da Silva Mendon\u00e7a",
+    "id": 74947,
+    "name": "snipjz.",
+    "nationality": "Brazil",
+    "region": "SAM",
+    "rlcsLanAppearances": 1,
+    "team": "Oblivion Esports"
+  },
+  {
+    "DOB": "22-08-2003",
+    "fullName": "Nick Costello",
+    "id": 46146,
+    "name": "mist",
+    "nationality": "United States",
+    "region": "NA",
+    "rlcsLanAppearances": 7,
+    "team": "None"
+  },
+  {
+    "DOB": "08-09-2005",
+    "fullName": "Roberto Lima de Souza",
+    "id": 88316,
+    "name": "Sad",
+    "nationality": "Brazil",
+    "region": "SAM",
+    "rlcsLanAppearances": 6,
+    "team": "Corinthians Esports"
+  },
+  {
+    "DOB": "31-03-1995",
+    "fullName": "Treyven Robitaille",
+    "id": 7125,
+    "name": "Lethamyr",
+    "nationality": "Canada",
+    "region": "NA",
+    "rlcsLanAppearances": 2,
+    "team": "Spacestation Gaming"
+  },
+  {
+    "DOB": "25-07-2004",
+    "fullName": "Kevin Ameye",
+    "id": 114494,
+    "name": "Kevin",
+    "nationality": "Thailand",
+    "region": "APAC",
+    "rlcsLanAppearances": 1,
+    "team": "90+7"
+  },
+  {
+    "DOB": "30-09-1999",
+    "fullName": "Jacob Knapman",
+    "id": 7436,
+    "name": "JKnaps",
+    "nationality": "Canada",
+    "region": "NA",
+    "rlcsLanAppearances": 14,
+    "team": "Pioneers"
+  },
+  {
+    "DOB": "02-01-2003",
+    "fullName": "Slater Thomas",
+    "id": 34065,
+    "name": "Retals",
+    "nationality": "United States",
+    "region": "NA",
+    "rlcsLanAppearances": 6,
+    "team": "Gen.G Mobil1 Racing"
+  },
+  {
+    "DOB": "04-11-1996",
+    "fullName": "Connor Lansink",
+    "id": 1293,
+    "name": "Jessie",
+    "nationality": "Netherlands",
+    "region": "EU",
+    "rlcsLanAppearances": 1,
+    "team": "Dignitas"
+  },
+  {
+    "DOB": "12-08-2003",
+    "fullName": "Massimo Franceschi",
+    "id": 52237,
+    "name": "Atomic",
+    "nationality": "United States",
+    "region": "NA",
+    "rlcsLanAppearances": 10,
+    "team": "NRG"
+  },
+  {
+    "DOB": "15-08-1996",
+    "fullName": "Nicolai Vistesen Andersen",
+    "id": 3407,
+    "name": "Snaski",
+    "nationality": "Denmark",
+    "region": "EU",
+    "rlcsLanAppearances": 1,
+    "team": "Ninjas in Pyjamas"
+  },
+  {
+    "DOB": "14-10-1995",
+    "fullName": "Jasper van Riet",
+    "id": 1225,
+    "name": "Vogan",
+    "nationality": "Netherlands",
+    "region": "EU",
+    "rlcsLanAppearances": 1,
+    "team": "None"
+  },
+  {
+    "DOB": "19-02-1997",
+    "fullName": "Francesco Cinquemani",
+    "id": 1359,
+    "name": "kuxir97",
+    "nationality": "Italy",
+    "region": "EU",
+    "rlcsLanAppearances": 4,
+    "team": "Fent and Friends"
+  },
+  {
+    "fullName": "Michael Behrouzi",
+    "id": 3288,
+    "name": "Quinn Lobdell",
+    "nationality": "United States",
+    "region": "NA",
+    "rlcsLanAppearances": 1,
+    "team": "None"
+  },
+  {
+    "DOB": "08-05-2003",
+    "fullName": "Kyle Robertson",
+    "id": 1404,
+    "name": "Scrub Killa",
+    "nationality": "Scotland",
+    "region": "EU",
+    "rlcsLanAppearances": 5,
+    "team": "None"
+  },
+  {
+    "DOB": "29-03-2005",
+    "fullName": "Gabriel Souza Buzon",
+    "id": 97754,
+    "name": "Lostt",
+    "nationality": "Brazil",
+    "region": "SAM",
+    "rlcsLanAppearances": 6,
+    "team": "FURIA Esports"
+  },
+  {
+    "DOB": "18-12-2001",
+    "fullName": "Kenyo Ito",
+    "id": 85273,
+    "name": "OLPiX",
+    "nationality": "Japan",
+    "region": "APAC",
+    "rlcsLanAppearances": 1,
+    "team": "None"
+  },
+  {
+    "DOB": "02-02-2002",
+    "fullName": "Joseph Kidd",
+    "id": 51246,
+    "name": "noly",
+    "nationality": "England",
+    "region": "NA",
+    "rlcsLanAppearances": 9,
+    "team": "None"
+  },
+  {
+    "DOB": "01-08-2003",
+    "fullName": "Gabriel Vieira Cardoso",
+    "id": 35116,
+    "name": "caard",
+    "nationality": "Brazil",
+    "region": "SAM",
+    "rlcsLanAppearances": 7,
+    "team": "Sunset"
+  },
+  {
+    "DOB": "26-12-2002",
+    "fullName": "Ma\u00ebllo Ernst",
+    "id": 40330,
+    "name": "AztraL",
+    "nationality": "Belgium",
+    "region": "EU",
+    "rlcsLanAppearances": 4,
+    "team": "Save the game"
+  },
+  {
+    "DOB": "03-06-2005",
+    "fullName": "Abdulmohsen Al-Khamis",
+    "id": 90016,
+    "name": "M7sn",
+    "nationality": "Saudi Arabia",
+    "region": "MENA",
+    "rlcsLanAppearances": 4,
+    "team": "MTS"
+  },
+  {
+    "DOB": "02-06-2003",
+    "fullName": "Finn Mawer",
+    "id": 92509,
+    "name": "finn",
+    "nationality": "Australia",
+    "region": "OCE",
+    "rlcsLanAppearances": 1,
+    "team": "Ground Zero Gaming"
+  },
+  {
+    "DOB": "23-02-1995",
+    "fullName": "Michael Costello",
+    "id": 1358,
+    "name": "M1k3Rules",
+    "nationality": "Ireland",
+    "region": "EU",
+    "rlcsLanAppearances": 1,
+    "team": "None"
+  },
+  {
+    "DOB": "15-11-2002",
+    "fullName": "Evan Rogez",
+    "id": 51274,
+    "name": "M0nkey M00n",
+    "nationality": "France",
+    "region": "EU",
+    "rlcsLanAppearances": 9,
+    "team": "Team Vitality"
+  },
+  {
+    "DOB": "12-05-2007",
+    "fullName": "Jordan Manley",
+    "id": 109379,
+    "name": "Evoh",
+    "nationality": "United States",
+    "region": "NA",
+    "rlcsLanAppearances": 1,
+    "team": "tech"
+  },
+  {
+    "DOB": "04-12-2000",
+    "fullName": "Shun Yokota",
+    "id": 80090,
+    "name": "mikan",
+    "nationality": "Japan",
+    "region": "APAC",
+    "rlcsLanAppearances": 1,
+    "team": "None"
+  },
+  {
+    "DOB": "27-09-1999",
+    "fullName": "Jack Pearton",
+    "id": 23002,
+    "name": "FlamE",
+    "nationality": "England",
+    "region": "EU",
     "rlcsLanAppearances": 1,
     "team": "None"
   },
@@ -1835,193 +1704,14 @@
     "team": "None"
   },
   {
-    "DOB": "23-02-1995",
-    "fullName": "Michael Costello",
-    "id": 1358,
-    "name": "M1k3Rules",
-    "nationality": "Ireland",
-    "region": "EU",
-    "rlcsLanAppearances": 1,
-    "team": "None"
-  },
-  {
-    "DOB": "06-10-2007",
-    "fullName": "Samy",
-    "id": 109454,
-    "name": "dralii",
-    "nationality": "Morocco",
+    "DOB": "30-10-2001",
+    "fullName": "Kurtis Cannon",
+    "id": 67370,
+    "name": "Kash",
+    "nationality": "England",
     "region": "EU",
     "rlcsLanAppearances": 3,
-    "team": "Team BDS"
-  },
-  {
-    "DOB": "05-12-2006",
-    "fullName": "Daniel Piecenski",
-    "id": 93667,
-    "name": "Daniel",
-    "nationality": "United States",
-    "region": "NA",
-    "rlcsLanAppearances": 7,
-    "team": "G2 Stride"
-  },
-  {
-    "DOB": "26-05-1997",
-    "fullName": "Dillon Rizzo",
-    "id": 2451,
-    "name": "Rizzo",
-    "nationality": "United States",
-    "region": "NA",
-    "rlcsLanAppearances": 5,
-    "team": "Moist Esports"
-  },
-  {
-    "DOB": "04-07-2006",
-    "fullName": "Ol\u00edmpio Torres",
-    "id": 113840,
-    "name": "nxghtt",
-    "nationality": "Brazil",
-    "region": "SAM",
-    "rlcsLanAppearances": 6,
-    "team": "Ninjas in Pyjamas"
-  },
-  {
-    "DOB": "03-06-2005",
-    "fullName": "David Morgenrood",
-    "id": 113173,
-    "name": "2Die4",
-    "nationality": "South Africa",
-    "region": "SSA",
-    "rlcsLanAppearances": 4,
-    "team": "Limitless"
-  },
-  {
-    "DOB": "16-03-2001",
-    "fullName": "Thibault Grzesiak",
-    "id": 7080,
-    "name": "Chausette45",
-    "nationality": "France",
-    "region": "EU",
-    "rlcsLanAppearances": 6,
-    "team": "None"
-  },
-  {
-    "DOB": "01-07-2001",
-    "fullName": "Abdullah Alsubaie",
-    "id": 88633,
-    "name": "ams",
-    "nationality": "Saudi Arabia",
-    "region": "MENA",
-    "rlcsLanAppearances": 1,
-    "team": "Espada"
-  },
-  {
-    "DOB": "01-08-2005",
-    "fullName": "Enzo Tremblay",
-    "id": 119868,
-    "name": "Wiiilooo",
-    "nationality": "R\u00e9union",
-    "region": "SSA",
-    "rlcsLanAppearances": 1,
-    "team": "None"
-  },
-  {
-    "DOB": "05-06-2006",
-    "fullName": "Bernardo Siqueira Marta",
-    "id": 114558,
-    "name": "Bemmz",
-    "nationality": "Brazil",
-    "region": "SAM",
-    "rlcsLanAppearances": 3,
-    "team": "None"
-  },
-  {
-    "DOB": "12-05-2007",
-    "fullName": "Jordan Manley",
-    "id": 109379,
-    "name": "Evoh",
-    "nationality": "United States",
-    "region": "NA",
-    "rlcsLanAppearances": 1,
-    "team": "Dignitas"
-  },
-  {
-    "DOB": "15-06-2005",
-    "fullName": "Carlos Aguado",
-    "id": 106655,
-    "name": "CHEESE.",
-    "nationality": "United States",
-    "region": "NA",
-    "rlcsLanAppearances": 1,
-    "team": "RetalsMajicCheese"
-  },
-  {
-    "DOB": "20-02-2007",
-    "fullName": "Alexis Bernier",
-    "id": 105966,
-    "name": "zen",
-    "nationality": "France",
-    "region": "EU",
-    "rlcsLanAppearances": 5,
-    "team": "Team Vitality"
-  },
-  {
-    "DOB": "10-08-2004",
-    "fullName": "Yan Xisto Nolasco",
-    "id": 93578,
-    "name": "yanxnz",
-    "nationality": "Brazil",
-    "region": "SAM",
-    "rlcsLanAppearances": 8,
-    "team": "FURIA Esports"
-  },
-  {
-    "DOB": "16-03-2002",
-    "fullName": "Tshaka Lateef Taylor Jr",
-    "id": 36421,
-    "name": "Arsenal",
-    "nationality": "United States",
-    "region": "NA",
-    "rlcsLanAppearances": 7,
-    "team": "Dignitas"
-  },
-  {
-    "DOB": "08-05-2003",
-    "fullName": "Kyle Robertson",
-    "id": 1404,
-    "name": "Scrub Killa",
-    "nationality": "Scotland",
-    "region": "EU",
-    "rlcsLanAppearances": 5,
-    "team": "BSR"
-  },
-  {
-    "DOB": "18-03-2005",
-    "fullName": "Ezequiel Aranda-Lovito",
-    "id": 83713,
-    "name": "Fib\u00e9rr",
-    "nationality": "Australia",
-    "region": "OCE",
-    "rlcsLanAppearances": 4,
-    "team": "QuikTrip Pioneers Gaming"
-  },
-  {
-    "DOB": "19-02-2004",
-    "fullName": "Ivan Ruiz Jim\u00e9nez",
-    "id": 117953,
-    "name": "DORITO",
-    "nationality": "Spain",
-    "region": "SAM",
-    "rlcsLanAppearances": 3,
-    "team": "None"
-  },
-  {
-    "fullName": "Alex McDonald",
-    "id": 23085,
-    "name": "Kia",
-    "nationality": "Australia",
-    "region": "OCE",
-    "rlcsLanAppearances": 1,
-    "team": "None"
+    "team": "Redemption"
   },
   {
     "fullName": "Timi Falodun",
@@ -2033,63 +1723,163 @@
     "team": "None"
   },
   {
-    "DOB": "28-06-1996",
-    "fullName": "Adam Barth",
-    "id": 3286,
-    "name": "Espeon",
+    "DOB": "19-12-2004",
+    "fullName": "Jason Corral",
+    "id": 36472,
+    "name": "Firstkiller",
     "nationality": "United States",
     "region": "NA",
-    "rlcsLanAppearances": 2,
-    "team": "None"
+    "rlcsLanAppearances": 10,
+    "team": "The Ultimates"
   },
   {
-    "DOB": "15-11-2002",
-    "fullName": "Evan Rogez",
-    "id": 51274,
-    "name": "M0nkey M00n",
+    "DOB": "04-12-2001",
+    "fullName": "Thomas Binkhorst",
+    "id": 40305,
+    "name": "ThO.",
+    "nationality": "Netherlands",
+    "region": "APAC",
+    "rlcsLanAppearances": 2,
+    "team": "Elevate"
+  },
+  {
+    "DOB": "12-11-2001",
+    "fullName": "Alexandre Paoli",
+    "id": 56290,
+    "name": "Extra",
     "nationality": "France",
     "region": "EU",
-    "rlcsLanAppearances": 9,
-    "team": "Team BDS"
+    "rlcsLanAppearances": 4,
+    "team": "Save the game"
   },
   {
-    "DOB": "31-03-1995",
-    "fullName": "Treyven Robitaille",
-    "id": 7125,
-    "name": "Lethamyr",
-    "nationality": "Canada",
-    "region": "NA",
+    "DOB": "14-08-2007",
+    "fullName": "Hunter Tomeski",
+    "id": 99636,
+    "name": "hntr",
+    "nationality": "Australia",
+    "region": "OCE",
+    "rlcsLanAppearances": 3,
+    "team": "Helfie Chiefs"
+  },
+  {
+    "DOB": "01-11-2004",
+    "fullName": "Kamran Christopher Naidoo",
+    "id": 113174,
+    "name": "kamz",
+    "nationality": "South Africa",
+    "region": "SSA",
+    "rlcsLanAppearances": 1,
+    "team": "CosmiCo Esports"
+  },
+  {
+    "DOB": "26-06-2002",
+    "fullName": "Pablo Le\u00f3n Briones",
+    "id": 133207,
+    "name": "Leoro",
+    "nationality": "Spain",
+    "region": "EU",
+    "rlcsLanAppearances": 1,
+    "team": "Maestros Del Esf\u00e9rico"
+  },
+  {
+    "DOB": "19-09-2003",
+    "fullName": "Gabr\u00edel Sindri Benediktsson",
+    "id": 84432,
+    "name": "OSM",
+    "nationality": "Iceland",
+    "region": "EU",
     "rlcsLanAppearances": 2,
-    "team": "Spacestation Gaming"
-  },
-  {
-    "DOB": "08-02-2002",
-    "fullName": "Felipe Pereira Chaves",
-    "id": 35118,
-    "name": "repi",
-    "nationality": "Brazil",
-    "region": "SAM",
-    "rlcsLanAppearances": 1,
     "team": "None"
   },
   {
-    "DOB": "19-09-1995",
-    "fullName": "Alexandre Bellemare",
-    "id": 29538,
-    "name": "AxB",
-    "nationality": "Canada",
-    "region": "NA",
-    "rlcsLanAppearances": 1,
+    "DOB": "17-09-1999",
+    "fullName": "Christopher Magee",
+    "id": 23071,
+    "name": "Siki",
+    "nationality": "Australia",
+    "region": "OCE",
+    "rlcsLanAppearances": 2,
     "team": "None"
   },
   {
-    "DOB": "22-08-2003",
-    "fullName": "Nick Costello",
-    "id": 46146,
-    "name": "mist",
+    "DOB": "05-08-2002",
+    "fullName": "Justin Morales",
+    "id": 23369,
+    "name": "jstn.",
     "nationality": "United States",
     "region": "NA",
     "rlcsLanAppearances": 7,
+    "team": "Shopify Rebellion"
+  },
+  {
+    "DOB": "24-11-2003",
+    "fullName": "Ole van Doorn",
+    "id": 80578,
+    "name": "oaly.",
+    "nationality": "Netherlands",
+    "region": "EU",
+    "rlcsLanAppearances": 2,
+    "team": "Geekay Esports"
+  },
+  {
+    "DOB": "05-09-2004",
+    "fullName": "Finlay Ferguson",
+    "id": 85652,
+    "name": "rise.",
+    "nationality": "England",
+    "region": "MENA",
+    "rlcsLanAppearances": 9,
+    "team": "Twisted Minds"
+  },
+  {
+    "DOB": "20-02-2004",
+    "fullName": "Victor Duran Parra",
+    "id": 76286,
+    "name": "Reysbull",
+    "nationality": "Chile",
+    "region": "SAM",
+    "rlcsLanAppearances": 5,
+    "team": "Complexity Gaming"
+  },
+  {
+    "DOB": "02-11-1998",
+    "fullName": "Jos van Meurs",
+    "id": 7128,
+    "name": "ViolentPanda",
+    "nationality": "Netherlands",
+    "region": "EU",
+    "rlcsLanAppearances": 5,
+    "team": "Dignitas"
+  },
+  {
+    "DOB": "03-02-2000",
+    "fullName": "Tom Jullienne",
+    "id": 27334,
+    "name": "Julz",
+    "nationality": "Australia",
+    "region": "OCE",
+    "rlcsLanAppearances": 2,
+    "team": "None"
+  },
+  {
+    "DOB": "28-06-2005",
+    "fullName": "Arthur Langsch Miguel",
+    "id": 89805,
+    "name": "drufinho",
+    "nationality": "Brazil",
+    "region": "SAM",
+    "rlcsLanAppearances": 6,
+    "team": "FURIA Esports"
+  },
+  {
+    "DOB": "21-09-2000",
+    "fullName": "Cameron Ingram",
+    "id": 23083,
+    "name": "Kamii",
+    "nationality": "New Zealand",
+    "region": "OCE",
+    "rlcsLanAppearances": 11,
     "team": "None"
   },
   {
@@ -2103,33 +1893,243 @@
     "team": "Gentle Mates Alpine"
   },
   {
-    "DOB": "02-08-1996",
-    "fullName": "Nicholas Blackerby",
-    "id": 23353,
-    "name": "Wonder",
-    "nationality": "United States",
-    "region": "NA",
+    "DOB": "27-05-1995",
+    "fullName": "Remco den Boer",
+    "id": 1497,
+    "name": "remkoe",
+    "nationality": "Netherlands",
+    "region": "EU",
+    "rlcsLanAppearances": 5,
+    "team": "None"
+  },
+  {
+    "DOB": "08-03-2005",
+    "fullName": "Joris Robben",
+    "id": 85648,
+    "name": "Joreuz",
+    "nationality": "Netherlands",
+    "region": "EU",
+    "rlcsLanAppearances": 6,
+    "team": "Dignitas"
+  },
+  {
+    "DOB": "30-09-1999",
+    "fullName": "Bandar Turki Al-Shaikh",
+    "id": 51090,
+    "name": "impressive",
+    "nationality": "Saudi Arabia",
+    "region": "MENA",
     "rlcsLanAppearances": 1,
     "team": "None"
   },
   {
-    "DOB": "01-07-1999",
-    "fullName": "Fahad Ahmed",
-    "id": 51349,
-    "name": "Zez0nix",
+    "DOB": "19-12-2002",
+    "fullName": "Khalid Qasim",
+    "id": 50625,
+    "name": "oKhaliD",
     "nationality": "Saudi Arabia",
     "region": "MENA",
-    "rlcsLanAppearances": 1,
-    "team": "Victory Esports"
+    "rlcsLanAppearances": 7,
+    "team": "None"
   },
   {
-    "DOB": "29-11-2000",
-    "fullName": "Mariano Arruda",
-    "id": 9111,
-    "name": "SquishyMuffinz",
-    "nationality": "Canada",
-    "region": "NA",
+    "DOB": "21-07-2003",
+    "fullName": "Luke Riddell",
+    "id": 80384,
+    "name": "Amphis",
+    "nationality": "Australia",
+    "region": "OCE",
     "rlcsLanAppearances": 7,
-    "team": "Cloud9"
+    "team": "TSM"
+  },
+  {
+    "DOB": "24-11-1997",
+    "fullName": "Jake Edwards",
+    "id": 20017,
+    "name": "Jake",
+    "nationality": "Australia",
+    "region": "OCE",
+    "rlcsLanAppearances": 3,
+    "team": "None"
+  },
+  {
+    "DOB": "18-11-2002",
+    "fullName": "Ahmad Abdullah",
+    "id": 50606,
+    "name": "Ahmad",
+    "nationality": "Saudi Arabia",
+    "region": "MENA",
+    "rlcsLanAppearances": 9,
+    "team": "None"
+  },
+  {
+    "DOB": "07-02-1997",
+    "fullName": "Daniel Hawkeswood",
+    "id": 29923,
+    "name": "Walcott",
+    "nationality": "Australia",
+    "region": "OCE",
+    "rlcsLanAppearances": 1,
+    "team": "None"
+  },
+  {
+    "DOB": "03-06-2005",
+    "fullName": "David Morgenrood",
+    "id": 113173,
+    "name": "2Die4",
+    "nationality": "South Africa",
+    "region": "SSA",
+    "rlcsLanAppearances": 4,
+    "team": "Limitless"
+  },
+  {
+    "DOB": "12-06-2001",
+    "fullName": "Reed Wilen",
+    "id": 23362,
+    "name": "Chicago",
+    "nationality": "United States",
+    "region": "NA",
+    "rlcsLanAppearances": 11,
+    "team": "9Lives"
+  },
+  {
+    "DOB": "11-12-2001",
+    "fullName": "Dan Bluett",
+    "id": 7318,
+    "name": "bluey.",
+    "nationality": "England",
+    "region": "EU",
+    "rlcsLanAppearances": 2,
+    "team": "None"
+  },
+  {
+    "DOB": "28-06-1996",
+    "fullName": "Adam Barth",
+    "id": 3286,
+    "name": "Espeon",
+    "nationality": "United States",
+    "region": "NA",
+    "rlcsLanAppearances": 2,
+    "team": "None"
+  },
+  {
+    "DOB": "23-02-2007",
+    "fullName": "Oskar Gozdowski",
+    "id": 100882,
+    "name": "Oski",
+    "nationality": "Poland",
+    "region": "EU",
+    "rlcsLanAppearances": 7,
+    "team": "Ninjas in Pyjamas"
+  },
+  {
+    "DOB": "21-08-2003",
+    "fullName": "Nelson Lasko",
+    "id": 58301,
+    "name": "virtuoso",
+    "nationality": "Ireland",
+    "region": "APAC",
+    "rlcsLanAppearances": 5,
+    "team": "None"
+  },
+  {
+    "DOB": "05-03-2005",
+    "fullName": "Charles Sabiani",
+    "id": 114101,
+    "name": "juicy",
+    "nationality": "France",
+    "region": "EU",
+    "rlcsLanAppearances": 5,
+    "team": "Gentle Mates Alpine"
+  },
+  {
+    "DOB": "30-08-2000",
+    "fullName": "Daniel Parsons",
+    "id": 20015,
+    "name": "Torsos",
+    "nationality": "Australia",
+    "region": "OCE",
+    "rlcsLanAppearances": 14,
+    "team": "Wildcard"
+  },
+  {
+    "DOB": "15-05-2004",
+    "fullName": "Luiz Fellipe Lopes Gomes",
+    "id": 83292,
+    "name": "Aztromick",
+    "nationality": "Brazil",
+    "region": "SAM",
+    "rlcsLanAppearances": 5,
+    "team": "Godfidence"
+  },
+  {
+    "DOB": "30-04-2002",
+    "fullName": "Riccardo Mazzotta",
+    "id": 47794,
+    "name": "Rizex45",
+    "nationality": "Germany",
+    "region": "EU",
+    "rlcsLanAppearances": 1,
+    "team": "RRG"
+  },
+  {
+    "DOB": "06-02-2001",
+    "fullName": "Garrett Gordon",
+    "id": 2935,
+    "name": "GarrettG",
+    "nationality": "United States",
+    "region": "NA",
+    "rlcsLanAppearances": 11,
+    "team": "G.A.S."
+  },
+  {
+    "DOB": "31-12-1998",
+    "fullName": "Enzo Toledo",
+    "id": 31229,
+    "name": "tander",
+    "nationality": "Brazil",
+    "region": "SAM",
+    "rlcsLanAppearances": 2,
+    "team": "Novus Aevi"
+  },
+  {
+    "DOB": "23-01-2002",
+    "fullName": "Colby James",
+    "id": 41523,
+    "name": "hockser",
+    "nationality": "United States",
+    "region": "NA",
+    "rlcsLanAppearances": 5,
+    "team": "9Lives"
+  },
+  {
+    "DOB": "20-02-2006",
+    "fullName": "Danilo Michelini",
+    "id": 114756,
+    "name": "kv1",
+    "nationality": "Brazil",
+    "region": "SAM",
+    "rlcsLanAppearances": 6,
+    "team": "Team Secret"
+  },
+  {
+    "DOB": "13-11-1997",
+    "fullName": "Kevin Carvalho",
+    "id": 1540,
+    "name": "Skyline",
+    "nationality": "Switzerland",
+    "region": "EU",
+    "rlcsLanAppearances": 1,
+    "team": "None"
+  },
+  {
+    "DOB": "22-02-2007",
+    "fullName": "Tristan Soyez",
+    "id": 97231,
+    "name": "Atow.",
+    "nationality": "Belgium",
+    "region": "EU",
+    "rlcsLanAppearances": 7,
+    "team": "Karmine Corp"
   }
 ]
