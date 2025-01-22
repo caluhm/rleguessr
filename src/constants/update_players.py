@@ -61,7 +61,7 @@ PLAYERS_WITH_MULTIPLE_TEAMS = {
     "GarrettG": "G.A.S.",
     "RelatingWave": "Team Evo",
     "SquishyMuffinz": "G.A.S.",
-    "Yukeo": "Shaman Esports",
+    "Yukeo": "Moonrise",
     "zenulous": "Antic x Odium",
 }
 
