@@ -4,6 +4,7 @@ import json
 from collections import Counter
 from datetime import datetime
 from random import shuffle
+from re import match
 from time import sleep
 
 import requests
@@ -56,13 +57,14 @@ REQUIRED_FIELDS = set(
 # shouldn't the team field be correct? Right now it wouldn't be because a player
 # can only be in one team and that would be G.A.S. for GarrettG.
 PLAYERS_WITH_MULTIPLE_TEAMS = {
-    "Catalysm": "Luminosity Gaming",
+    "ASN_RuBiiX": "Akimbo Esports",
+    "Catalysm": "Virtus.pro",
     "eekso": "Strictly Business",
     "GarrettG": "G.A.S.",
     "RelatingWave": "Team Evo",
+    "Sad": "Amethyst",
     "SquishyMuffinz": "G.A.S.",
-    "Yukeo": "Moonrise",
-    "zenulous": "Antic x Odium",
+    "Yukeo": "NOMSTER",
 }
 
 
@@ -236,17 +238,30 @@ def _get_player_info(page, rlcs_lan_appearances):
             # Some players have double nationality, we only keep the first one
             info["nationality"] = div_text.split("\xa0")[1]
         elif div_text.startswith("Born:"):
-            try:
-                info["DOB"] = datetime.strptime(
-                    div_text.split(" (age")[0], "Born:%B %d, %Y"
-                ).strftime("%d-%m-%Y")
-            except ValueError:
-                # As of 2024-09-23, https://liquipedia.net/rocketleague/Mesho
-                # doesn't have a proper DOB, only a year.
+            # As of 2025-05-19, https://liquipedia.net/rocketleague/Dralii
+            # DOB contains Canada.
+            r = match(
+                r"Born:((?P<month>\w+)\s+(?P<day>\d+),\s+)?(?P<year>\d+)", div_text
+            )
+            if not r:
                 log(f"{info['name']} missing proper DOB: '{div_text}'")
-                info["DOB"] = datetime.strptime(
-                    div_text.split(" (age")[0], "Born:%Y"
-                ).strftime("%Y")
+            else:
+                year = r.group("year")
+                month = r.group("month")
+                day = r.group("day")
+                if day and month:
+                    dob = f"{day}-{month}-{year}"
+                    dob_format_in = "%d-%B-%Y"
+                    dob_format_out = "%d-%m-%Y"
+                else:
+                    # As of 2024-09-23, https://liquipedia.net/rocketleague/Mesho
+                    # doesn't have a proper DOB, only a year.
+                    dob = year
+                    dob_format_in = "%Y"
+                    dob_format_out = "%Y"
+                info["DOB"] = datetime.strptime(dob, dob_format_in).strftime(
+                    dob_format_out
+                )
         elif div_text.startswith("Region:"):
             info["region"] = REGIONS[div_text.split(maxsplit=1)[1]]
         elif div_text.startswith("Team:"):
@@ -364,8 +379,8 @@ def compute_diff(old_players, new_players):
         old_player = old_players_dict[name]
         diff_player = {}
         for key, value in sorted(new_player.items()):
-            if value != old_player[key]:
-                diff_player[key] = f"{old_player[key]} -> {value}"
+            if value != old_player.get(key):
+                diff_player[key] = f"{old_player.get(key)} -> {value}"
         if diff_player:
             diff[name] = f"[changed] {name}: {diff_player}"
 
