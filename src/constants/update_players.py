@@ -57,14 +57,12 @@ REQUIRED_FIELDS = set(
 # shouldn't the team field be correct? Right now it wouldn't be because a player
 # can only be in one team and that would be G.A.S. for GarrettG.
 PLAYERS_WITH_MULTIPLE_TEAMS = {
-    "ASN_RuBiiX": "Akimbo Esports",
-    "Catalysm": "Virtus.pro",
-    "eekso": "Strictly Business",
+    "eekso": "Geekay Esports",
     "GarrettG": "G.A.S.",
     "RelatingWave": "Team Evo",
     "Sad": "Amethyst",
     "SquishyMuffinz": "G.A.S.",
-    "Yukeo": "NOMSTER",
+    "Yukeo": "Team TSK",
 }
 
 
@@ -98,16 +96,16 @@ def _get_page(page):
     return {"id": page_id, "html": soup}
 
 
-def _get_rlcs_lans():
-    """Get the list of RLCS LANs that have happened"""
-    rlcs_lans = []
+def _get_rlcs_tournaments():
+    """Get the list of RLCS tournaments that have happened"""
+    rlcs_tournaments = []
 
     page = _get_page("S-Tier_Tournaments")
     # Only select premier (RLCS) tournaments.
     # This ignores tournaments like the Esports World Cup/Gamers 8, the FIFAe
     # World Cup, CRL, ...
     for tournament in page["html"].select(
-        "div[class='divRow tournament-card-premier tournament-card-premier']"
+        "div[class='gridRow tournament-highlighted-bg']"
     ):
         # If the tournament hasn't happened yet, don't include it.
         # The obvious way to check this would be to parse the date column and
@@ -117,26 +115,17 @@ def _get_rlcs_lans():
         # going on then we'd ignore it. But since we run the script so rarely
         # this is easy to avoid, just wait for the end of the LAN.
         winner_tbd = tournament.select_one(
-            "div[class='divCell Placement FirstPlace']"
-        ).select_one("abbr[title='To Be Determined']")
+            "div[class='gridCell Placement FirstPlace']"
+        ).select_one("abbr[title='To Be Decided']")
         if winner_tbd:
             # If the winner of the tournament is TBD, the tournament hasn't
             # happened yet so skip it.
             continue
 
-        # Get the location of the tournament to know if it was online or a LAN
-        location = tournament.select_one(
-            "div[class='divCell EventDetails-Left-60 Header-Premier']"
-        ).text.strip()
-        # If it was an online tournament, skip it.
-        if location.startswith("Online,"):
-            continue
-
         # Get the url of the tournament
         url = (
-            tournament.select_one("div[class='divCell Tournament Header-Premier']")
-            .select_one("b")
-            .select_one("a")
+            tournament.select_one("div[class='gridCell Tournament Header']")
+            .select("a")[-1]
             .get("href")
             .split("/rocketleague/")[-1]
         )
@@ -146,17 +135,35 @@ def _get_rlcs_lans():
         if "1v1" in url:
             continue
 
-        # The LAN already happened and wasn't 1v1, add it to the list.
-        rlcs_lans.append(url)
+        # The tournament already happened and wasn't 1v1, add it to the list.
+        rlcs_tournaments.append(url)
 
-    return rlcs_lans
+    return rlcs_tournaments
 
 
-def _get_lan_players(lan):
-    """Get the list of players that participated to the LAN"""
+def _get_tournament_players(tournament):
+    """Get the list of players that participated to the tournament if it was a LAN"""
     players = []
 
-    page = _get_page(lan)
+    page = _get_page(tournament)
+
+    # Get the location of the tournament to know if it was online or a LAN.
+    # This isn't the cleanest. We have a functions that's supposed to return
+    # the list of players that participated in a tournament but we only do that
+    # if it was a LAN. Ideally this function would only be called for LANs, but
+    # we now need to load the tournament page to know if it was a LAN or not.
+    # Since we need to load that exact same page to get the list of players, it
+    # makes sense to check if it was a LAN here so we don't load the page twice.
+    divs = list(page["html"].select_one("div[class='fo-nttax-infobox']").children)
+    for div in divs:
+        div_text = div.text
+        if div_text.startswith("Type:"):
+            tournament_type = div_text.split("Type:")[1]
+            if tournament_type == "Online":
+                # It's not a LAN, don't get the list of players who participated
+                log("Not a LAN, skipping")
+                return players
+
     children = page["html"].select_one("div[class=mw-parser-output]").children
     for child in children:
         # Some children are just strings, they're not what we're looking for
@@ -195,6 +202,8 @@ def _get_lan_players(lan):
         if child.select("span[id='Results']"):
             break
 
+    log(f"{len(players)} players attended that LAN")
+
     # For safety in case in the future the current code isn't able to extract
     # the players from the page.
     assert players
@@ -204,9 +213,9 @@ def _get_lan_players(lan):
 def get_players():
     """Get the list of all the players who participated in an RLCS LAN"""
     players = []
-    lans = _get_rlcs_lans()
-    for lan in lans:
-        players.extend(_get_lan_players(lan))
+    tournaments = _get_rlcs_tournaments()
+    for tournament in tournaments:
+        players.extend(_get_tournament_players(tournament))
     # Sorting the players by name so we can get a rough idea of how far
     # into the execution we are when looking at stdout.
     return sorted(Counter(players).items())
