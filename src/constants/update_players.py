@@ -59,8 +59,8 @@ REQUIRED_FIELDS = set(
 PLAYERS_WITH_MULTIPLE_TEAMS = {
     "eekso": "Geekay Esports",
     "GarrettG": "G.A.S.",
+    "Hockser": "The Boys",
     "RelatingWave": "Team Evo",
-    "Sad": "Amethyst",
     "SquishyMuffinz": "G.A.S.",
     "Yukeo": "Team TSK",
 }
@@ -164,7 +164,7 @@ def _get_tournament_players(tournament):
                 log("Not a LAN, skipping")
                 return players
 
-    children = page["html"].select_one("div[class=mw-parser-output]").children
+    children = page["html"].select_one("div[class*=mw-parser-output]").children
     for child in children:
         # Some children are just strings, they're not what we're looking for
         if not hasattr(child, "select"):
