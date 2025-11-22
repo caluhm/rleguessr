@@ -1,6 +1,8 @@
 """Update the players json files using the Liquipedia API"""
 
 import json
+import logging
+import sys
 from collections import Counter
 from datetime import datetime
 from random import shuffle
@@ -60,15 +62,39 @@ PLAYERS_WITH_MULTIPLE_TEAMS = {
     "eekso": "Geekay Esports",
     "GarrettG": "G.A.S.",
     "Hockser": "The Boys",
-    "RelatingWave": "Team Evo",
+    "Kronovi": "German Mountain Goats",
+    "noly": "Lotus 8 Esports",
+    "RelatingWave": "SHUFFLE'S KITTENS",
+    "Rezears": "Magnifico",
     "SquishyMuffinz": "G.A.S.",
-    "Yukeo": "Team TSK",
 }
 
 
-def log(msg):
-    """Print message with the date"""
-    print(f"{datetime.now()} {msg}")
+LOG = logging.getLogger(__name__)
+
+
+class ColorFormatter(logging.Formatter):
+    """https://stackoverflow.com/a/56944256"""
+
+    grey = "\x1b[38;20m"
+    yellow = "\x1b[33;20m"
+    red = "\x1b[31;20m"
+    bold_red = "\x1b[31;1m"
+    reset = "\x1b[0m"
+    format_ = "%(asctime)s [%(levelname)s] %(message)s"
+
+    FORMATS = {
+        logging.DEBUG: grey + format_ + reset,
+        logging.INFO: grey + format_ + reset,
+        logging.WARNING: yellow + format_ + reset,
+        logging.ERROR: red + format_ + reset,
+        logging.CRITICAL: bold_red + format_ + reset,
+    }
+
+    def format(self, record):
+        log_fmt = self.FORMATS.get(record.levelno)
+        formatter = logging.Formatter(log_fmt)
+        return formatter.format(record)
 
 
 def _get_page(page):
@@ -80,11 +106,11 @@ def _get_page(page):
             RATE_LIMIT_SECONDS - (datetime.now() - LAST_REQUEST_TIME).total_seconds()
         )
         if delay > 0:
-            log(f"Sleeping for {int(delay)} seconds")
+            LOG.debug(f"Sleeping for {int(delay)} seconds")
             sleep(delay)
     LAST_REQUEST_TIME = datetime.now()
 
-    log(f"Getting page {page}")
+    LOG.info(f"Getting page {page}")
     resp = requests.get(f"{BASE_URL}{page}", headers=HEADERS, timeout=REQUEST_TIMEOUT)
     resp.raise_for_status()
     resp_parse = resp.json()["parse"]
@@ -114,11 +140,15 @@ def _get_rlcs_tournaments():
         # It's not perfect because if we were to run the script while a LAN is
         # going on then we'd ignore it. But since we run the script so rarely
         # this is easy to avoid, just wait for the end of the LAN.
-        winner_tbd = tournament.select_one(
-            "div[class='gridCell Placement FirstPlace']"
-        ).select_one("abbr[title='To Be Decided']")
-        if winner_tbd:
-            # If the winner of the tournament is TBD, the tournament hasn't
+        winner_known = (
+            tournament.select_one(
+                "div[class='gridCell Placement FirstPlace']"
+            ).select_one("span[class='name']")
+            # If the winner is known, there will be a link to the team's page
+            .select_one("a")
+        )
+        if not winner_known:
+            # If the winner of the tournament is unknown, the tournament hasn't
             # happened yet so skip it.
             continue
 
@@ -161,7 +191,7 @@ def _get_tournament_players(tournament):
             tournament_type = div_text.split("Type:")[1]
             if tournament_type == "Online":
                 # It's not a LAN, don't get the list of players who participated
-                log("Not a LAN, skipping")
+                LOG.info("Not a LAN, skipping")
                 return players
 
     children = page["html"].select_one("div[class*=mw-parser-output]").children
@@ -202,7 +232,7 @@ def _get_tournament_players(tournament):
         if child.select("span[id='Results']"):
             break
 
-    log(f"{len(players)} players attended that LAN")
+    LOG.info(f"{len(players)} players attended that LAN")
 
     # For safety in case in the future the current code isn't able to extract
     # the players from the page.
@@ -253,7 +283,7 @@ def _get_player_info(page, rlcs_lan_appearances):
                 r"Born:((?P<month>\w+)\s+(?P<day>\d+),\s+)?(?P<year>\d+)", div_text
             )
             if not r:
-                log(f"{info['name']} missing proper DOB: '{div_text}'")
+                LOG.warning(f"{info['name']} missing proper DOB: '{div_text}'")
             else:
                 year = r.group("year")
                 month = r.group("month")
@@ -286,19 +316,19 @@ def _get_player_info(page, rlcs_lan_appearances):
                 # got from Liquipedia. This is to ensure that we'll keep the
                 # list of hardcoded teams up to date in the future.
                 if hardcoded_team in div_text:
-                    log(
+                    LOG.info(
                         f"{info['name']} has multiple teams: {div_text}. "
                         f"Using the hardcoded team {hardcoded_team}"
                     )
                     info["team"] = hardcoded_team
                 else:
-                    log(
+                    LOG.error(
                         f"{info['name']}'s hardcoded team is wrong, "
                         f"{hardcoded_team} is not in {div_text}. "
                         "Update PLAYERS_WITH_MULTIPLE_TEAMS."
                     )
             else:
-                log(
+                LOG.error(
                     f"{info['name']} doesn't have a hardcoded team, can't choose from {div_text}."
                     "Update PLAYERS_WITH_MULTIPLE_TEAMS."
                 )
@@ -306,7 +336,7 @@ def _get_player_info(page, rlcs_lan_appearances):
     # If a player is no longer in multiple teams, we should remove him from
     # PLAYERS_WITH_MULTIPLE_TEAMS.
     if info["name"] in PLAYERS_WITH_MULTIPLE_TEAMS and not is_in_multiple_teams:
-        log(
+        LOG.warning(
             f"{info['name']} doesn't need to have a hardcoded team anymore. "
             "Update PLAYERS_WITH_MULTIPLE_TEAMS."
         )
@@ -318,7 +348,7 @@ def _get_player_info(page, rlcs_lan_appearances):
         # for quite a few players).
         # Continue the execution but print a message warning about the missing
         # data.
-        log(f"{info['name']} missing {missing_fields} fields")
+        LOG.warning(f"{info['name']} missing {missing_fields} fields")
         # TODO: Ignore players that are missing DOB?
 
     return info
@@ -331,7 +361,7 @@ def get_players_info(players):
     for url, rlcs_lan_appearances in players:
         # If we've already fecthed the player's page, update the info
         if url in players_info:
-            log(f"Already got {url}")
+            LOG.debug(f"Already got {url}")
             players_info[url]["rlcsLanAppearances"] += rlcs_lan_appearances
             continue
 
@@ -345,11 +375,11 @@ def get_players_info(players):
         redirect = page["html"].select_one("div[class='redirectMsg']")
         if redirect:
             url = redirect.select_one("a").get("href").split("/rocketleague/")[-1]
-            log(f"Redirect -> {url}")
+            LOG.debug(f"Redirect -> {url}")
 
             # If we've already fecthed the player's page, update the info
             if url in players_info:
-                log(f"Already got {url}")
+                LOG.debug(f"Already got {url}")
                 players_info[url]["rlcsLanAppearances"] += rlcs_lan_appearances
                 continue
 
@@ -411,27 +441,33 @@ def create_json_files(players_info):
         # there have been no updates since the last time we ran the script),
         # stop the execution now so we don't unnecessarily reshuffle players2.json
         if players_info == old:
-            log("Local files already up to date, stopping")
+            LOG.info("Local files already up to date, stopping")
             return
 
     diff = compute_diff(old, players_info)
 
-    log("Saving players.json")
+    LOG.info("Saving players.json")
     with open("players.json", "w", encoding="utf-8") as f:
         json.dump(players_info, f, indent=2, sort_keys=True)
 
     shuffle(players_info)
-    log("Saving players2.json")
+    LOG.info("Saving players2.json")
     with open("players2.json", "w", encoding="utf-8") as f:
         json.dump(players_info, f, indent=2, sort_keys=True)
 
-    log("Here's what changed:")
+    LOG.info("Here's what changed:")
     for name in sorted(diff, key=lambda x: x.lower()):
         print(diff[name])
 
 
 def main():
     """Main function"""
+    # Set up logging
+    handler = logging.StreamHandler()
+    handler.setFormatter(ColorFormatter())
+    LOG.addHandler(handler)
+    LOG.setLevel(logging.INFO)
+
     players = get_players()
     players_info = get_players_info(players)
     create_json_files(players_info)
