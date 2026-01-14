@@ -26,8 +26,8 @@
     "name": "2Piece",
     "nationality": "United States",
     "region": "NA",
-    "rlcsLanAppearances": 1,
-    "team": "REDACTED"
+    "rlcsLanAppearances": 2,
+    "team": "[REDACTED]"
   },
   {
     "DOB": "30-06-2008",
@@ -37,7 +37,7 @@
     "nationality": "Saudi Arabia",
     "region": "MENA",
     "rlcsLanAppearances": 1,
-    "team": "ROC Esports"
+    "team": "R8 Esports"
   },
   {
     "DOB": "10-09-2000",
@@ -47,7 +47,7 @@
     "nationality": "India",
     "region": "APAC",
     "rlcsLanAppearances": 1,
-    "team": "Overlooked Academy"
+    "team": "Big Dawgs"
   },
   {
     "DOB": "07-07-2005",
@@ -56,7 +56,7 @@
     "name": "AcroniK.",
     "nationality": "Portugal",
     "region": "EU",
-    "rlcsLanAppearances": 5,
+    "rlcsLanAppearances": 6,
     "team": "NOVO Esports"
   },
   {
@@ -117,7 +117,7 @@
     "nationality": "Australia",
     "region": "OCE",
     "rlcsLanAppearances": 9,
-    "team": "TSM"
+    "team": "Take Flyte"
   },
   {
     "DOB": "01-07-2001",
@@ -137,7 +137,7 @@
     "nationality": "United States",
     "region": "NA",
     "rlcsLanAppearances": 1,
-    "team": "1"
+    "team": "None"
   },
   {
     "DOB": "23-09-2003",
@@ -177,7 +177,7 @@
     "nationality": "Spain",
     "region": "EU",
     "rlcsLanAppearances": 1,
-    "team": "None"
+    "team": "Akimbo Esports"
   },
   {
     "DOB": "12-08-2003",
@@ -206,7 +206,7 @@
     "name": "Atow.",
     "nationality": "Belgium",
     "region": "EU",
-    "rlcsLanAppearances": 10,
+    "rlcsLanAppearances": 11,
     "team": "Karmine Corp"
   },
   {
@@ -297,7 +297,7 @@
     "nationality": "Brazil",
     "region": "SAM",
     "rlcsLanAppearances": 3,
-    "team": "Aelix"
+    "team": "None"
   },
   {
     "DOB": "11-12-2001",
@@ -317,7 +317,7 @@
     "nationality": "Brazil",
     "region": "SAM",
     "rlcsLanAppearances": 6,
-    "team": "Aelix"
+    "team": "None"
   },
   {
     "DOB": "07-10-2003",
@@ -337,7 +337,7 @@
     "nationality": "Brazil",
     "region": "SAM",
     "rlcsLanAppearances": 7,
-    "team": "Overlooked"
+    "team": "Sunset"
   },
   {
     "DOB": "20-05-2001",
@@ -347,7 +347,7 @@
     "nationality": "Brazil",
     "region": "SAM",
     "rlcsLanAppearances": 5,
-    "team": "Sunset"
+    "team": "None"
   },
   {
     "DOB": "15-02-2002",
@@ -367,7 +367,7 @@
     "nationality": "France",
     "region": "EU",
     "rlcsLanAppearances": 6,
-    "team": "None"
+    "team": "thanos"
   },
   {
     "DOB": "15-06-2005",
@@ -406,7 +406,7 @@
     "name": "Chronic",
     "nationality": "United States",
     "region": "NA",
-    "rlcsLanAppearances": 10,
+    "rlcsLanAppearances": 11,
     "team": "Spacestation Gaming"
   },
   {
@@ -455,7 +455,7 @@
     "name": "crr",
     "nationality": "Spain",
     "region": "EU",
-    "rlcsLanAppearances": 5,
+    "rlcsLanAppearances": 6,
     "team": "Ninjas in Pyjamas"
   },
   {
@@ -496,7 +496,7 @@
     "nationality": "Australia",
     "region": "OCE",
     "rlcsLanAppearances": 1,
-    "team": "I'm fine in the west"
+    "team": "you not a champ. you a clown."
   },
   {
     "DOB": "12-07-2000",
@@ -515,7 +515,7 @@
     "name": "diaz",
     "nationality": "Brazil",
     "region": "NA",
-    "rlcsLanAppearances": 1,
+    "rlcsLanAppearances": 2,
     "team": "Spacestation Gaming"
   },
   {
@@ -544,7 +544,7 @@
     "id": 109454,
     "name": "dralii",
     "nationality": "Morocco",
-    "region": "EU",
+    "region": "MENA",
     "rlcsLanAppearances": 6,
     "team": "Team Falcons"
   },
@@ -576,7 +576,7 @@
     "nationality": "Brazil",
     "region": "SAM",
     "rlcsLanAppearances": 4,
-    "team": "Aelix"
+    "team": "None"
   },
   {
     "DOB": "28-06-2005",
@@ -625,7 +625,7 @@
     "name": "ExoTiiK",
     "nationality": "France",
     "region": "EU",
-    "rlcsLanAppearances": 11,
+    "rlcsLanAppearances": 12,
     "team": "Team Vitality"
   },
   {
@@ -725,7 +725,7 @@
     "name": "Firstkiller",
     "nationality": "United States",
     "region": "NA",
-    "rlcsLanAppearances": 13,
+    "rlcsLanAppearances": 14,
     "team": "Shopify Rebellion"
   },
   {
@@ -746,7 +746,7 @@
     "nationality": "Germany",
     "region": "EU",
     "rlcsLanAppearances": 3,
-    "team": "None"
+    "team": "PWR"
   },
   {
     "DOB": "22-02-1996",
@@ -776,7 +776,7 @@
     "nationality": "Saudi Arabia",
     "region": "MENA",
     "rlcsLanAppearances": 1,
-    "team": "ROC Esports"
+    "team": "R8 Esports"
   },
   {
     "DOB": "30-06-2000",
@@ -787,6 +787,16 @@
     "region": "NA",
     "rlcsLanAppearances": 4,
     "team": "None"
+  },
+  {
+    "DOB": "22-03-2006",
+    "fullName": "Giuliano De Lillo",
+    "id": 142283,
+    "name": "GiuK",
+    "nationality": "France",
+    "region": "EU",
+    "rlcsLanAppearances": 1,
+    "team": "NOVO Esports"
   },
   {
     "DOB": "05-04-1996",
@@ -826,7 +836,7 @@
     "nationality": "Australia",
     "region": "OCE",
     "rlcsLanAppearances": 4,
-    "team": "None"
+    "team": "Canterbury-Bankstown Bulldogs"
   },
   {
     "DOB": "23-01-2002",
@@ -865,7 +875,7 @@
     "nationality": "Morocco",
     "region": "EU",
     "rlcsLanAppearances": 9,
-    "team": "None"
+    "team": "Gentle Mates"
   },
   {
     "DOB": "21-06-2003",
@@ -875,7 +885,7 @@
     "nationality": "Austria",
     "region": "EU",
     "rlcsLanAppearances": 1,
-    "team": "None"
+    "team": "FN"
   },
   {
     "DOB": "01-01-1997",
@@ -924,7 +934,7 @@
     "name": "Joreuz",
     "nationality": "Netherlands",
     "region": "EU",
-    "rlcsLanAppearances": 9,
+    "rlcsLanAppearances": 10,
     "team": "Ninjas in Pyjamas"
   },
   {
@@ -944,7 +954,7 @@
     "name": "jstn.",
     "nationality": "United States",
     "region": "NA",
-    "rlcsLanAppearances": 9,
+    "rlcsLanAppearances": 10,
     "team": "Gen.G Mobil1 Racing"
   },
   {
@@ -954,7 +964,7 @@
     "name": "juicy",
     "nationality": "France",
     "region": "EU",
-    "rlcsLanAppearances": 6,
+    "rlcsLanAppearances": 7,
     "team": "Karmine Corp"
   },
   {
@@ -975,7 +985,7 @@
     "nationality": "Australia",
     "region": "OCE",
     "rlcsLanAppearances": 5,
-    "team": "TSM"
+    "team": "Canterbury-Bankstown Bulldogs"
   },
   {
     "DOB": "21-09-2000",
@@ -995,7 +1005,7 @@
     "nationality": "South Africa",
     "region": "SSA",
     "rlcsLanAppearances": 1,
-    "team": "ROUNDS"
+    "team": "Amapiano"
   },
   {
     "DOB": "30-10-2001",
@@ -1073,7 +1083,7 @@
     "name": "kofyr",
     "nationality": "United States",
     "region": "NA",
-    "rlcsLanAppearances": 2,
+    "rlcsLanAppearances": 3,
     "team": "Shopify Rebellion"
   },
   {
@@ -1144,7 +1154,7 @@
     "nationality": "Spain",
     "region": "EU",
     "rlcsLanAppearances": 4,
-    "team": "None"
+    "team": "RLD"
   },
   {
     "DOB": "31-03-1995",
@@ -1163,7 +1173,7 @@
     "name": "Lj",
     "nationality": "United States",
     "region": "NA",
-    "rlcsLanAppearances": 8,
+    "rlcsLanAppearances": 9,
     "team": "Shopify Rebellion"
   },
   {
@@ -1204,7 +1214,7 @@
     "nationality": "Saudi Arabia",
     "region": "MENA",
     "rlcsLanAppearances": 4,
-    "team": "Team Vision"
+    "team": "MMA"
   },
   {
     "DOB": "04-06-1997",
@@ -1223,7 +1233,7 @@
     "name": "MaJicBear",
     "nationality": "United States",
     "region": "NA",
-    "rlcsLanAppearances": 5,
+    "rlcsLanAppearances": 6,
     "team": "Gen.G Mobil1 Racing"
   },
   {
@@ -1304,7 +1314,7 @@
     "nationality": "Saudi Arabia",
     "region": "MENA",
     "rlcsLanAppearances": 1,
-    "team": "Team Vision"
+    "team": "MMA"
   },
   {
     "DOB": "12-12-1998",
@@ -1407,6 +1417,16 @@
     "team": "Gentle Mates"
   },
   {
+    "DOB": "12-12-2008",
+    "fullName": "Nico Majgren",
+    "id": 147395,
+    "name": "Nico",
+    "nationality": "Denmark",
+    "region": "EU",
+    "rlcsLanAppearances": 1,
+    "team": "NOVO Esports"
+  },
+  {
     "DOB": "02-02-2002",
     "fullName": "Joseph Kidd",
     "id": 51246,
@@ -1414,7 +1434,7 @@
     "nationality": "England",
     "region": "NA",
     "rlcsLanAppearances": 9,
-    "team": "Lotus 8 Esports"
+    "team": "M80"
   },
   {
     "DOB": "15-01-2007",
@@ -1443,7 +1463,7 @@
     "name": "oaly.",
     "nationality": "Netherlands",
     "region": "EU",
-    "rlcsLanAppearances": 4,
+    "rlcsLanAppearances": 5,
     "team": "Ninjas in Pyjamas"
   },
   {
@@ -1583,7 +1603,7 @@
     "nationality": "Brazil",
     "region": "SAM",
     "rlcsLanAppearances": 1,
-    "team": "Moonrise"
+    "team": "Sunset"
   },
   {
     "DOB": "02-01-2003",
@@ -1602,7 +1622,7 @@
     "name": "reveal",
     "nationality": "United States",
     "region": "NA",
-    "rlcsLanAppearances": 2,
+    "rlcsLanAppearances": 3,
     "team": "Spacestation Gaming"
   },
   {
@@ -1632,7 +1652,7 @@
     "name": "rise.",
     "nationality": "England",
     "region": "NA",
-    "rlcsLanAppearances": 12,
+    "rlcsLanAppearances": 13,
     "team": "Gen.G Mobil1 Racing"
   },
   {
@@ -1643,7 +1663,7 @@
     "nationality": "Germany",
     "region": "EU",
     "rlcsLanAppearances": 1,
-    "team": "Synergy"
+    "team": "FN"
   },
   {
     "DOB": "26-05-1997",
@@ -1723,7 +1743,7 @@
     "nationality": "Australia",
     "region": "OCE",
     "rlcsLanAppearances": 7,
-    "team": "I'm fine in the west"
+    "team": "Take Flyte"
   },
   {
     "DOB": "08-05-2003",
@@ -1733,7 +1753,7 @@
     "nationality": "Scotland",
     "region": "EU",
     "rlcsLanAppearances": 5,
-    "team": "Stick mick"
+    "team": "ABS Esports"
   },
   {
     "DOB": "05-11-2009",
@@ -1832,7 +1852,7 @@
     "nationality": "South Africa",
     "region": "SSA",
     "rlcsLanAppearances": 1,
-    "team": "Astronic LTX"
+    "team": "Astronic Esports"
   },
   {
     "DOB": "13-11-1997",
@@ -1882,7 +1902,7 @@
     "nationality": "South Africa",
     "region": "SSA",
     "rlcsLanAppearances": 4,
-    "team": "None"
+    "team": "Five Fears"
   },
   {
     "DOB": "15-03-2004",
@@ -1896,7 +1916,7 @@
   },
   {
     "DOB": "14-01-2009",
-    "fullName": "Nik Aiman Hakim Nik Azhar",
+    "fullName": "Nik Aiman Hakim Bin Nik Azhar",
     "id": 146111,
     "name": "Sphinx",
     "nationality": "Malaysia",
@@ -1912,7 +1932,7 @@
     "nationality": "Australia",
     "region": "OCE",
     "rlcsLanAppearances": 1,
-    "team": "Big Chungus"
+    "team": "None"
   },
   {
     "DOB": "29-11-2000",
@@ -1931,7 +1951,7 @@
     "name": "stizzy",
     "nationality": "Spain",
     "region": "EU",
-    "rlcsLanAppearances": 3,
+    "rlcsLanAppearances": 4,
     "team": "Team Vitality"
   },
   {
@@ -1982,7 +2002,7 @@
     "nationality": "Wales",
     "region": "EU",
     "rlcsLanAppearances": 1,
-    "team": "None"
+    "team": "S.E.A. Dragons"
   },
   {
     "DOB": "31-12-1998",
@@ -1993,6 +2013,16 @@
     "region": "SAM",
     "rlcsLanAppearances": 2,
     "team": "None"
+  },
+  {
+    "DOB": "22-08-2007",
+    "fullName": "Cohen Hawco",
+    "id": 151594,
+    "name": "Tawk",
+    "nationality": "Canada",
+    "region": "NA",
+    "rlcsLanAppearances": 1,
+    "team": "[REDACTED]"
   },
   {
     "DOB": "20-09-2000",
@@ -2057,7 +2087,7 @@
     "DOB": "26-07-2005",
     "fullName": "Mohammed Khalid Alotaibi",
     "id": 100098,
-    "name": "Trk511",
+    "name": "trk511",
     "nationality": "Saudi Arabia",
     "region": "MENA",
     "rlcsLanAppearances": 13,
@@ -2091,7 +2121,7 @@
     "nationality": "Saudi Arabia",
     "region": "MENA",
     "rlcsLanAppearances": 2,
-    "team": "ROC Esports"
+    "team": "Team Stallions"
   },
   {
     "DOB": "22-10-2003",
@@ -2110,7 +2140,7 @@
     "name": "Vatira",
     "nationality": "France",
     "region": "EU",
-    "rlcsLanAppearances": 12,
+    "rlcsLanAppearances": 13,
     "team": "Karmine Corp"
   },
   {
@@ -2170,8 +2200,8 @@
     "name": "Wahvey",
     "nationality": "United States",
     "region": "NA",
-    "rlcsLanAppearances": 1,
-    "team": "REDACTED"
+    "rlcsLanAppearances": 2,
+    "team": "[REDACTED]"
   },
   {
     "DOB": "07-02-1997",
@@ -2201,7 +2231,7 @@
     "nationality": "R\u00e9union",
     "region": "SSA",
     "rlcsLanAppearances": 1,
-    "team": "ROUNDS"
+    "team": "Les R\u00e9unionnais"
   },
   {
     "DOB": "02-08-1996",
@@ -2215,7 +2245,7 @@
   },
   {
     "DOB": "10-08-2004",
-    "fullName": "Yan Xisto Nolasco",
+    "fullName": "Yan Bernardo Xisto Nolasco",
     "id": 93578,
     "name": "yANXNZ",
     "nationality": "Brazil",
@@ -2260,7 +2290,7 @@
     "name": "zen",
     "nationality": "France",
     "region": "EU",
-    "rlcsLanAppearances": 8,
+    "rlcsLanAppearances": 9,
     "team": "Team Vitality"
   },
   {
@@ -2271,7 +2301,7 @@
     "nationality": "Australia",
     "region": "OCE",
     "rlcsLanAppearances": 1,
-    "team": "University of New South Wales Roar"
+    "team": "FIZ6 Gaming"
   },
   {
     "DOB": "01-07-1999",
@@ -2281,6 +2311,6 @@
     "nationality": "Saudi Arabia",
     "region": "MENA",
     "rlcsLanAppearances": 1,
-    "team": "ROC Esports"
+    "team": "R8 Esports"
   }
 ]

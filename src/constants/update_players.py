@@ -2,7 +2,6 @@
 
 import json
 import logging
-import sys
 from collections import Counter
 from datetime import datetime
 from random import shuffle
@@ -35,6 +34,8 @@ REGIONS = {
     # Catalysm's region is listed as Asia-Pacific for some reason
     "Asia-Pacific": "APAC",
     "Middle East": "MENA",
+    # Dralii's region is MENA
+    "MENA": "MENA",
     "Africa": "SSA",
 }
 # Required player fields
@@ -59,14 +60,17 @@ REQUIRED_FIELDS = set(
 # shouldn't the team field be correct? Right now it wouldn't be because a player
 # can only be in one team and that would be G.A.S. for GarrettG.
 PLAYERS_WITH_MULTIPLE_TEAMS = {
-    "eekso": "Geekay Esports",
     "GarrettG": "G.A.S.",
+    "Gyro.": "Unreal Nightmare",
     "Hockser": "The Boys",
     "Kronovi": "German Mountain Goats",
-    "noly": "Lotus 8 Esports",
+    "M7sn": "MMA",
+    "Mesho": "MMA",
+    "noly": "M80",
     "RelatingWave": "SHUFFLE'S KITTENS",
     "Rezears": "Magnifico",
     "SquishyMuffinz": "G.A.S.",
+    "zenulous": "FIZ6 Gaming",
 }
 
 
@@ -164,6 +168,10 @@ def _get_rlcs_tournaments():
         # Maybe the format of the page will get updated later on.
         if "1v1" in url:
             continue
+        # The Kick-Off Weekend Showmatch is listed as a regular tournament so
+        # we need to skip it.
+        if "Showmatch" in url:
+            continue
 
         # The tournament already happened and wasn't 1v1, add it to the list.
         rlcs_tournaments.append(url)
@@ -173,12 +181,10 @@ def _get_rlcs_tournaments():
 
 def _get_tournament_players(tournament):
     """Get the list of players that participated to the tournament if it was a LAN"""
-    players = []
-
     page = _get_page(tournament)
 
     # Get the location of the tournament to know if it was online or a LAN.
-    # This isn't the cleanest. We have a functions that's supposed to return
+    # This isn't the cleanest. We have a function that's supposed to return
     # the list of players that participated in a tournament but we only do that
     # if it was a LAN. Ideally this function would only be called for LANs, but
     # we now need to load the tournament page to know if it was a LAN or not.
@@ -192,9 +198,29 @@ def _get_tournament_players(tournament):
             if tournament_type == "Online":
                 # It's not a LAN, don't get the list of players who participated
                 LOG.info("Not a LAN, skipping")
-                return players
+                return []
 
-    children = page["html"].select_one("div[class*=mw-parser-output]").children
+    # In the end of 2025, Liquipedia introduced a new way to show rosters
+    # https://x.com/LiquipediaRL/status/1994430632647352782
+    # But not all the tournament pages use that new format, so we need to
+    # check for both formats to be sure to get the players.
+    players = _get_tournament_players_new_format(page["html"])
+    if not players:
+        players = _get_tournament_players_old_format(page["html"])
+
+    LOG.info(f"{len(players)} players attended that LAN")
+
+    # For safety in case in the future the current code isn't able to extract
+    # the players from the page.
+    assert players
+    return players
+
+
+def _get_tournament_players_old_format(html):
+    """Get the list of players that participated to the tournament using the old format"""
+    players = []
+
+    children = html.select_one("div[class*=mw-parser-output]").children
     for child in children:
         # Some children are just strings, they're not what we're looking for
         if not hasattr(child, "select"):
@@ -229,14 +255,51 @@ def _get_tournament_players(tournament):
         # In https://liquipedia.net/rocketleague/Rocket_League_Championship_Series/2024/Major_2
         # the results are in the same child as the teams, so checking for this
         # after checking for the teams.
-        if child.select("span[id='Results']"):
+        if child.select("h2[id='Results']"):
             break
 
-    LOG.info(f"{len(players)} players attended that LAN")
+    return players
 
-    # For safety in case in the future the current code isn't able to extract
-    # the players from the page.
-    assert players
+
+def _get_tournament_players_new_format(html):
+    """Get the list of players that participated to the tournament using the new format"""
+    players = []
+
+    # There might only ever be one div that matches this filter. But in other
+    # tournaments we've had teams listed separately (for example the group
+    # stage teams and the wildcard teams). We don't yet know if the new format
+    # will have separate divs like in the old one but accounting for it just in
+    # case.
+    for participants in html.select("div[class=team-participant]"):
+        # Sometimes the staff of a team is listed below the players, sometimes
+        # it's in a different "tab", there doesn't seem to be any consistency
+        # there. As a result, when the staff is in a different tab, we'll have
+        # 2 divs with the class we want. Meaning in one iteration we'll be
+        # parsing the players, and in the next one the staff, even though
+        # they're both part of the same team.
+        # So naming the variable "team" here isn't accurate but it'll do.
+        for team in participants.select("div[class=team-participant-roster]"):
+            # TODO: We don't yet know how substitutes will be listed, and
+            # how we'll know if they've played, so we'll need to update
+            # this function once we have that info.
+            for person in team.select("div[class*=team-participant-card__member]"):
+                if not person.select("div[class*=team-participant-card__member-name]"):
+                    # We're in the inner-div, we've already parsed the outer-div
+                    # for this person so we skip it.
+                    # This is not just to save time but also because the outer-div
+                    # has the optional role that we need to differentiate
+                    # between players and staff.
+                    continue
+
+                # Coaches have a role listed next to their names whereas players
+                # don't have anything. So if such a role is listed, we're not
+                # dealing with a player.
+                if not person.select(
+                    "div[class=team-participant-card__member-role-right]"
+                ):
+                    url = person.select_one("a").get("href").split("/rocketleague/")[-1]
+                    players.append(url)
+
     return players
 
 
@@ -348,7 +411,7 @@ def _get_player_info(page, rlcs_lan_appearances):
         # for quite a few players).
         # Continue the execution but print a message warning about the missing
         # data.
-        LOG.warning(f"{info['name']} missing {missing_fields} fields")
+        LOG.warning(f"{info['name']} missing {missing_fields} field(s)")
         # TODO: Ignore players that are missing DOB?
 
     return info
@@ -359,7 +422,7 @@ def get_players_info(players):
     players_info = {}
 
     for url, rlcs_lan_appearances in players:
-        # If we've already fecthed the player's page, update the info
+        # If we've already fetched the player's page, update the info
         if url in players_info:
             LOG.debug(f"Already got {url}")
             players_info[url]["rlcsLanAppearances"] += rlcs_lan_appearances
@@ -377,7 +440,7 @@ def get_players_info(players):
             url = redirect.select_one("a").get("href").split("/rocketleague/")[-1]
             LOG.debug(f"Redirect -> {url}")
 
-            # If we've already fecthed the player's page, update the info
+            # If we've already fetched the player's page, update the info
             if url in players_info:
                 LOG.debug(f"Already got {url}")
                 players_info[url]["rlcsLanAppearances"] += rlcs_lan_appearances
