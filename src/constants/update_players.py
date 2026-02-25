@@ -70,7 +70,7 @@ PLAYERS_WITH_MULTIPLE_TEAMS = {
     "RelatingWave": "SHUFFLE'S KITTENS",
     "Rezears": "Magnifico",
     "SquishyMuffinz": "G.A.S.",
-    "zenulous": "FIZ6 Gaming",
+    "tehqoz": "Five Fears",
 }
 
 
