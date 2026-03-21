@@ -61,14 +61,14 @@ REQUIRED_FIELDS = set(
 # can only be in one team and that would be G.A.S. for GarrettG.
 PLAYERS_WITH_MULTIPLE_TEAMS = {
     "GarrettG": "G.A.S.",
-    "Gyro.": "Unreal Nightmare",
+    "Gyro.": "Kaizen",
     "Hockser": "The Boys",
-    "Kronovi": "German Mountain Goats",
+    "Kronovi": "The Demunz",
     "M7sn": "MMA",
     "Mesho": "MMA",
     "noly": "M80",
-    "RelatingWave": "SHUFFLE'S KITTENS",
-    "Rezears": "Magnifico",
+    "RelatingWave": "Strictly Business",
+    "Rezears": "TRB",
     "SquishyMuffinz": "G.A.S.",
     "tehqoz": "Five Fears",
 }
@@ -87,17 +87,17 @@ class ColorFormatter(logging.Formatter):
     reset = "\x1b[0m"
     format_ = "%(asctime)s [%(levelname)s] %(message)s"
 
-    FORMATS = {
-        logging.DEBUG: grey + format_ + reset,
-        logging.INFO: grey + format_ + reset,
-        logging.WARNING: yellow + format_ + reset,
-        logging.ERROR: red + format_ + reset,
-        logging.CRITICAL: bold_red + format_ + reset,
+    colors = {
+        logging.DEBUG: grey,
+        logging.INFO: grey,
+        logging.WARNING: yellow,
+        logging.ERROR: red,
+        logging.CRITICAL: bold_red,
     }
 
     def format(self, record):
-        log_fmt = self.FORMATS.get(record.levelno)
-        formatter = logging.Formatter(log_fmt)
+        color = self.colors.get(record.levelno)
+        formatter = logging.Formatter(color + self.format_ + self.reset)
         return formatter.format(record)
 
 
@@ -134,9 +134,7 @@ def _get_rlcs_tournaments():
     # Only select premier (RLCS) tournaments.
     # This ignores tournaments like the Esports World Cup/Gamers 8, the FIFAe
     # World Cup, CRL, ...
-    for tournament in page["html"].select(
-        "div[class='gridRow tournament-highlighted-bg']"
-    ):
+    for tournament in page["html"].select("tr[class*='table2__row--highlighted']"):
         # If the tournament hasn't happened yet, don't include it.
         # The obvious way to check this would be to parse the date column and
         # compare it to the current date. But instead of doing all of that we
@@ -144,10 +142,11 @@ def _get_rlcs_tournaments():
         # It's not perfect because if we were to run the script while a LAN is
         # going on then we'd ignore it. But since we run the script so rarely
         # this is easy to avoid, just wait for the end of the LAN.
+
+        # The last 2 columns are the winner and the runner-up. We could use
+        # either but might as well go with the winner.
         winner_known = (
-            tournament.select_one(
-                "div[class='gridCell Placement FirstPlace']"
-            ).select_one("span[class='name']")
+            tournament.select("td")[-2]
             # If the winner is known, there will be a link to the team's page
             .select_one("a")
         )
@@ -158,8 +157,8 @@ def _get_rlcs_tournaments():
 
         # Get the url of the tournament
         url = (
-            tournament.select_one("div[class='gridCell Tournament Header']")
-            .select("a")[-1]
+            tournament.select("td")[1]
+            .select_one("a")
             .get("href")
             .split("/rocketleague/")[-1]
         )
