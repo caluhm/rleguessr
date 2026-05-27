@@ -21,3 +21,6 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+# Used by update_players.py to cache the Liquipedia pages
+http_cache.sqlite

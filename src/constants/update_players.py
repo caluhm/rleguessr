@@ -9,6 +9,7 @@ from re import match
 from time import sleep
 
 import requests
+import requests_cache
 from bs4 import BeautifulSoup
 
 BASE_URL = "https://liquipedia.net/rocketleague/api.php?action=parse&format=json&page="
@@ -61,16 +62,24 @@ REQUIRED_FIELDS = set(
 # can only be in one team and that would be G.A.S. for GarrettG.
 PLAYERS_WITH_MULTIPLE_TEAMS = {
     "GarrettG": "G.A.S.",
-    "Gyro.": "Kaizen",
+    "Gyro.": "Unreal Nightmare",
     "Hockser": "The Boys",
     "Kronovi": "The Demunz",
-    "M7sn": "MMA",
-    "Mesho": "MMA",
     "noly": "M80",
     "RelatingWave": "Strictly Business",
-    "Rezears": "TRB",
+    "Rezears": "GriddyGoose",
     "SquishyMuffinz": "G.A.S.",
     "tehqoz": "Five Fears",
+    "Yukeo": "dmy",
+}
+
+# In https://liquipedia.net/rocketleague/Rocket_League_Championship_Series/2022-23/Fall,
+# the player who now goes by Aztr0 is referred to as AZTROMICK. This is a
+# common occurrence, Liquipedia handles those issues by using a redirect to
+# the page with the correct name. But this one fails, so hardcoding it instead.
+PLAYERS_WITH_NON_WORKING_REDIRECTS = {
+    "AZTROMICK": "Aztro",
+    "AztromicK": "Aztro",
 }
 
 
@@ -112,13 +121,16 @@ def _get_page(page):
         if delay > 0:
             LOG.debug(f"Sleeping for {int(delay)} seconds")
             sleep(delay)
-    LAST_REQUEST_TIME = datetime.now()
 
     LOG.info(f"Getting page {page}")
     resp = requests.get(f"{BASE_URL}{page}", headers=HEADERS, timeout=REQUEST_TIMEOUT)
     resp.raise_for_status()
-    resp_parse = resp.json()["parse"]
 
+    # If we hit the cache, we don't need to update LAST_REQUEST_TIME
+    if not resp.from_cache:
+        LAST_REQUEST_TIME = datetime.now()
+
+    resp_parse = resp.json()["parse"]
     page_id = resp_parse["pageid"]
     page_html = resp_parse["text"]["*"]
     soup = BeautifulSoup(page_html, "html.parser")
@@ -171,6 +183,9 @@ def _get_rlcs_tournaments():
         # we need to skip it.
         if "Showmatch" in url:
             continue
+        # Same thing for the Bracket Rivalry Showmatch
+        if "Bracket_Rivalry" in url:
+            continue
 
         # The tournament already happened and wasn't 1v1, add it to the list.
         rlcs_tournaments.append(url)
@@ -206,6 +221,13 @@ def _get_tournament_players(tournament):
     players = _get_tournament_players_new_format(page["html"])
     if not players:
         players = _get_tournament_players_old_format(page["html"])
+
+    # TODO: On some pages (mainly Rocket_League_Championship_Series/2026/Paris_Major
+    # and Rocket_League_Championship_Series/2026/Boston_Major), players are
+    # counted twice. Leading the script to believe they attended way more LANs.
+    # We should update the _get_tournament_players_{new,old}_format() functions
+    # to fix that issue. In the meantime we'll remove duplicates here.
+    players = list(set(players))
 
     LOG.info(f"{len(players)} players attended that LAN")
 
@@ -308,6 +330,23 @@ def get_players():
     tournaments = _get_rlcs_tournaments()
     for tournament in tournaments:
         players.extend(_get_tournament_players(tournament))
+
+    # Check if we need to update PLAYERS_WITH_NON_WORKING_REDIRECTS.
+    # TODO: We're only checking if the problematic names are still listed in
+    # the pages, but we should be checking if the redirects are now working.
+    # For that we would need to update _get_page() because the .json() call
+    # fails when we're dealing with one of the problematic players.
+    for player in PLAYERS_WITH_NON_WORKING_REDIRECTS:
+        if player not in players:
+            LOG.warning(
+                f"{player} doesn't need to have a hardcoded redirect anymore. "
+                "Update PLAYERS_WITH_NON_WORKING_REDIRECTS."
+            )
+    # Replace players' names for which the redirect doesn't work automatically.
+    players = [
+        PLAYERS_WITH_NON_WORKING_REDIRECTS.get(player, player) for player in players
+    ]
+
     # Sorting the players by name so we can get a rough idea of how far
     # into the execution we are when looking at stdout.
     return sorted(Counter(players).items())
@@ -529,6 +568,14 @@ def main():
     handler.setFormatter(ColorFormatter())
     LOG.addHandler(handler)
     LOG.setLevel(logging.INFO)
+
+    # We often have to run the script multiple times because something changed
+    # in the Liquipedia pages. As a result it takes hours to fully complete.
+    # By adding a cache, the first run will still take a couple of hours but
+    # the subsequent ones will take a few seconds.
+    # Setting the cache to expire after 24h should be enough to finish updating
+    # the script.
+    requests_cache.install_cache(expire_after=24 * 60 * 60)
 
     players = get_players()
     players_info = get_players_info(players)
