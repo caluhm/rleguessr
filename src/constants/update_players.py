@@ -12,12 +12,20 @@ import requests
 import requests_cache
 from bs4 import BeautifulSoup
 
+# We often have to run the script multiple times because something changed
+# in the Liquipedia pages. As a result it takes hours to fully complete.
+# By adding a cache, the first run will still take a couple of hours but
+# the subsequent ones will take a few seconds.
+# Setting the cache to expire after a week should be enough to finish updating
+# the script.
+REQUEST_CACHE_DURATION = 7 * 24 * 60 * 60
+REQUEST_TIMEOUT = 10
+
 BASE_URL = "https://liquipedia.net/rocketleague/api.php?action=parse&format=json&page="
 HEADERS = {
     "Accept-Encoding": "gzip",
     "User-Agent": "RLEGuessr (https://rleguessr.vercel.app/; romain.richard.IT.engineer@gmail.com)",
 }
-REQUEST_TIMEOUT = 10
 # https://liquipedia.net/api-terms-of-use states:
 # API "action=parse" requests should not exceed 1 request per 30 seconds
 # as these are more resource intensive.
@@ -67,19 +75,10 @@ PLAYERS_WITH_MULTIPLE_TEAMS = {
     "Kronovi": "The Demunz",
     "noly": "M80",
     "RelatingWave": "Strictly Business",
-    "Rezears": "GriddyGoose",
+    "Rezears": "Kaydop Corp",
     "SquishyMuffinz": "G.A.S.",
     "tehqoz": "Five Fears",
     "Yukeo": "dmy",
-}
-
-# In https://liquipedia.net/rocketleague/Rocket_League_Championship_Series/2022-23/Fall,
-# the player who now goes by Aztr0 is referred to as AZTROMICK. This is a
-# common occurrence, Liquipedia handles those issues by using a redirect to
-# the page with the correct name. But this one fails, so hardcoding it instead.
-PLAYERS_WITH_NON_WORKING_REDIRECTS = {
-    "AZTROMICK": "Aztro",
-    "AztromicK": "Aztro",
 }
 
 
@@ -127,7 +126,7 @@ def _get_page(page):
     resp.raise_for_status()
 
     # If we hit the cache, we don't need to update LAST_REQUEST_TIME
-    if not resp.from_cache:
+    if not hasattr(resp, "from_cache") or not resp.from_cache:
         LAST_REQUEST_TIME = datetime.now()
 
     resp_parse = resp.json()["parse"]
@@ -214,95 +213,36 @@ def _get_tournament_players(tournament):
                 LOG.info("Not a LAN, skipping")
                 return []
 
-    # In the end of 2025, Liquipedia introduced a new way to show rosters
-    # https://x.com/LiquipediaRL/status/1994430632647352782
-    # But not all the tournament pages use that new format, so we need to
-    # check for both formats to be sure to get the players.
-    players = _get_tournament_players_new_format(page["html"])
-    if not players:
-        players = _get_tournament_players_old_format(page["html"])
-
-    # TODO: On some pages (mainly Rocket_League_Championship_Series/2026/Paris_Major
-    # and Rocket_League_Championship_Series/2026/Boston_Major), players are
-    # counted twice. Leading the script to believe they attended way more LANs.
-    # We should update the _get_tournament_players_{new,old}_format() functions
-    # to fix that issue. In the meantime we'll remove duplicates here.
-    players = list(set(players))
-
-    LOG.info(f"{len(players)} players attended that LAN")
-
-    # For safety in case in the future the current code isn't able to extract
-    # the players from the page.
-    assert players
-    return players
-
-
-def _get_tournament_players_old_format(html):
-    """Get the list of players that participated to the tournament using the old format"""
     players = []
-
-    children = html.select_one("div[class*=mw-parser-output]").children
+    # Ideally we'd select all the divs that correspond to a team and parse
+    # those, but unfortunately some of those shouldn't be parsed (showmatch
+    # participants, former participants) and there's nothing inside the div
+    # itself telling us that we shouldn't parse them. Instead we have to rely
+    # on reading the page from top to bottom and stopping when necessary.
+    # Which is why we do that loop over all the children.
+    children = page["html"].select_one("div[class*=mw-parser-output]").children
     for child in children:
         # Some children are just strings, they're not what we're looking for
         if not hasattr(child, "select"):
             continue
 
-        teams = child.select("div[class='teamcard-inner']")
+        # In https://liquipedia.net/rocketleague/Rocket_League_Championship_Series/2024
+        # a team forfeited their spot but are still listed as participants.
+        # Same in https://liquipedia.net/rocketleague/Rocket_League_Championship_Series/2021-22/Winter
+        # where a team couldn't make it because of visa issues.
+        #
+        # The only difference between actual participants and former
+        # participants is that there's text above the team saying that they're
+        # former participants. This is not a great way of dealing with this
+        # special case (what if one day a team calls themselves "Former
+        # Participants"? what if a child contains both actual participants
+        # and former participants?) but I don't see a better solution right now.
+        if "Former Participants" in child.text:
+            continue
+
+        teams = child.select("div[class=team-participant-roster]")
         # Go through each team one by one
         for team in teams:
-            # Add the main players
-            for tr in team.select_one("table[data-toggle-area-content='1']").select(
-                "tr"
-            ):
-                if tr.select_one("th") and tr.select_one("th").text in "123":
-                    url = tr.select("a")[-1].get("href").split("/rocketleague/")[-1]
-                    players.append(url)
-
-            # Add the substitute if they played
-            subs = team.select_one("table[data-toggle-area-content='2']")
-            if subs:
-                for tr in subs.select("tr"):
-                    if (
-                        tr.select_one("th")
-                        and tr.select_one("th").text == "S"
-                        and not tr.select_one("abbr[title='Did not play']")
-                    ):
-                        url = tr.select("a")[-1].get("href").split("/rocketleague/")[-1]
-                        players.append(url)
-
-        # In https://liquipedia.net/rocketleague/Rocket_League_Championship_Series/Season_3
-        # there are 2 teams who played a showmatch. We don't want to include
-        # those so we go through the page and stop if we get to the Results.
-        # In https://liquipedia.net/rocketleague/Rocket_League_Championship_Series/2024/Major_2
-        # the results are in the same child as the teams, so checking for this
-        # after checking for the teams.
-        if child.select("h2[id='Results']"):
-            break
-
-    return players
-
-
-def _get_tournament_players_new_format(html):
-    """Get the list of players that participated to the tournament using the new format"""
-    players = []
-
-    # There might only ever be one div that matches this filter. But in other
-    # tournaments we've had teams listed separately (for example the group
-    # stage teams and the wildcard teams). We don't yet know if the new format
-    # will have separate divs like in the old one but accounting for it just in
-    # case.
-    for participants in html.select("div[class=team-participant]"):
-        # Sometimes the staff of a team is listed below the players, sometimes
-        # it's in a different "tab", there doesn't seem to be any consistency
-        # there. As a result, when the staff is in a different tab, we'll have
-        # 2 divs with the class we want. Meaning in one iteration we'll be
-        # parsing the players, and in the next one the staff, even though
-        # they're both part of the same team.
-        # So naming the variable "team" here isn't accurate but it'll do.
-        for team in participants.select("div[class=team-participant-roster]"):
-            # TODO: We don't yet know how substitutes will be listed, and
-            # how we'll know if they've played, so we'll need to update
-            # this function once we have that info.
             for person in team.select("div[class*=team-participant-card__member]"):
                 if not person.select("div[class*=team-participant-card__member-name]"):
                     # We're in the inner-div, we've already parsed the outer-div
@@ -312,15 +252,37 @@ def _get_tournament_players_new_format(html):
                     # between players and staff.
                     continue
 
-                # Coaches have a role listed next to their names whereas players
-                # don't have anything. So if such a role is listed, we're not
-                # dealing with a player.
+                # Coaches have "Coach" listed as a role next to their names.
+                # Substitues who didn't play have "DNP" listed as a role.
+                # But regular players don't have any role listed.
+                # So if such a role is listed, don't add the person's name to
+                # the list of players.
                 if not person.select(
                     "div[class=team-participant-card__member-role-right]"
                 ):
                     url = person.select_one("a").get("href").split("/rocketleague/")[-1]
                     players.append(url)
 
+        # In https://liquipedia.net/rocketleague/Rocket_League_Championship_Series/Season_3
+        # there are 2 teams who played a showmatch. We don't want to include
+        # those so we go through the page and stop if we get to the Results.
+        # In https://liquipedia.net/rocketleague/Rocket_League_Championship_Series/2024/Major_2
+        # the results are in the same child as the teams, so checking for this
+        # after checking for the teams.
+        if child.select("h2[id=Results]"):
+            break
+
+    # On some pages (mainly Rocket_League_Championship_Series/2026/Paris_Major
+    # and Rocket_League_Championship_Series/2026/Boston_Major), players are
+    # counted twice. Leading the script to believe they attended way more LANs.
+    players = list(set(players))
+
+    LOG.info(f"{len(players)} players attended that LAN")
+    LOG.debug(players)
+
+    # For safety in case in the future the current code isn't able to extract
+    # the players from the page.
+    assert players
     return players
 
 
@@ -330,22 +292,6 @@ def get_players():
     tournaments = _get_rlcs_tournaments()
     for tournament in tournaments:
         players.extend(_get_tournament_players(tournament))
-
-    # Check if we need to update PLAYERS_WITH_NON_WORKING_REDIRECTS.
-    # TODO: We're only checking if the problematic names are still listed in
-    # the pages, but we should be checking if the redirects are now working.
-    # For that we would need to update _get_page() because the .json() call
-    # fails when we're dealing with one of the problematic players.
-    for player in PLAYERS_WITH_NON_WORKING_REDIRECTS:
-        if player not in players:
-            LOG.warning(
-                f"{player} doesn't need to have a hardcoded redirect anymore. "
-                "Update PLAYERS_WITH_NON_WORKING_REDIRECTS."
-            )
-    # Replace players' names for which the redirect doesn't work automatically.
-    players = [
-        PLAYERS_WITH_NON_WORKING_REDIRECTS.get(player, player) for player in players
-    ]
 
     # Sorting the players by name so we can get a rough idea of how far
     # into the execution we are when looking at stdout.
@@ -569,13 +515,7 @@ def main():
     LOG.addHandler(handler)
     LOG.setLevel(logging.INFO)
 
-    # We often have to run the script multiple times because something changed
-    # in the Liquipedia pages. As a result it takes hours to fully complete.
-    # By adding a cache, the first run will still take a couple of hours but
-    # the subsequent ones will take a few seconds.
-    # Setting the cache to expire after 24h should be enough to finish updating
-    # the script.
-    requests_cache.install_cache(expire_after=24 * 60 * 60)
+    requests_cache.install_cache(expire_after=REQUEST_CACHE_DURATION)
 
     players = get_players()
     players_info = get_players_info(players)
