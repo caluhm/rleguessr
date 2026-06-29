@@ -117,7 +117,7 @@
     "nationality": "France",
     "region": "EU",
     "rlcsLanAppearances": 8,
-    "team": "None"
+    "team": "Geekay Esports"
   },
   {
     "DOB": "21-07-2003",
@@ -157,7 +157,7 @@
     "nationality": "England",
     "region": "EU",
     "rlcsLanAppearances": 14,
-    "team": "Geekay Esports"
+    "team": "None"
   },
   {
     "DOB": "11-03-2005",
@@ -257,7 +257,7 @@
     "nationality": "Belgium",
     "region": "EU",
     "rlcsLanAppearances": 4,
-    "team": "Team BSK"
+    "team": "The Bricks"
   },
   {
     "DOB": "15-05-2004",
@@ -440,15 +440,6 @@
     "team": "None"
   },
   {
-    "fullName": "Shantanu Modak",
-    "id": 125315,
-    "name": "Commutator",
-    "nationality": "Singapore",
-    "region": "APAC",
-    "rlcsLanAppearances": 1,
-    "team": "None"
-  },
-  {
     "DOB": "01-06-1995",
     "fullName": "Gabriel Vallozzi",
     "id": 7207,
@@ -516,7 +507,7 @@
     "nationality": "England",
     "region": "EU",
     "rlcsLanAppearances": 4,
-    "team": "None"
+    "team": "Lowkenuinely"
   },
   {
     "DOB": "15-07-2008",
@@ -636,7 +627,7 @@
     "nationality": "United States",
     "region": "NA",
     "rlcsLanAppearances": 1,
-    "team": "None"
+    "team": "Gen.G Mobil1 Racing"
   },
   {
     "DOB": "31-10-2002",
@@ -839,16 +830,6 @@
     "team": "Five Fears"
   },
   {
-    "DOB": "2004",
-    "fullName": "Angus Hall",
-    "id": 94158,
-    "name": "gus",
-    "nationality": "Australia",
-    "region": "OCE",
-    "rlcsLanAppearances": 1,
-    "team": "PWR"
-  },
-  {
     "DOB": "13-10-2002",
     "fullName": "Jirair Papazian",
     "id": 36235,
@@ -895,15 +876,6 @@
     "name": "impressive",
     "nationality": "Saudi Arabia",
     "region": "MENA",
-    "rlcsLanAppearances": 1,
-    "team": "None"
-  },
-  {
-    "fullName": "Trevor Carmody",
-    "id": 5696,
-    "name": "Insolences",
-    "nationality": "United States",
-    "region": "NA",
     "rlcsLanAppearances": 1,
     "team": "None"
   },
@@ -1086,15 +1058,6 @@
     "region": "APAC",
     "rlcsLanAppearances": 3,
     "team": "TSM"
-  },
-  {
-    "fullName": "Alex McDonald",
-    "id": 23085,
-    "name": "Kia",
-    "nationality": "Australia",
-    "region": "OCE",
-    "rlcsLanAppearances": 1,
-    "team": "None"
   },
   {
     "DOB": "10-06-2007",
@@ -1364,7 +1327,7 @@
     "nationality": "Finland",
     "region": "EU",
     "rlcsLanAppearances": 7,
-    "team": "None"
+    "team": "Team Finland"
   },
   {
     "DOB": "26-01-1999",
@@ -1577,15 +1540,6 @@
     "team": "None"
   },
   {
-    "fullName": "Michael Behrouzi",
-    "id": 3288,
-    "name": "Quinn Lobdell",
-    "nationality": "United States",
-    "region": "NA",
-    "rlcsLanAppearances": 1,
-    "team": "None"
-  },
-  {
     "DOB": "12-01-2004",
     "fullName": "Andrea Radovanovi\u0107",
     "id": 90125,
@@ -1733,7 +1687,7 @@
     "nationality": "Denmark",
     "region": "EU",
     "rlcsLanAppearances": 1,
-    "team": "None"
+    "team": "Lowkenuinely"
   },
   {
     "DOB": "10-06-2007",
@@ -1773,7 +1727,7 @@
     "nationality": "France",
     "region": "EU",
     "rlcsLanAppearances": 1,
-    "team": "Erah Esport"
+    "team": "None"
   },
   {
     "DOB": "02-09-2005",
@@ -1856,15 +1810,6 @@
     "team": "None"
   },
   {
-    "fullName": "Alexander Karelin",
-    "id": 2518,
-    "name": "Sikii",
-    "nationality": "Germany",
-    "region": "EU",
-    "rlcsLanAppearances": 3,
-    "team": "None"
-  },
-  {
     "DOB": "05-11-1996",
     "fullName": "Emiliano Benny",
     "id": 7439,
@@ -1942,7 +1887,7 @@
     "nationality": "Canada",
     "region": "NA",
     "rlcsLanAppearances": 3,
-    "team": "Plot Twist"
+    "team": "Next2Nu Esports"
   },
   {
     "DOB": "14-01-2009",
@@ -2083,15 +2028,6 @@
     "region": "EU",
     "rlcsLanAppearances": 2,
     "team": "Chippy Chips"
-  },
-  {
-    "fullName": "Timi Falodun",
-    "id": 7434,
-    "name": "timi",
-    "nationality": "Canada",
-    "region": "NA",
-    "rlcsLanAppearances": 1,
-    "team": "None"
   },
   {
     "DOB": "06-06-2000",

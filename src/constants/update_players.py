@@ -76,6 +76,7 @@ PLAYERS_WITH_MULTIPLE_TEAMS = {
     "noly": "M80",
     "RelatingWave": "Strictly Business",
     "Rezears": "Kaydop Corp",
+    "sosa": "Next2Nu Esports",
     "SquishyMuffinz": "G.A.S.",
     "tehqoz": "Five Fears",
     "Yukeo": "dmy",
@@ -326,28 +327,16 @@ def _get_player_info(page, rlcs_lan_appearances):
         elif div_text.startswith("Born:"):
             # As of 2025-05-19, https://liquipedia.net/rocketleague/Dralii
             # DOB contains Canada.
-            r = match(
-                r"Born:((?P<month>\w+)\s+(?P<day>\d+),\s+)?(?P<year>\d+)", div_text
-            )
-            if not r:
-                LOG.warning(f"{info['name']} missing proper DOB: '{div_text}'")
-            else:
+            r = match(r"Born:(?P<month>\w+)\s+(?P<day>\d+),\s+(?P<year>\d+)", div_text)
+            if r:
+                # The month is written as a word, we need to convert it to a
+                # number.
                 year = r.group("year")
                 month = r.group("month")
                 day = r.group("day")
-                if day and month:
-                    dob = f"{day}-{month}-{year}"
-                    dob_format_in = "%d-%B-%Y"
-                    dob_format_out = "%d-%m-%Y"
-                else:
-                    # As of 2024-09-23, https://liquipedia.net/rocketleague/Mesho
-                    # doesn't have a proper DOB, only a year.
-                    dob = year
-                    dob_format_in = "%Y"
-                    dob_format_out = "%Y"
-                info["DOB"] = datetime.strptime(dob, dob_format_in).strftime(
-                    dob_format_out
-                )
+                info["DOB"] = datetime.strptime(
+                    f"{day}-{month}-{year}", "%d-%B-%Y"
+                ).strftime("%d-%m-%Y")
         elif div_text.startswith("Region:"):
             info["region"] = REGIONS[div_text.split(maxsplit=1)[1]]
         elif div_text.startswith("Team:"):
@@ -393,10 +382,13 @@ def _get_player_info(page, rlcs_lan_appearances):
         # We weren't able to get some of the fields, most likely Liquipedia is
         # missing the information we need (for example it is missing the DOB
         # for quite a few players).
-        # Continue the execution but print a message warning about the missing
-        # data.
-        LOG.warning(f"{info['name']} missing {missing_fields} field(s)")
-        # TODO: Ignore players that are missing DOB?
+        msg = f"{info['name']} missing {missing_fields} field(s)"
+        # Ignore players that are missing DOB because we can't calculate their
+        # age.
+        if "DOB" in missing_fields:
+            info = {}
+            msg = f"{msg}, skipping the player"
+        LOG.warning(msg)
 
     return info
 
@@ -433,7 +425,10 @@ def get_players_info(players):
             # Get the player's page
             page = _get_page(url)
 
-        players_info[url] = _get_player_info(page, rlcs_lan_appearances)
+        player_info = _get_player_info(page, rlcs_lan_appearances)
+        # Don't add the player if we weren't able to get his info
+        if player_info:
+            players_info[url] = player_info
 
     return list(players_info.values())
 
