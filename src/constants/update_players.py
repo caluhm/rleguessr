@@ -69,13 +69,18 @@ REQUIRED_FIELDS = set(
 # shouldn't the team field be correct? Right now it wouldn't be because a player
 # can only be in one team and that would be G.A.S. for GarrettG.
 PLAYERS_WITH_MULTIPLE_TEAMS = {
+    "ajg": "Mate y Tapa",
+    "AtomiK": "Mate y Tapa",
+    "Dorito": "Mate y Tapa",
+    "DRUFINHO": "Bigodes",
     "GarrettG": "G.A.S.",
     "Gyro.": "Unreal Nightmare",
     "Hockser": "The Boys",
     "Kronovi": "The Demunz",
-    "noly": "M80",
+    "Motta": "Plot Twist",
     "RelatingWave": "Strictly Business",
-    "Rezears": "Kaydop Corp",
+    "Rezears": "The LANimals",
+    "Roll Dizz": "Deleted Gaming",
     "sosa": "Next2Nu Esports",
     "SquishyMuffinz": "G.A.S.",
     "tehqoz": "Five Fears",
@@ -306,7 +311,7 @@ def _get_player_info(page, rlcs_lan_appearances):
     info = {
         "id": page["id"],
         "rlcsLanAppearances": rlcs_lan_appearances,
-        "name": divs[0].text.split("\xa0")[-1].split("]")[-1].strip(),
+        "name": divs[0].text.replace("[e][h]", "").replace("\xa0", "").strip(),
         "team": "None",
     }
     for div in divs:
